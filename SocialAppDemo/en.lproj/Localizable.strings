@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  SocialAppDemo
+
+  Created by Нияз Нуруллин on 19.03.2023.
+  
+*/
+
+// MARK: - Navigation
+
+"Main" = "Main";
+"Profile" = "Profile";
+"Saved" = "Saved";
+
+// MARK: - WelcomeScreen, SignUpScreen, ConfirmSignUpScreen
+
+"Sign Up" = "Sign Up";
+"Already have an account" = "Already have an account";
+
+"Enter phone number" = "Enter phone number";
+"Your phone number would be used to log into your account" = "Your phone number would be used to log into your account";
+"NEXT" = "NEXT";
+"By pressing “Next” you are agreeing to all terms and conditions of our privacy policy" = "By pressing “Next” you are agreeing to all terms and conditions of our privacy policy";
+
+"Confirm Sign Up" = "Confirm Sign Up";
+"We sent the code via SMS to number" = "We sent the code via SMS to number";
+"Enter code from SMS" = "Enter code from SMS";
+
+"Welcome back" = "Welcome back";
+"Enter your phone number to log in" = "Enter your phone number to log in";
+"CONFIRM" = "CONFIRM";

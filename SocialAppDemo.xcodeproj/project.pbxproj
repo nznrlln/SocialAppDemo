@@ -10,13 +10,55 @@
 		FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */; };
 		FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */; };
 		FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */; };
-		FD1C5BE229BDD71400C42CD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1C5BE029BDD71400C42CD6 /* Main.storyboard */; };
 		FD1C5BE529BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BE329BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld */; };
 		FD1C5BE729BDD71500C42CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */; };
 		FD1C5BEA29BDD71500C42CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */; };
 		FD1C5BF529BDD71500C42CD6 /* SocialAppDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BF429BDD71500C42CD6 /* SocialAppDemoTests.swift */; };
 		FD1C5BFF29BDD71500C42CD6 /* SocialAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */; };
 		FD1C5C0129BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */; };
+		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
+		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
+		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
+		FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282629C63FC400553FBD /* WelcomeScreenView.swift */; };
+		FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282829C6420500553FBD /* UIView+Extention.swift */; };
+		FD5D282B29C6449200553FBD /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282A29C6449200553FBD /* CustomUIButton.swift */; };
+		FD5D283229C7112E00553FBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD5D283429C7112E00553FBD /* Localizable.strings */; };
+		FD5D283829C7793000553FBD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD5D283729C7793000553FBD /* SnapKit */; };
+		FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D283929C77E0000553FBD /* String+Extention.swift */; };
+		FD5D283C29C7812D00553FBD /* Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D283B29C7812D00553FBD /* Pallete.swift */; };
+		FD5D283E29C7819500553FBD /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D283D29C7819500553FBD /* UIColor+Extention.swift */; };
+		FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D283F29C783D800553FBD /* WelcomeScreenViewController.swift */; };
+		FD5D284629C786EC00553FBD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284529C786EC00553FBD /* Fonts.swift */; };
+		FD5D284929C8F54F00553FBD /* WelcomeScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284829C8F54F00553FBD /* WelcomeScreenALConstants.swift */; };
+		FD5D284B29CA158900553FBD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284A29CA158900553FBD /* MainTabBarController.swift */; };
+		FD5D284D29CA267000553FBD /* LogInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284C29CA267000553FBD /* LogInScreenViewController.swift */; };
+		FD5D284F29CC8E3100553FBD /* LogInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284E29CC8E3100553FBD /* LogInScreenView.swift */; };
+		FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285029CC8E4300553FBD /* LogInScreenALConstants.swift */; };
+		FD5D285329CED52200553FBD /* SignUpScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285229CED52200553FBD /* SignUpScreenALConstants.swift */; };
+		FD5D285529CED53B00553FBD /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285429CED53B00553FBD /* SignUpScreenViewController.swift */; };
+		FD5D285729CED56600553FBD /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285629CED56600553FBD /* SignUpScreenView.swift */; };
+		FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285929CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift */; };
+		FD5D285C29CEE70D00553FBD /* ConfirmSignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285B29CEE70D00553FBD /* ConfirmSignUpScreenView.swift */; };
+		FD5D285E29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285D29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift */; };
+		FD5D287A29D0C5C000553FBD /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287129D0C5BF00553FBD /* Inter-Regular.ttf */; };
+		FD5D287B29D0C5C000553FBD /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287229D0C5BF00553FBD /* Inter-Thin.ttf */; };
+		FD5D287C29D0C5C000553FBD /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287329D0C5BF00553FBD /* Inter-Black.ttf */; };
+		FD5D287D29D0C5C000553FBD /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287429D0C5BF00553FBD /* Inter-ExtraBold.ttf */; };
+		FD5D287E29D0C5C000553FBD /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287529D0C5BF00553FBD /* Inter-Medium.ttf */; };
+		FD5D287F29D0C5C000553FBD /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287629D0C5BF00553FBD /* Inter-ExtraLight.ttf */; };
+		FD5D288029D0C5C000553FBD /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287729D0C5C000553FBD /* Inter-SemiBold.ttf */; };
+		FD5D288129D0C5C000553FBD /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287829D0C5C000553FBD /* Inter-Bold.ttf */; };
+		FD5D288229D0C5C000553FBD /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287929D0C5C000553FBD /* Inter-Light.ttf */; };
+		FD5D288829D8B8BB00553FBD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FD5D288729D8B8BB00553FBD /* FirebaseAuth */; };
+		FD5D288A29D8B9A600553FBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD5D288929D8B9A600553FBD /* GoogleService-Info.plist */; };
+		FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D288B29D8BA9400553FBD /* AuthManager.swift */; };
+		FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D288429D3485500553FBD /* PostScreenView.swift */; };
+		FD5D288F29D9638500553FBD /* PostScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D288E29D9638500553FBD /* PostScreenALConstants.swift */; };
+		FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289029D976C200553FBD /* PostScreenViewController.swift */; };
+		FD5D289329D9FC9200553FBD /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289229D9FC9200553FBD /* HomeScreenViewController.swift */; };
+		FD5D289529D9FCA300553FBD /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289429D9FCA300553FBD /* HomeScreenView.swift */; };
+		FD5D289729D9FCB800553FBD /* HomeScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */; };
+		FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +83,6 @@
 		FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FD1C5BE129BDD71400C42CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD1C5BE429BDD71400C42CD6 /* SocialAppDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialAppDemo.xcdatamodel; sourceTree = "<group>"; };
 		FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD1C5BE929BDD71500C42CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +92,48 @@
 		FD1C5BFA29BDD71500C42CD6 /* SocialAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITests.swift; sourceTree = "<group>"; };
 		FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
+		FD5D282629C63FC400553FBD /* WelcomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenView.swift; sourceTree = "<group>"; };
+		FD5D282829C6420500553FBD /* UIView+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
+		FD5D282A29C6449200553FBD /* CustomUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		FD5D283329C7112E00553FBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD5D283529C7114200553FBD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD5D283929C77E0000553FBD /* String+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		FD5D283B29C7812D00553FBD /* Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallete.swift; sourceTree = "<group>"; };
+		FD5D283D29C7819500553FBD /* UIColor+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
+		FD5D283F29C783D800553FBD /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D284529C786EC00553FBD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		FD5D284829C8F54F00553FBD /* WelcomeScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D284A29CA158900553FBD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FD5D284C29CA267000553FBD /* LogInScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D284E29CC8E3100553FBD /* LogInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenView.swift; sourceTree = "<group>"; };
+		FD5D285029CC8E4300553FBD /* LogInScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D285229CED52200553FBD /* SignUpScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D285429CED53B00553FBD /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D285629CED56600553FBD /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
+		FD5D285929CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D285B29CEE70D00553FBD /* ConfirmSignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpScreenView.swift; sourceTree = "<group>"; };
+		FD5D285D29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D287129D0C5BF00553FBD /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		FD5D287229D0C5BF00553FBD /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		FD5D287329D0C5BF00553FBD /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		FD5D287429D0C5BF00553FBD /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FD5D287529D0C5BF00553FBD /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		FD5D287629D0C5BF00553FBD /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		FD5D287729D0C5C000553FBD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		FD5D287829D0C5C000553FBD /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		FD5D287929D0C5C000553FBD /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		FD5D288429D3485500553FBD /* PostScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenView.swift; sourceTree = "<group>"; };
+		FD5D288929D8B9A600553FBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD5D288B29D8BA9400553FBD /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		FD5D288E29D9638500553FBD /* PostScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D289029D976C200553FBD /* PostScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D289229D9FC9200553FBD /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D289429D9FCA300553FBD /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5D283829C7793000553FBD /* SnapKit in Frameworks */,
+				FD5D288829D8B8BB00553FBD /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,12 +188,29 @@
 			children = (
 				FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */,
 				FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */,
+				FD5D284A29CA158900553FBD /* MainTabBarController.swift */,
 				FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */,
-				FD1C5BE029BDD71400C42CD6 /* Main.storyboard */,
 				FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */,
 				FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */,
 				FD1C5BEB29BDD71500C42CD6 /* Info.plist */,
-				FD1C5BE329BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld */,
+				FD5D288929D8B9A600553FBD /* GoogleService-Info.plist */,
+				FD5D283429C7112E00553FBD /* Localizable.strings */,
+				FD5D282829C6420500553FBD /* UIView+Extention.swift */,
+				FD5D283929C77E0000553FBD /* String+Extention.swift */,
+				FD5D283D29C7819500553FBD /* UIColor+Extention.swift */,
+				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
+				FD5D281A29BDD8E900553FBD /* CoreData */,
+				FD5D282429C188F000553FBD /* WelcomeScreen */,
+				FD5D281E29BE274D00553FBD /* LogInScreen */,
+				FD5D282529C1892700553FBD /* SignUpScreen */,
+				FD5D285829CEE6CB00553FBD /* ConfirmSignUpScreen */,
+				FD5D281B29BE26E800553FBD /* HomeScreen */,
+				FD5D281C29BE270400553FBD /* ProfileScreen */,
+				FD5D281D29BE271400553FBD /* FavouritesScreen */,
+				FD5D281F29BE27C100553FBD /* PostScreen */,
+				FD5D284729C786F400553FBD /* Helpers */,
+				FD5D288329D0C5C400553FBD /* Fonts */,
+				FD5D288B29D8BA9400553FBD /* AuthManager.swift */,
 			);
 			path = SocialAppDemo;
 			sourceTree = "<group>";
@@ -130,6 +232,117 @@
 			path = SocialAppDemoUITests;
 			sourceTree = "<group>";
 		};
+		FD5D281A29BDD8E900553FBD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FD1C5BE329BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld */,
+				FD5D281829BDD84800553FBD /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FD5D281B29BE26E800553FBD /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D289229D9FC9200553FBD /* HomeScreenViewController.swift */,
+				FD5D289429D9FCA300553FBD /* HomeScreenView.swift */,
+				FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */,
+				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		FD5D281C29BE270400553FBD /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
+				FD5D282229C1831300553FBD /* ProfileScreenView.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		FD5D281D29BE271400553FBD /* FavouritesScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavouritesScreen;
+			sourceTree = "<group>";
+		};
+		FD5D281E29BE274D00553FBD /* LogInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D284C29CA267000553FBD /* LogInScreenViewController.swift */,
+				FD5D284E29CC8E3100553FBD /* LogInScreenView.swift */,
+				FD5D285029CC8E4300553FBD /* LogInScreenALConstants.swift */,
+			);
+			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		FD5D281F29BE27C100553FBD /* PostScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D289029D976C200553FBD /* PostScreenViewController.swift */,
+				FD5D288429D3485500553FBD /* PostScreenView.swift */,
+				FD5D288E29D9638500553FBD /* PostScreenALConstants.swift */,
+			);
+			path = PostScreen;
+			sourceTree = "<group>";
+		};
+		FD5D282429C188F000553FBD /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D283F29C783D800553FBD /* WelcomeScreenViewController.swift */,
+				FD5D282629C63FC400553FBD /* WelcomeScreenView.swift */,
+				FD5D284829C8F54F00553FBD /* WelcomeScreenALConstants.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		FD5D282529C1892700553FBD /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D285429CED53B00553FBD /* SignUpScreenViewController.swift */,
+				FD5D285629CED56600553FBD /* SignUpScreenView.swift */,
+				FD5D285229CED52200553FBD /* SignUpScreenALConstants.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		FD5D284729C786F400553FBD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D284529C786EC00553FBD /* Fonts.swift */,
+				FD5D283B29C7812D00553FBD /* Pallete.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FD5D285829CEE6CB00553FBD /* ConfirmSignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D285929CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift */,
+				FD5D285B29CEE70D00553FBD /* ConfirmSignUpScreenView.swift */,
+				FD5D285D29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift */,
+			);
+			path = ConfirmSignUpScreen;
+			sourceTree = "<group>";
+		};
+		FD5D288329D0C5C400553FBD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D287329D0C5BF00553FBD /* Inter-Black.ttf */,
+				FD5D287829D0C5C000553FBD /* Inter-Bold.ttf */,
+				FD5D287429D0C5BF00553FBD /* Inter-ExtraBold.ttf */,
+				FD5D287629D0C5BF00553FBD /* Inter-ExtraLight.ttf */,
+				FD5D287929D0C5C000553FBD /* Inter-Light.ttf */,
+				FD5D287529D0C5BF00553FBD /* Inter-Medium.ttf */,
+				FD5D287129D0C5BF00553FBD /* Inter-Regular.ttf */,
+				FD5D287729D0C5C000553FBD /* Inter-SemiBold.ttf */,
+				FD5D287229D0C5BF00553FBD /* Inter-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +359,10 @@
 			dependencies = (
 			);
 			name = SocialAppDemo;
+			packageProductDependencies = (
+				FD5D283729C7793000553FBD /* SnapKit */,
+				FD5D288729D8B8BB00553FBD /* FirebaseAuth */,
+			);
 			productName = SocialAppDemo;
 			productReference = FD1C5BD729BDD71400C42CD6 /* SocialAppDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -216,8 +433,13 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = FD1C5BCE29BDD71400C42CD6;
+			packageReferences = (
+				FD5D283629C7793000553FBD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FD5D288629D8B8BB00553FBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FD1C5BD829BDD71400C42CD6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,8 +457,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1C5BEA29BDD71500C42CD6 /* LaunchScreen.storyboard in Resources */,
+				FD5D287F29D0C5C000553FBD /* Inter-ExtraLight.ttf in Resources */,
+				FD5D287A29D0C5C000553FBD /* Inter-Regular.ttf in Resources */,
+				FD5D288029D0C5C000553FBD /* Inter-SemiBold.ttf in Resources */,
+				FD5D287B29D0C5C000553FBD /* Inter-Thin.ttf in Resources */,
+				FD5D288229D0C5C000553FBD /* Inter-Light.ttf in Resources */,
+				FD5D287D29D0C5C000553FBD /* Inter-ExtraBold.ttf in Resources */,
+				FD5D288129D0C5C000553FBD /* Inter-Bold.ttf in Resources */,
+				FD5D283229C7112E00553FBD /* Localizable.strings in Resources */,
 				FD1C5BE729BDD71500C42CD6 /* Assets.xcassets in Resources */,
-				FD1C5BE229BDD71400C42CD6 /* Main.storyboard in Resources */,
+				FD5D287C29D0C5C000553FBD /* Inter-Black.ttf in Resources */,
+				FD5D287E29D0C5C000553FBD /* Inter-Medium.ttf in Resources */,
+				FD5D288A29D8B9A600553FBD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +493,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5D282B29C6449200553FBD /* CustomUIButton.swift in Sources */,
+				FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */,
+				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
+				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,
+				FD5D284F29CC8E3100553FBD /* LogInScreenView.swift in Sources */,
+				FD5D285C29CEE70D00553FBD /* ConfirmSignUpScreenView.swift in Sources */,
 				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
+				FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */,
+				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
+				FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */,
+				FD5D289329D9FC9200553FBD /* HomeScreenViewController.swift in Sources */,
+				FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */,
+				FD5D283E29C7819500553FBD /* UIColor+Extention.swift in Sources */,
+				FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */,
+				FD5D285329CED52200553FBD /* SignUpScreenALConstants.swift in Sources */,
 				FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */,
+				FD5D289729D9FCB800553FBD /* HomeScreenALConstants.swift in Sources */,
+				FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */,
 				FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */,
+				FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */,
+				FD5D289529D9FCA300553FBD /* HomeScreenView.swift in Sources */,
+				FD5D285529CED53B00553FBD /* SignUpScreenViewController.swift in Sources */,
+				FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */,
+				FD5D284D29CA267000553FBD /* LogInScreenViewController.swift in Sources */,
 				FD1C5BE529BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld in Sources */,
+				FD5D283C29C7812D00553FBD /* Pallete.swift in Sources */,
+				FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */,
+				FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */,
+				FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */,
+				FD5D284929C8F54F00553FBD /* WelcomeScreenALConstants.swift in Sources */,
+				FD5D288F29D9638500553FBD /* PostScreenALConstants.swift in Sources */,
+				FD5D285E29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift in Sources */,
+				FD5D284B29CA158900553FBD /* MainTabBarController.swift in Sources */,
+				FD5D285729CED56600553FBD /* SignUpScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,20 +563,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FD1C5BE029BDD71400C42CD6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD1C5BE129BDD71400C42CD6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FD1C5BE929BDD71500C42CD6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FD5D283429C7112E00553FBD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD5D283329C7112E00553FBD /* en */,
+				FD5D283529C7114200553FBD /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -324,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -384,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -445,9 +710,8 @@
 				INFOPLIST_FILE = SocialAppDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +719,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = niyaz.SocialAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -472,9 +739,8 @@
 				INFOPLIST_FILE = SocialAppDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,6 +748,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = niyaz.SocialAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -600,6 +869,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FD5D283629C7793000553FBD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		FD5D288629D8B8BB00553FBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FD5D283729C7793000553FBD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5D283629C7793000553FBD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FD5D288729D8B8BB00553FBD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5D288629D8B8BB00553FBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FD1C5BE329BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld */ = {
