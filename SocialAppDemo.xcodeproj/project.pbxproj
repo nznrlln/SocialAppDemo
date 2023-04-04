@@ -59,6 +59,7 @@
 		FD5D289529D9FCA300553FBD /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289429D9FCA300553FBD /* HomeScreenView.swift */; };
 		FD5D289729D9FCB800553FBD /* HomeScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */; };
 		FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */; };
+		FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		FD5D289429D9FCA300553FBD /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				FD5D284729C786F400553FBD /* Helpers */,
 				FD5D288329D0C5C400553FBD /* Fonts */,
 				FD5D288B29D8BA9400553FBD /* AuthManager.swift */,
+				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 			);
 			path = SocialAppDemo;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				FD5D284F29CC8E3100553FBD /* LogInScreenView.swift in Sources */,
 				FD5D285C29CEE70D00553FBD /* ConfirmSignUpScreenView.swift in Sources */,
 				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
+				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
 				FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */,

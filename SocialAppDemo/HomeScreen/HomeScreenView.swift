@@ -24,9 +24,14 @@ class HomeScreenView: UIView {
         return collectionView
     }()
 
-    private let postsTableView: UITableView = {
+    private lazy var postsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.toAutoLayout()
+//        tableView.backgroundColor = Palette.mainAccent
+
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.delegate = self
 
         return tableView
     }()
@@ -60,6 +65,9 @@ class HomeScreenView: UIView {
         }
 
         postsTableView.snp.makeConstraints { make in
+            make.top.equalTo(usersCollectionView.snp.bottom).offset(22)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
 
         }
     }
@@ -102,4 +110,41 @@ extension HomeScreenView: UICollectionViewDelegateFlowLayout {
         return 12
     }
 
+}
+
+// MARK: - UITableViewDataSource
+
+extension HomeScreenView: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        3
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        2
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
+
+        return cell
+    }
+
+
+}
+
+// MARK: - UITableViewDelegate
+
+extension HomeScreenView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+600
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = UIView()
+        return footer
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        0
+    }
 }

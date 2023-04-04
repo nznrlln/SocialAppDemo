@@ -27,7 +27,8 @@ class HomeScreenViewController: UIViewController {
 
     private func viewInitialSettings() {
         view.backgroundColor = .white
-
+        self.title = "Main".localizable
+        self.tabBarItem.image = UIImage(systemName: "house")
         setupSubviews()
         setupSubviewsLayout()
     }
