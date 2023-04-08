@@ -38,8 +38,9 @@ class LogInScreenViewController: UIViewController {
 
     private func setupSubviewsLayout() {
         mainView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
 

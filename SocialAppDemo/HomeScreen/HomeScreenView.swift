@@ -59,13 +59,13 @@ class HomeScreenView: UIView {
 
     private func setupSubviewsLayout() {
         usersCollectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(154)
+            make.top.equalToSuperview().inset(HomeScreenALConstants.collectionTopInset)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(60)
         }
 
         postsTableView.snp.makeConstraints { make in
-            make.top.equalTo(usersCollectionView.snp.bottom).offset(22)
+            make.top.equalTo(usersCollectionView.snp.bottom).offset(HomeScreenALConstants.tableViewTopInset)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
 
@@ -136,7 +136,11 @@ extension HomeScreenView: UITableViewDataSource {
 
 extension HomeScreenView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-600
+        return 380
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 380
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

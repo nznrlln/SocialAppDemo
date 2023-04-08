@@ -213,7 +213,6 @@
 				FD5D284729C786F400553FBD /* Helpers */,
 				FD5D288329D0C5C400553FBD /* Fonts */,
 				FD5D288B29D8BA9400553FBD /* AuthManager.swift */,
-				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 			);
 			path = SocialAppDemo;
 			sourceTree = "<group>";
@@ -251,6 +250,7 @@
 				FD5D289429D9FCA300553FBD /* HomeScreenView.swift */,
 				FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */,
 				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
+				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
