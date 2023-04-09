@@ -116,51 +116,51 @@ class PostTableViewCell: UITableViewCell {
 
     private func setupSubviewsLayout() {
         avatarImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(HomeScreenALConstants.avatarTopInset)
-            make.leading.equalToSuperview().inset(HomeScreenALConstants.generalSideInset)
-            make.height.width.equalTo(HomeScreenALConstants.avatarHeight)
+            make.top.equalToSuperview().inset(MainScreenALConstants.avatarTopInset)
+            make.leading.equalToSuperview().inset(MainScreenALConstants.generalSideInset)
+            make.height.width.equalTo(MainScreenALConstants.avatarHeight)
         }
 
         authorNicknameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(HomeScreenALConstants.nicknameTopInset)
-            make.leading.equalTo(avatarImageView.snp.trailing).offset(HomeScreenALConstants.nicknameSideInset)
+            make.top.equalToSuperview().inset(MainScreenALConstants.nicknameTopInset)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(MainScreenALConstants.nicknameSideInset)
         }
 
         authorStatusLabel.snp.makeConstraints { make in
-            make.top.equalTo(authorNicknameLabel.snp.bottom).offset(HomeScreenALConstants.statusTopInset)
+            make.top.equalTo(authorNicknameLabel.snp.bottom).offset(MainScreenALConstants.statusTopInset)
             make.leading.equalTo(authorNicknameLabel.snp.leading)
         }
 
         postBodyView.snp.makeConstraints { make in
-            make.top.equalTo(avatarImageView.snp.bottom).offset(HomeScreenALConstants.postBodyTopInset)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(MainScreenALConstants.postBodyTopInset)
             make.leading.trailing.bottom.equalToSuperview()
         }
 
         verticalLineView.snp.makeConstraints { make in
-            make.top.equalTo(postBodyView.snp.top).inset(HomeScreenALConstants.verticalLineTopInset)
-            make.leading.equalTo(postBodyView.snp.leading).inset(HomeScreenALConstants.verticalLineSideInset)
-            make.bottom.equalTo(postBodyView.snp.bottom).inset(HomeScreenALConstants.verticalLineBottomInset)
+            make.top.equalTo(postBodyView.snp.top).inset(MainScreenALConstants.verticalLineTopInset)
+            make.leading.equalTo(postBodyView.snp.leading).inset(MainScreenALConstants.verticalLineSideInset)
+            make.bottom.equalTo(postBodyView.snp.bottom).inset(MainScreenALConstants.verticalLineBottomInset)
 //            make.height.equalTo(HomeScreenALConstants.verticalLineHeight)
-            make.width.equalTo(HomeScreenALConstants.verticalLineWidth)
+            make.width.equalTo(MainScreenALConstants.verticalLineWidth)
         }
 
         postDescriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(postBodyView.snp.top).inset(HomeScreenALConstants.postDescriptionTopInset)
-            make.leading.equalTo(verticalLineView.snp.trailing).offset(HomeScreenALConstants.postDescriptionSideInset)
-            make.trailing.equalTo(postBodyView.snp.trailing).inset(HomeScreenALConstants.postDescriptionSideInset)
+            make.top.equalTo(postBodyView.snp.top).inset(MainScreenALConstants.postDescriptionTopInset)
+            make.leading.equalTo(verticalLineView.snp.trailing).offset(MainScreenALConstants.postDescriptionSideInset)
+            make.trailing.equalTo(postBodyView.snp.trailing).inset(MainScreenALConstants.postDescriptionSideInset)
         }
 
         postImageView.snp.makeConstraints { make in
-            make.top.equalTo(postDescriptionLabel.snp.bottom).offset(HomeScreenALConstants.postImageTopInset)
-            make.leading.equalTo(verticalLineView.snp.trailing).offset(HomeScreenALConstants.postImageSideInset)
-            make.trailing.equalTo(postBodyView.snp.trailing).inset(HomeScreenALConstants.postImageSideInset)
-            make.height.equalTo(HomeScreenALConstants.postImageHeight)
+            make.top.equalTo(postDescriptionLabel.snp.bottom).offset(MainScreenALConstants.postImageTopInset)
+            make.leading.equalTo(verticalLineView.snp.trailing).offset(MainScreenALConstants.postImageSideInset)
+            make.trailing.equalTo(postBodyView.snp.trailing).inset(MainScreenALConstants.postImageSideInset)
+            make.height.equalTo(MainScreenALConstants.postImageHeight)
         }
 
         separatorView.snp.makeConstraints { make in
-            make.top.equalTo(verticalLineView.snp.bottom).offset(HomeScreenALConstants.separatorTopInset)
+            make.top.equalTo(verticalLineView.snp.bottom).offset(MainScreenALConstants.separatorTopInset)
             make.leading.trailing.equalTo(postBodyView)
-            make.height.equalTo(HomeScreenALConstants.separatorHeight)
+            make.height.equalTo(MainScreenALConstants.separatorHeight)
         }
     }
 

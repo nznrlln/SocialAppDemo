@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeScreenALConstants {
+struct MainScreenALConstants {
     // HomeScreen autolayout constants
     static let collectionTopInset: CGFloat = 16
 

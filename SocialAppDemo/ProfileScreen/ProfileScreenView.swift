@@ -5,9 +5,9 @@
 //  Created by Нияз Нуруллин on 15.03.2023.
 //
 
-//import UIKit
-//
-//class ProfileScreenView: UIView {
+import UIKit
+
+class ProfileScreenView: UIView {
 //
 //    /*
 //    // Only override draw() if you perform custom drawing.
@@ -98,7 +98,7 @@
 //
 //    }
 //
-//}
+}
 //
 //// MARK: - UITableViewDataSource
 //

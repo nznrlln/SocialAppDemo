@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeScreenView: UIView {
+class MainScreenView: UIView {
 
     private lazy var usersCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -59,13 +59,13 @@ class HomeScreenView: UIView {
 
     private func setupSubviewsLayout() {
         usersCollectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(HomeScreenALConstants.collectionTopInset)
+            make.top.equalToSuperview().inset(MainScreenALConstants.collectionTopInset)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(60)
         }
 
         postsTableView.snp.makeConstraints { make in
-            make.top.equalTo(usersCollectionView.snp.bottom).offset(HomeScreenALConstants.tableViewTopInset)
+            make.top.equalTo(usersCollectionView.snp.bottom).offset(MainScreenALConstants.tableViewTopInset)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
 
@@ -83,7 +83,7 @@ class HomeScreenView: UIView {
 
 // MARK: - UICollectionViewDataSource
 
-extension HomeScreenView: UICollectionViewDataSource {
+extension MainScreenView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         10
@@ -100,21 +100,22 @@ extension HomeScreenView: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension HomeScreenView: UICollectionViewDelegateFlowLayout {
+extension MainScreenView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 60, height: 60)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
     }
+
 
 }
 
 // MARK: - UITableViewDataSource
 
-extension HomeScreenView: UITableViewDataSource {
+extension MainScreenView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         3
     }
@@ -134,7 +135,7 @@ extension HomeScreenView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension HomeScreenView: UITableViewDelegate {
+extension MainScreenView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 380
     }

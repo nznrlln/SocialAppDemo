@@ -16,6 +16,7 @@
 		FD1C5BF529BDD71500C42CD6 /* SocialAppDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BF429BDD71500C42CD6 /* SocialAppDemoTests.swift */; };
 		FD1C5BFF29BDD71500C42CD6 /* SocialAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */; };
 		FD1C5C0129BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */; };
+		FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -55,9 +56,9 @@
 		FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D288429D3485500553FBD /* PostScreenView.swift */; };
 		FD5D288F29D9638500553FBD /* PostScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D288E29D9638500553FBD /* PostScreenALConstants.swift */; };
 		FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289029D976C200553FBD /* PostScreenViewController.swift */; };
-		FD5D289329D9FC9200553FBD /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289229D9FC9200553FBD /* HomeScreenViewController.swift */; };
-		FD5D289529D9FCA300553FBD /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289429D9FCA300553FBD /* HomeScreenView.swift */; };
-		FD5D289729D9FCB800553FBD /* HomeScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */; };
+		FD5D289329D9FC9200553FBD /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */; };
+		FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289429D9FCA300553FBD /* MainScreenView.swift */; };
+		FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */; };
 		FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */; };
 		FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		FD1C5BFA29BDD71500C42CD6 /* SocialAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITests.swift; sourceTree = "<group>"; };
 		FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -131,9 +133,9 @@
 		FD5D288B29D8BA9400553FBD /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		FD5D288E29D9638500553FBD /* PostScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5D289029D976C200553FBD /* PostScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenViewController.swift; sourceTree = "<group>"; };
-		FD5D289229D9FC9200553FBD /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
-		FD5D289429D9FCA300553FBD /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
-		FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D289429D9FCA300553FBD /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,7 +208,7 @@
 				FD5D281E29BE274D00553FBD /* LogInScreen */,
 				FD5D282529C1892700553FBD /* SignUpScreen */,
 				FD5D285829CEE6CB00553FBD /* ConfirmSignUpScreen */,
-				FD5D281B29BE26E800553FBD /* HomeScreen */,
+				FD5D281B29BE26E800553FBD /* MainScreen */,
 				FD5D281C29BE270400553FBD /* ProfileScreen */,
 				FD5D281D29BE271400553FBD /* FavouritesScreen */,
 				FD5D281F29BE27C100553FBD /* PostScreen */,
@@ -243,23 +245,24 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		FD5D281B29BE26E800553FBD /* HomeScreen */ = {
+		FD5D281B29BE26E800553FBD /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D289229D9FC9200553FBD /* HomeScreenViewController.swift */,
-				FD5D289429D9FCA300553FBD /* HomeScreenView.swift */,
-				FD5D289629D9FCB800553FBD /* HomeScreenALConstants.swift */,
+				FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */,
+				FD5D289429D9FCA300553FBD /* MainScreenView.swift */,
+				FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */,
 				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
 				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 			);
-			path = HomeScreen;
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		FD5D281C29BE270400553FBD /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
+				FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */,
 				FD5D282229C1831300553FBD /* ProfileScreenView.swift */,
+				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -507,17 +510,18 @@
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
 				FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */,
-				FD5D289329D9FC9200553FBD /* HomeScreenViewController.swift in Sources */,
+				FD5D289329D9FC9200553FBD /* MainScreenViewController.swift in Sources */,
 				FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */,
 				FD5D283E29C7819500553FBD /* UIColor+Extention.swift in Sources */,
 				FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */,
 				FD5D285329CED52200553FBD /* SignUpScreenALConstants.swift in Sources */,
 				FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */,
-				FD5D289729D9FCB800553FBD /* HomeScreenALConstants.swift in Sources */,
+				FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */,
 				FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */,
 				FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */,
+				FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */,
 				FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */,
-				FD5D289529D9FCA300553FBD /* HomeScreenView.swift in Sources */,
+				FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */,
 				FD5D285529CED53B00553FBD /* SignUpScreenViewController.swift in Sources */,
 				FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */,
 				FD5D284D29CA267000553FBD /* LogInScreenViewController.swift in Sources */,
