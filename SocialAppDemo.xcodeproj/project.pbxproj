@@ -17,6 +17,11 @@
 		FD1C5BFF29BDD71500C42CD6 /* SocialAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */; };
 		FD1C5C0129BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */; };
 		FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */; };
+		FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B029E2E995009A992B /* SavedScreenViewController.swift */; };
+		FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B229E2E9A7009A992B /* SavedScreenView.swift */; };
+		FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */; };
+		FD5836B829E34B85009A992B /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B729E34B85009A992B /* UILabel+Extention.swift */; };
+		FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B929E478AE009A992B /* PostsTableView.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -95,6 +100,11 @@
 		FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITests.swift; sourceTree = "<group>"; };
 		FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
+		FD5836B029E2E995009A992B /* SavedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenViewController.swift; sourceTree = "<group>"; };
+		FD5836B229E2E9A7009A992B /* SavedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenView.swift; sourceTree = "<group>"; };
+		FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5836B729E34B85009A992B /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
+		FD5836B929E478AE009A992B /* PostsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableView.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -204,17 +214,19 @@
 				FD5D283D29C7819500553FBD /* UIColor+Extention.swift */,
 				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
 				FD5D281A29BDD8E900553FBD /* CoreData */,
+				FD5836AF29E2C12C009A992B /* Network */,
+				FD5836B629E331F9009A992B /* PostsTableView */,
 				FD5D282429C188F000553FBD /* WelcomeScreen */,
 				FD5D281E29BE274D00553FBD /* LogInScreen */,
 				FD5D282529C1892700553FBD /* SignUpScreen */,
 				FD5D285829CEE6CB00553FBD /* ConfirmSignUpScreen */,
 				FD5D281B29BE26E800553FBD /* MainScreen */,
 				FD5D281C29BE270400553FBD /* ProfileScreen */,
-				FD5D281D29BE271400553FBD /* FavouritesScreen */,
+				FD5D281D29BE271400553FBD /* SavedScreen */,
 				FD5D281F29BE27C100553FBD /* PostScreen */,
 				FD5D284729C786F400553FBD /* Helpers */,
 				FD5D288329D0C5C400553FBD /* Fonts */,
-				FD5D288B29D8BA9400553FBD /* AuthManager.swift */,
+				FD5836B729E34B85009A992B /* UILabel+Extention.swift */,
 			);
 			path = SocialAppDemo;
 			sourceTree = "<group>";
@@ -236,6 +248,23 @@
 			path = SocialAppDemoUITests;
 			sourceTree = "<group>";
 		};
+		FD5836AF29E2C12C009A992B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D288B29D8BA9400553FBD /* AuthManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FD5836B629E331F9009A992B /* PostsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
+				FD5836B929E478AE009A992B /* PostsTableView.swift */,
+			);
+			path = PostsTableView;
+			sourceTree = "<group>";
+		};
 		FD5D281A29BDD8E900553FBD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +281,6 @@
 				FD5D289429D9FCA300553FBD /* MainScreenView.swift */,
 				FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */,
 				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
-				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -267,11 +295,14 @@
 			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
-		FD5D281D29BE271400553FBD /* FavouritesScreen */ = {
+		FD5D281D29BE271400553FBD /* SavedScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836B029E2E995009A992B /* SavedScreenViewController.swift */,
+				FD5836B229E2E9A7009A992B /* SavedScreenView.swift */,
+				FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */,
 			);
-			path = FavouritesScreen;
+			path = SavedScreen;
 			sourceTree = "<group>";
 		};
 		FD5D281E29BE274D00553FBD /* LogInScreen */ = {
@@ -507,6 +538,7 @@
 				FD5D285C29CEE70D00553FBD /* ConfirmSignUpScreenView.swift in Sources */,
 				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
 				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
+				FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */,
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
 				FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */,
@@ -523,16 +555,20 @@
 				FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */,
 				FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */,
 				FD5D285529CED53B00553FBD /* SignUpScreenViewController.swift in Sources */,
+				FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */,
+				FD5836B829E34B85009A992B /* UILabel+Extention.swift in Sources */,
 				FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */,
 				FD5D284D29CA267000553FBD /* LogInScreenViewController.swift in Sources */,
 				FD1C5BE529BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld in Sources */,
 				FD5D283C29C7812D00553FBD /* Pallete.swift in Sources */,
 				FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */,
 				FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */,
+				FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */,
 				FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */,
 				FD5D284929C8F54F00553FBD /* WelcomeScreenALConstants.swift in Sources */,
 				FD5D288F29D9638500553FBD /* PostScreenALConstants.swift in Sources */,
 				FD5D285E29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift in Sources */,
+				FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */,
 				FD5D284B29CA158900553FBD /* MainTabBarController.swift in Sources */,
 				FD5D285729CED56600553FBD /* SignUpScreenView.swift in Sources */,
 			);

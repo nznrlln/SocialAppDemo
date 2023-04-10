@@ -24,14 +24,21 @@ class MainScreenView: UIView {
         return collectionView
     }()
 
-    private lazy var postsTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.toAutoLayout()
-//        tableView.backgroundColor = Palette.mainAccent
+//    private lazy var postsTableView: UITableView = {
+//        let tableView = UITableView(frame: .zero, style: .plain)
+//        tableView.toAutoLayout()
+////        tableView.backgroundColor = Palette.mainAccent
+//
+//        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//
+//        return tableView
+//    }(
 
-        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
-        tableView.dataSource = self
-        tableView.delegate = self
+    private lazy var postsTableView: PostsTableView = {
+        let tableView = PostsTableView(frame: .zero, style: .plain)
+        tableView.toAutoLayout()
 
         return tableView
     }()
@@ -151,5 +158,10 @@ extension MainScreenView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         0
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postVC = PostScreenViewController()
+        
     }
 }

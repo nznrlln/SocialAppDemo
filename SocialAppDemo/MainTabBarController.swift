@@ -13,8 +13,29 @@ class MainTabBarController: UITabBarController {
 //    private let vc2 = LogInScreenViewController()
 //    private let vc3 = SignUpScreenViewController()
 //    private let vc4 = ConfirmSignUpScreenViewController()
-    private let mainVC = MainScreenViewController()
-    private let profileVC = ProfileScreenViewController()
+    private let mainVC: MainScreenViewController = {
+        let vc = MainScreenViewController()
+        vc.title = "Main".localizable
+        vc.tabBarItem.image = UIImage(systemName: "house")
+
+        return vc
+    }()
+
+    private let profileVC: ProfileScreenViewController = {
+        let vc = ProfileScreenViewController()
+        vc.title = "Profile".localizable
+        vc.tabBarItem.image = UIImage(systemName: "person.crop.circle")
+
+        return vc
+    }()
+
+    private let savedVC: SavedScreenViewController = {
+        let vc = SavedScreenViewController()
+        vc.title = "Saved".localizable
+        vc.tabBarItem.image = UIImage(systemName: "bookmark")
+
+        return vc
+    }()
     private let vc6 = PostScreenViewController()
 
     override func viewDidLoad() {
@@ -24,11 +45,6 @@ class MainTabBarController: UITabBarController {
     }
 
     private func setupControllers() {
-        mainVC.title = "Main".localizable
-        mainVC.tabBarItem.image = UIImage(systemName: "house")
-
-        profileVC.title = "Profile".localizable
-        profileVC.tabBarItem.image = UIImage(systemName: "person.crop.circle")
         viewControllers = [
 //            vc1,
 //            vc2,
@@ -36,6 +52,7 @@ class MainTabBarController: UITabBarController {
 //            vc4,
             mainVC,
             profileVC,
+            savedVC,
             vc6
         ]
 
