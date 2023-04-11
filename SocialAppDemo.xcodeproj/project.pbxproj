@@ -22,6 +22,7 @@
 		FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */; };
 		FD5836B829E34B85009A992B /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B729E34B85009A992B /* UILabel+Extention.swift */; };
 		FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B929E478AE009A992B /* PostsTableView.swift */; };
+		FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -105,6 +106,7 @@
 		FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5836B729E34B85009A992B /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
 		FD5836B929E478AE009A992B /* PostsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableView.swift; sourceTree = "<group>"; };
+		FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionHeaderView.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 				FD5836B929E478AE009A992B /* PostsTableView.swift */,
+				FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */,
 			);
 			path = PostsTableView;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5D282B29C6449200553FBD /* CustomUIButton.swift in Sources */,
+				FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */,
 				FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */,
 				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
 				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,

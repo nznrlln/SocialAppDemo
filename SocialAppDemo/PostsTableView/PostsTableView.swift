@@ -28,6 +28,8 @@ class PostsTableView: UITableView {
 
         self.dataSource = self
         self.delegate = self
+
+        self.separatorStyle = .none
     }
 }
 
@@ -63,8 +65,19 @@ extension PostsTableView: UITableViewDelegate {
 //        return 380
 //    }
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = DateSectionHeaderView()
+
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        26
+    }
+
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView()
+
         return footer
     }
 
