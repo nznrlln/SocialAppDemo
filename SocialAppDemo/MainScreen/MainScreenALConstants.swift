@@ -11,7 +11,7 @@ struct MainScreenALConstants {
     // HomeScreen autolayout constants
     static let collectionTopInset: CGFloat = 16
 
-    static let tableViewTopInset: CGFloat = 22
+    static let tableViewTopInset: CGFloat = 16
 
 
     // PostTableViewCell autolayout constants

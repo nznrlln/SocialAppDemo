@@ -8,24 +8,20 @@
 
 // MARK: - Navigation
 
-"Main" = "Главная";
-"Profile" = "Профиль";
-"Saved" = "Сохраненные";
+"main" = "Главная";
+"profile" = "Профиль";
+"saved" = "Сохраненные";
 
 // MARK: - WelcomeScreen, SignUpScreen, ConfirmSignUpScreen
 
-"Sign Up" = "ЗАРЕГИСТРИРОВАТЬСЯ";
-"Already have an account" = "Уже есть аккаунт";
+"sign_in" = "ВОЙТИ";
 
-"Enter phone number" = "Введите номер телефона";
-"Your phone number would be used to log into your account" = "Ваш номер телефона будет использоваться для входа в аккаунт";
-"NEXT" = "ДАЛЕЕ";
-"By pressing “Next” you are agreeing to all terms and conditions of our privacy policy" = "Нажимая кнопку “Далее” Вы принимаете пользовательское Соглашение и политику конфедициальности ";
+"sign_in_phone" = "Введите номер телефона";
+"sign_in_phone_description" = "Ваш номер телефона будет использоваться для входа в аккаунт";
+"first_sign_in_description" = "После первого входа, будет автоматически создан новый аккаунт";
+"next" = "ДАЛЕЕ";
+"agreetment_description" = "Нажимая кнопку “Далее” Вы принимаете пользовательское Соглашение и политику конфедициальности ";
 
-"Confirm Sign Up" = "Подтверждение регистрации";
-"We sent the code via SMS to number" = "Мы отправили SMS с кодом на номер";
-"Enter code from SMS" = "Введите код из SMS";
-
-"Welcome back" = "С возвращением";
-"Enter your phone number to log in" = "Введите ваш номер телефона для входа в приложение";
-"CONFIRM" = "ПОДТВЕРДИТЬ";
+"sign_in_confirm" = "Подтвердите аккаунт";
+"code_sent" = "Мы отправили SMS с кодом на номер";
+"enter_code" = "Введите код из SMS";

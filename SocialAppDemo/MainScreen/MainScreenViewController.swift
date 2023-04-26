@@ -12,7 +12,7 @@ class MainScreenViewController: UIViewController {
     private lazy var mainView: MainScreenView = {
         let view = MainScreenView()
         view.toAutoLayout()
-//        view.delegate = self
+        view.delegate = self
 
         return view
     }()
@@ -25,10 +25,15 @@ class MainScreenViewController: UIViewController {
         viewInitialSettings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+
     private func viewInitialSettings() {
         view.backgroundColor = .white
         self.title = "Main".localizable
         self.tabBarItem.image = UIImage(systemName: "house")
+
 
         setupSubviews()
         setupSubviewsLayout()
@@ -46,5 +51,18 @@ class MainScreenViewController: UIViewController {
         }
     }
     
+
+}
+
+
+// MARK: - MainScreenViewDelegate
+
+extension MainScreenViewController: MainScreenViewDelegate {
+    func didSelectPost() {
+        let postVC = PostScreenViewController()
+
+        self.navigationController!.pushViewController(postVC, animated: true)
+    }
+
 
 }

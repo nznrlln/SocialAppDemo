@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>common_count_of_posts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@format@</string>
+		<key>format</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Публикация</string>
+			<key>few</key>
+			<string>Публикации</string>
+			<key>many</key>
+			<string>Публикаций</string>
+			<key>other</key>
+			<string>Публикаций</string>
+		</dict>
+	</dict>
+	<key>common_count_of_followers</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@format@</string>
+		<key>format</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Подписчик</string>
+			<key>few</key>
+			<string>Подписчика</string>
+			<key>many</key>
+			<string>Подписчиков</string>
+			<key>other</key>
+			<string>Подписчиков</string>
+		</dict>
+	</dict>
+	<key>common_count_of_followings</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@format@</string>
+		<key>format</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Подписка</string>
+			<key>few</key>
+			<string>Подписки</string>
+			<key>many</key>
+			<string>Подписок</string>
+			<key>other</key>
+			<string>Подписок</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

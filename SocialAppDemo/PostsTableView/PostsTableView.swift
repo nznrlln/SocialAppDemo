@@ -9,9 +9,14 @@ import UIKit
 
 protocol PostsTableViewDataSource {}
 
+protocol PostsTableViewDelegate {
+    func didSelectPost()
+}
+
 class PostsTableView: UITableView {
 
     var tvDataSource: PostsTableViewDataSource?
+    var tvDelegate: PostsTableViewDelegate?
 
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -61,10 +66,6 @@ extension PostsTableView: UITableViewDelegate {
         return 380
     }
 
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 380
-//    }
-
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = DateSectionHeaderView()
 
@@ -77,11 +78,18 @@ extension PostsTableView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView()
-
+        footer.backgroundColor = Palette.mainBackground
+        
         return footer
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        0
+        20
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        tvDelegate?.didSelectPost()
     }
 }

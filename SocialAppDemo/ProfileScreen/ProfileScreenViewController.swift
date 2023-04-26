@@ -25,6 +25,10 @@ class ProfileScreenViewController: UIViewController {
         viewInitialSettings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+
     private func viewInitialSettings() {
         view.backgroundColor = .white
         self.title = "Profile".localizable

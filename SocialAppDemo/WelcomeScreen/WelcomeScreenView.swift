@@ -10,7 +10,6 @@ import SnapKit
 
 protocol WelcomeScreenViewDelegate {
     func signUpButtonTapAction()
-    func logInButtonTapAction()
 }
 
 class WelcomeScreenView: UIView {
@@ -25,8 +24,8 @@ class WelcomeScreenView: UIView {
         return imageView
     }()
 
-    private lazy var signUpButton: CustomUIButton = {
-        let button = CustomUIButton(title: "Sign Up".localizable,
+    private lazy var signInButton: CustomUIButton = {
+        let button = CustomUIButton(title: "sign_in".localizable,
                                     font: Fonts.interMed16,
                                     titleColor: nil,
                                     backgroundColor: Palette.darkButton,
@@ -34,23 +33,6 @@ class WelcomeScreenView: UIView {
         button.toAutoLayout()
         button.customButtonTapAction = { [weak self] in
             self?.delegate?.signUpButtonTapAction()
-        }
-
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
-
-        return button
-    }()
-
-    private lazy var logInButton: CustomUIButton = {
-        let button = CustomUIButton(title: "Already have an account".localizable,
-                                    font: Fonts.interReg14,
-                                    titleColor: Palette.blackAndWhite,
-                                    backgroundColor: nil,
-                                    state: .normal)
-        button.toAutoLayout()
-        button.customButtonTapAction = { [weak self] in
-            self?.delegate?.logInButtonTapAction()
         }
 
         button.layer.cornerRadius = 10
@@ -77,7 +59,7 @@ class WelcomeScreenView: UIView {
     }
 
     private func setupSubviews() {
-        self.addSubviews(welcomeImageView, signUpButton, logInButton)
+        self.addSubviews(welcomeImageView, signInButton)
     }
 
     private func setupSubviewsLayout() {
@@ -87,25 +69,12 @@ class WelcomeScreenView: UIView {
             make.height.width.equalTo(WelcomeScreenALConstants.welcomeImageHeightWidth)
         }
 
-        signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(welcomeImageView.snp.bottom).offset(WelcomeScreenALConstants.signUpButtonTopInset)
-            make.leading.trailing.equalToSuperview().inset(WelcomeScreenALConstants.signUpButtonSideInset)
-            make.height.equalTo(WelcomeScreenALConstants.signUpButtonHeight)
+        signInButton.snp.makeConstraints { make in
+            make.top.equalTo(welcomeImageView.snp.bottom).offset(WelcomeScreenALConstants.signInButtonTopInset)
+            make.leading.trailing.equalToSuperview().inset(WelcomeScreenALConstants.signInButtonSideInset)
+            make.height.equalTo(WelcomeScreenALConstants.signInButtonHeight)
         }
 
-        logInButton.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.bottom).offset(WelcomeScreenALConstants.logInButtonTopInset)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(WelcomeScreenALConstants.logInButtonHeight)
-        }
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
 }

@@ -49,13 +49,7 @@ class WelcomeScreenViewController: UIViewController {
 // MARK: - WelcomeScreenViewDelegate
 extension WelcomeScreenViewController: WelcomeScreenViewDelegate {
     func signUpButtonTapAction() {
-        let signUpVC = SignUpScreenViewController()
-        self.navigationController?.pushViewController(signUpVC, animated: true)
+        let signInVC = SignInScreenViewController()
+        self.navigationController?.pushViewController(signInVC, animated: true)
     }
-
-    func logInButtonTapAction() {
-        let logInVC = LogInScreenViewController()
-        self.navigationController?.pushViewController(logInVC, animated: true)    }
-
-
 }

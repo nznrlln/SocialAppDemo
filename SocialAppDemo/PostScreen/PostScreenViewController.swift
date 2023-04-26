@@ -27,6 +27,7 @@ class PostScreenViewController: UIViewController {
 
     private func viewInitialSettings() {
         view.backgroundColor = .white
+        self.navigationController?.navigationBar.isHidden = false
 
         setupSubviews()
         setupSubviewsLayout()

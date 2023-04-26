@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 
-class SignUpScreenViewController: UIViewController {
+class SignInScreenViewController: UIViewController {
 
-    private lazy var mainView: SignUpScreenView = {
-        let view = SignUpScreenView()
+    private lazy var mainView: SignInScreenView = {
+        let view = SignInScreenView()
         view.toAutoLayout()
         view.delegate = self
 
@@ -52,13 +52,13 @@ class SignUpScreenViewController: UIViewController {
 }
 
 // MARK: - SignUpScreenViewDelegate
-extension SignUpScreenViewController: SignUpScreenViewDelegate {
+extension SignInScreenViewController: SignInScreenViewDelegate {
     func nextButtonTapAction(number: String) {
         AuthManager.shared.startAuth(phoneNumber: number) { [weak self] success in
             guard success else { return }
             DispatchQueue.main.async {
-                let confirmSignUpVC = ConfirmSignUpScreenViewController()
-                self?.navigationController?.pushViewController(confirmSignUpVC, animated: true)
+                let confirmSignInVC = ConfirmSignInScreenViewController(accountPhoneNumber: number)
+                self?.navigationController?.pushViewController(confirmSignInVC, animated: true)
             }
         }
     }

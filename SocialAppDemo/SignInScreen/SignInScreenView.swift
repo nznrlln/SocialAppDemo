@@ -7,20 +7,21 @@
 
 import UIKit
 import SnapKit
+import PhoneNumberKit
 
-protocol SignUpScreenViewDelegate {
+protocol SignInScreenViewDelegate {
     func nextButtonTapAction(number: String)
 }
 
-class SignUpScreenView: UIView {
+class SignInScreenView: UIView {
 
-    var delegate: SignUpScreenViewDelegate?
+    var delegate: SignInScreenViewDelegate?
 
-    private let signUpLabel: UILabel = {
+    private let signInLabel: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.font = Fonts.interSemiBold18
-        label.text = "Sign Up".localizable
+        label.text = "sign_in".localizable
 
         return label
     }()
@@ -30,7 +31,7 @@ class SignUpScreenView: UIView {
         label.toAutoLayout()
         label.font = Fonts.interMed16
         label.textColor = Palette.thirdText
-        label.text = "Enter phone number".localizable
+        label.text = "sign_in_phone".localizable
 
         return label
     }()
@@ -42,29 +43,46 @@ class SignUpScreenView: UIView {
         label.textColor = Palette.secondaryText
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Your phone number would be used to log into your account".localizable
+        label.text = "sign_in_phone_description".localizable
 
         return label
     }()
 
-    private lazy var signUpTextField: UITextField = {
-        let textField = UITextField()
+    private lazy var signInTextField: PhoneNumberTextField = {
+        let textField = PhoneNumberTextField()
         textField.toAutoLayout()
         textField.layer.cornerRadius = 10
         textField.layer.borderWidth = 1
         textField.clipsToBounds = true
+        textField.keyboardType = .numberPad
+        textField.returnKeyType = .send
 
-        textField.placeholder = "+7___-___-__-__"
-        textField.textAlignment = .center
+        textField.withPrefix = true
+        textField.withExamplePlaceholder = true
+        textField.withFlag = true
+
+        textField.text = "+16505551111"
+        textField.maxDigits = 10
 
         textField.delegate = self
-        textField.returnKeyType = .send
 
         return textField
     }()
 
+    private let firstSignInLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.font = Fonts.interMed12
+        label.textColor = Palette.secondaryText
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = "first_sign_in_description".localizable
+
+        return label
+    }()
+
     private lazy var nextButton: CustomUIButton = {
-        let button = CustomUIButton(title: "NEXT".localizable,
+        let button = CustomUIButton(title: "next".localizable,
                                     font: Fonts.interMed16,
                                     titleColor: nil,
                                     backgroundColor: Palette.darkButton,
@@ -74,8 +92,8 @@ class SignUpScreenView: UIView {
         button.clipsToBounds = true
 
         button.customButtonTapAction = { [weak self] in
-            if let text = self?.signUpTextField.text, !text.isEmpty {
-                let number = "+1\(text)"
+            if let text = self?.signInTextField.text, !text.isEmpty {
+                let number = text
                 self?.delegate?.nextButtonTapAction(number: number)
             }
         }
@@ -90,7 +108,7 @@ class SignUpScreenView: UIView {
         label.textColor = Palette.secondaryText
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "By pressing “Next” you are agreeing to all terms and conditions of our privacy policy".localizable
+        label.text = "agreetment_description".localizable
 
         return label
     }()
@@ -113,68 +131,66 @@ class SignUpScreenView: UIView {
     }
 
     private func setupSubviews() {
-        self.addSubviews(signUpLabel,
+        self.addSubviews(signInLabel,
                          enterNumberLabel,
                          descriptionLabel,
-                         signUpTextField,
+                         signInTextField,
+                         firstSignInLabel,
                          nextButton,
                          agreetmentLabel)
     }
 
     private func setupSubviewsLayout() {
 
-        signUpLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(SignUpScreenALConstants.signUpLabelTopInset)
+        signInLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(SignInScreenALConstants.signInLabelTopInset)
             make.centerX.equalToSuperview()
         }
 
         enterNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(signUpLabel.snp.bottom).offset(SignUpScreenALConstants.enterNumberLabelTopInset)
+            make.top.equalTo(signInLabel.snp.bottom).offset(SignInScreenALConstants.enterNumberLabelTopInset)
             make.centerX.equalToSuperview()
         }
 
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(enterNumberLabel.snp.bottom).offset(SignUpScreenALConstants.descriptionLabelTopInset)
-            make.leading.trailing.equalToSuperview().inset(SignUpScreenALConstants.descriptionLabelSideInset)
+            make.top.equalTo(enterNumberLabel.snp.bottom).offset(SignInScreenALConstants.descriptionLabelTopInset)
+            make.leading.trailing.equalToSuperview().inset(SignInScreenALConstants.descriptionLabelSideInset)
         }
 
-        signUpTextField.snp.makeConstraints { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(SignUpScreenALConstants.signUpTextFieldTopInset)
-            make.leading.trailing.equalToSuperview().inset(SignUpScreenALConstants.signUpTextFieldSideInset)
-            make.height.equalTo(SignUpScreenALConstants.signUpTextFieldHeight)
+        signInTextField.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(SignInScreenALConstants.signInTextFieldTopInset)
+            make.leading.trailing.equalToSuperview().inset(SignInScreenALConstants.signInTextFieldSideInset)
+            make.height.equalTo(SignInScreenALConstants.signInTextFieldHeight)
+        }
+
+        firstSignInLabel.snp.makeConstraints { make in
+            make.top.equalTo(signInTextField.snp.bottom).offset(SignInScreenALConstants.firstSignInLabelTopInset)
+            make.leading.trailing.equalToSuperview().inset(SignInScreenALConstants.firstSignInLabelSideInset)
         }
 
         nextButton.snp.makeConstraints { make in
-            make.top.equalTo(signUpTextField.snp.bottom).offset(SignUpScreenALConstants.nextButtonTopInset)
-            make.leading.trailing.equalToSuperview().inset(SignUpScreenALConstants.nextButtonSideInset)
-            make.height.equalTo(SignUpScreenALConstants.nextButtonHeight)
+            make.top.equalTo(signInTextField.snp.bottom).offset(SignInScreenALConstants.nextButtonTopInset)
+            make.leading.trailing.equalToSuperview().inset(SignInScreenALConstants.nextButtonSideInset)
+            make.height.equalTo(SignInScreenALConstants.nextButtonHeight)
         }
 
         agreetmentLabel.snp.makeConstraints { make in
-            make.top.equalTo(nextButton.snp.bottom).offset(SignUpScreenALConstants.agreetmentLabelTopInset)
-            make.leading.trailing.equalToSuperview().inset(SignUpScreenALConstants.agreetmentLabelSideInset)
+            make.top.equalTo(nextButton.snp.bottom).offset(SignInScreenALConstants.agreetmentLabelTopInset)
+            make.leading.trailing.equalToSuperview().inset(SignInScreenALConstants.agreetmentLabelSideInset)
         }
     }
-
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
 
 // MARK: - UITextFieldDelegate
 
-extension SignUpScreenView: UITextFieldDelegate {
+extension SignInScreenView: UITextFieldDelegate {
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
 
         if let text = textField.text, !text.isEmpty {
-            let number = "+1\(text)"
+            let number = text
             delegate?.nextButtonTapAction(number: number)
         }
         return true

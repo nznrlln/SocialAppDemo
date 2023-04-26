@@ -46,11 +46,11 @@ class DateSectionHeaderView: UIView {
 
     private func createLines() {
         let y: CGFloat = self.frame.height / 2
-        let firstStartX: CGFloat = 0
+        let firstStartX: CGFloat = 16
         let firstEndX: CGFloat = self.frame.width / 2 - 50 - 10
 
         let secondStartX: CGFloat = self.frame.width / 2 + 50 + 10
-        let secondEndX: CGFloat = self.frame.width
+        let secondEndX: CGFloat = self.frame.width - 16
 
         let path = UIBezierPath()
         path.move(to: CGPoint(x: firstStartX, y: y))

@@ -7,7 +7,27 @@
 
 import UIKit
 
+protocol MainScreenViewDelegate {
+    func didSelectPost()
+}
+
 class MainScreenView: UIView {
+
+    var delegate: MainScreenViewDelegate?
+
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.toAutoLayout()
+
+        return scrollView
+    }()
+
+    private let contentView: UIView = {
+        let view = UIView()
+        view.toAutoLayout()
+
+        return view
+    }()
 
     private lazy var usersCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -37,8 +57,12 @@ class MainScreenView: UIView {
 //    }(
 
     private lazy var postsTableView: PostsTableView = {
-        let tableView = PostsTableView(frame: .zero, style: .plain)
+        let tableView = PostsTableView(frame: .zero, style: .grouped)
         tableView.toAutoLayout()
+        tableView.backgroundColor = Palette.mainBackground
+
+        tableView.tvDataSource = self
+        tableView.tvDelegate = self
 
         return tableView
     }()
@@ -61,30 +85,34 @@ class MainScreenView: UIView {
     }
 
     private func setupSubviews() {
-        self.addSubviews(usersCollectionView, postsTableView)
+        contentView.addSubviews(usersCollectionView, postsTableView)
+        scrollView.addSubview(contentView)
+        self.addSubview(scrollView)
     }
 
     private func setupSubviewsLayout() {
+        scrollView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalToSuperview()
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.top.leading.trailing.bottom.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+        }
+        
         usersCollectionView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(MainScreenALConstants.collectionTopInset)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(contentView).inset(MainScreenALConstants.collectionTopInset)
+            make.leading.trailing.equalTo(contentView).inset(16)
             make.height.equalTo(60)
         }
 
         postsTableView.snp.makeConstraints { make in
             make.top.equalTo(usersCollectionView.snp.bottom).offset(MainScreenALConstants.tableViewTopInset)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
-
+            make.leading.trailing.equalTo(contentView)
+            make.bottom.equalTo(contentView)
+            make.height.equalTo(700)
         }
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
 
@@ -160,8 +188,23 @@ extension MainScreenView: UITableViewDelegate {
         0
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let postVC = PostScreenViewController()
-        
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let postVC = PostScreenViewController()
+//
+//    }
+}
+
+
+// MARK: - PostsTableViewDataSource
+
+extension MainScreenView: PostsTableViewDataSource {
+
+}
+
+// MARK: - PostsTableViewDelegate
+
+extension MainScreenView: PostsTableViewDelegate {
+    func didSelectPost() {
+        self.delegate?.didSelectPost()
     }
 }

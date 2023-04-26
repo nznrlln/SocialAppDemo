@@ -20,13 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
 
-//        let mainTabBarVC = MainTabBarController()
-//        window.rootViewController = mainTabBarVC
+        // if already auth in firebase - show main tab bar controller, else sign in/up
 
         if Auth.auth().currentUser == nil {
             let welcomeVC = WelcomeScreenViewController ()
-            let navVC = UINavigationController(rootViewController: welcomeVC)
-            window.rootViewController = navVC
+            let welcomeNC = UINavigationController(rootViewController: welcomeVC)
+            window.rootViewController = welcomeNC
         } else {
             let mainTabBarVC = MainTabBarController()
             window.rootViewController = mainTabBarVC

@@ -9,13 +9,9 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-//    private let vc1 = WelcomeScreenViewController()
-//    private let vc2 = LogInScreenViewController()
-//    private let vc3 = SignUpScreenViewController()
-//    private let vc4 = ConfirmSignUpScreenViewController()
     private let mainVC: MainScreenViewController = {
         let vc = MainScreenViewController()
-        vc.title = "Main".localizable
+        vc.title = "main".localizable
         vc.tabBarItem.image = UIImage(systemName: "house")
 
         return vc
@@ -23,7 +19,7 @@ class MainTabBarController: UITabBarController {
 
     private let profileVC: ProfileScreenViewController = {
         let vc = ProfileScreenViewController()
-        vc.title = "Profile".localizable
+        vc.title = "profile".localizable
         vc.tabBarItem.image = UIImage(systemName: "person.crop.circle")
 
         return vc
@@ -31,12 +27,11 @@ class MainTabBarController: UITabBarController {
 
     private let savedVC: SavedScreenViewController = {
         let vc = SavedScreenViewController()
-        vc.title = "Saved".localizable
+        vc.title = "saved".localizable
         vc.tabBarItem.image = UIImage(systemName: "bookmark")
 
         return vc
     }()
-    private let vc6 = PostScreenViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,15 +40,18 @@ class MainTabBarController: UITabBarController {
     }
 
     private func setupControllers() {
+        let mainNC = UINavigationController(rootViewController: mainVC)
+
+        let profileNC = UINavigationController(rootViewController: profileVC)
+        profileNC.navigationBar.isHidden = true
+
+        let savedNC = UINavigationController(rootViewController: savedVC)
+        savedNC.navigationBar.isHidden = true
+
         viewControllers = [
-//            vc1,
-//            vc2,
-//            vc3,
-//            vc4,
-            mainVC,
-            profileVC,
-            savedVC,
-            vc6
+            mainNC,
+            profileNC,
+            savedNC
         ]
 
         tabBar.backgroundColor = Palette.mainBackground

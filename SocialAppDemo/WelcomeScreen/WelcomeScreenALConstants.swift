@@ -8,15 +8,12 @@
 import UIKit
 
 struct WelcomeScreenALConstants {
-    static let welcomeImageTopInset: CGFloat = 124
+    static let welcomeImageTopInset: CGFloat = 80
     static let welcomeImageSideInset: CGFloat = 16
     static let welcomeImageHeightWidth: CGFloat = 344
 
-    static let signUpButtonTopInset: CGFloat = 80
-    static let signUpButtonSideInset: CGFloat = 57
-    static let signUpButtonHeight: CGFloat = 50
-
-    static let logInButtonTopInset: CGFloat = 30
-    static let logInButtonHeight: CGFloat = 20
+    static let signInButtonTopInset: CGFloat = 80
+    static let signInButtonSideInset: CGFloat = 57
+    static let signInButtonHeight: CGFloat = 50
 }
 

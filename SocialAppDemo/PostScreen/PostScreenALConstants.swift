@@ -10,10 +10,10 @@ import UIKit
 struct PostScreenALConstants {
     static let generalSideInset: CGFloat = 16
 
-    static let avatarTopInset: CGFloat = 106 //18
+    static let avatarTopInset: CGFloat = 18
     static let avatarHeight: CGFloat = 30
 
-    static let nicknameTopInset: CGFloat = 106 //18
+    static let nicknameTopInset: CGFloat = 18
 
     static let postImageTopInset: CGFloat = 12
     static let postImageHeight: CGFloat = 212

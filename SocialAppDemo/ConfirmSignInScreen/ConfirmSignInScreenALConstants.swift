@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct ConfirmSignUpScreenALConstants {
-    static let confirmSignUpLabelTopInset: CGFloat = 148
+struct ConfirmSignInScreenALConstants {
+    static let confirmSignInLabelTopInset: CGFloat = 60
 
     static let descriptionLabelTopInset: CGFloat = 12
 
@@ -21,9 +21,9 @@ struct ConfirmSignUpScreenALConstants {
     static let codeTextFieldSideInset: CGFloat = 58
     static let codeTextFieldHeight: CGFloat = 48
 
-    static let signUpButtonTopInset: CGFloat = 86
-    static let signUpButtonSideInset: CGFloat = 58
-    static let signUpButtonHeight: CGFloat = 50
+    static let signInButtonTopInset: CGFloat = 86
+    static let signInButtonSideInset: CGFloat = 58
+    static let signInButtonHeight: CGFloat = 50
 
     static let checkImageViewTopInset: CGFloat = 43
     static let checkImageViewHeight: CGFloat = 100

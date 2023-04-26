@@ -8,24 +8,21 @@
 
 // MARK: - Navigation
 
-"Main" = "Main";
-"Profile" = "Profile";
-"Saved" = "Saved";
+"main" = "Main";
+"profile" = "Profile";
+"saved" = "Saved";
 
 // MARK: - WelcomeScreen, SignUpScreen, ConfirmSignUpScreen
 
-"Sign Up" = "Sign Up";
-"Already have an account" = "Already have an account";
+"sign_in" = "SIGN IN";
 
-"Enter phone number" = "Enter phone number";
-"Your phone number would be used to log into your account" = "Your phone number would be used to log into your account";
-"NEXT" = "NEXT";
-"By pressing “Next” you are agreeing to all terms and conditions of our privacy policy" = "By pressing “Next” you are agreeing to all terms and conditions of our privacy policy";
+"sign_in_phone" = "Enter phone number";
+"sign_in_phone_description" = "Your phone number would be used to log into your account";
+"first_sign_in_description" = "After signing in for the first time, a new user account is created";
+"next" = "NEXT";
+"agreetment_description" = "By pressing “Next” you are agreeing to all terms and conditions of our privacy policy";
 
-"Confirm Sign Up" = "Confirm Sign Up";
-"We sent the code via SMS to number" = "We sent the code via SMS to number";
-"Enter code from SMS" = "Enter code from SMS";
+"sign_in_confirm" = "Confirm account";
+"code_sent" = "We sent the code via SMS to number";
+"enter_code" = "Enter code from SMS";
 
-"Welcome back" = "Welcome back";
-"Enter your phone number to log in" = "Enter your phone number to log in";
-"CONFIRM" = "CONFIRM";

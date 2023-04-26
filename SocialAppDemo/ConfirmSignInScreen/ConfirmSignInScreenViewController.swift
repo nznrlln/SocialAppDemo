@@ -8,16 +8,27 @@
 import UIKit
 import SnapKit
 
-class ConfirmSignUpScreenViewController: UIViewController {
+class ConfirmSignInScreenViewController: UIViewController {
 
-    private lazy var mainView: ConfirmSignUpScreenView = {
-        let view = ConfirmSignUpScreenView()
+    private(set) var accountPhoneNumber: String!
+
+    private lazy var mainView: ConfirmSignInScreenView = {
+        let view = ConfirmSignInScreenView(frame: .zero, number: accountPhoneNumber)
         view.toAutoLayout()
         view.delegate = self
 
         return view
     }()
 
+    init(accountPhoneNumber: String!) {
+        self.accountPhoneNumber = accountPhoneNumber
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +50,23 @@ class ConfirmSignUpScreenViewController: UIViewController {
 
     private func setupSubviewsLayout() {
         mainView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
     }
 }
 
 // MARK: - ConfirmSignUpScreenViewDelegate
-extension ConfirmSignUpScreenViewController: ConfirmSignUpScreenViewDelegate {
-    func signUpButtonTapAction(code: String) {
-        AuthManager.shared.verifyCode(smsCode: code) { [weak self] success in
+
+extension ConfirmSignInScreenViewController: ConfirmSignInScreenViewDelegate {
+    func signInButtonTapAction(code: String) {
+        AuthManager.shared.verifyCode(smsCode: code) { success in
             guard success else { return }
             DispatchQueue.main.async {
                 let tabbarVC = MainTabBarController()
-                self?.navigationController?.pushViewController(tabbarVC, animated: true)
+                UIApplication.shared.windows.first?.rootViewController = tabbarVC
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
             }
         }
     }

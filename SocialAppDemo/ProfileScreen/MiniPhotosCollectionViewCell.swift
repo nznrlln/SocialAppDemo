@@ -1,16 +1,16 @@
 //
-//  UserCollectionViewCell.swift
-//  SocialAppDemo
+//  MiniPhotosCollectionViewCell.swift
+//  Navigation
 //
-//  Created by Нияз Нуруллин on 03.04.2023.
+//  Created by Нияз Нуруллин on 19.06.2022.
 //
 
 import UIKit
 import SnapKit
 
-class UserCollectionViewCell: UICollectionViewCell {
+class MiniPhotosCollectionViewCell: UICollectionViewCell {
 
-    private let avatarImageView: UIImageView = {
+    private let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.toAutoLayout()
         imageView.clipsToBounds = true
@@ -30,33 +30,36 @@ class UserCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(model: UIImage) {
-        avatarImageView.image = model
+        photoImageView.image = model
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        avatarImageView.image = nil
+        photoImageView.image = nil
     }
 
     private func cellInitialSetting() {
-//        self.contentView.backgroundColor = .blue
-        self.layer.cornerRadius = 30
+        self.layer.cornerRadius = 5
         self.layer.borderWidth = 0.5
         self.layer.borderColor = Palette.mainAccent?.cgColor
         self.clipsToBounds = true
+
 
         setupSubviews()
         setupSubviewsLayout()
     }
 
     private func setupSubviews() {
-        self.contentView.addSubview(avatarImageView)
+        self.contentView.addSubview(photoImageView)
     }
 
     private func setupSubviewsLayout() {
-        avatarImageView.snp.makeConstraints { make in
+        photoImageView.snp.makeConstraints { make in
             make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
+
 }
+
+

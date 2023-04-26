@@ -20,9 +20,15 @@
 		FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B029E2E995009A992B /* SavedScreenViewController.swift */; };
 		FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B229E2E9A7009A992B /* SavedScreenView.swift */; };
 		FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */; };
-		FD5836B829E34B85009A992B /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B729E34B85009A992B /* UILabel+Extention.swift */; };
 		FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B929E478AE009A992B /* PostsTableView.swift */; };
 		FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */; };
+		FD5836BF29F27571009A992B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836BE29F27571009A992B /* FirebaseStorage */; };
+		FD5836C129F27677009A992B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836C029F27677009A992B /* FirebaseFirestore */; };
+		FD5836C429F47297009A992B /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FD5836C629F47297009A992B /* Localizable.stringsdict */; };
+		FD5836CD29F5A208009A992B /* MiniPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */; };
+		FD5836CF29F5BF0C009A992B /* ProfileScreenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */; };
+		FD5836D229F5BFCB009A992B /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836D129F5BFCB009A992B /* FirebaseStorageManager.swift */; };
+		FD5836D529F87466009A992B /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836D429F87466009A992B /* PhoneNumberKit */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -38,15 +44,12 @@
 		FD5D284629C786EC00553FBD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284529C786EC00553FBD /* Fonts.swift */; };
 		FD5D284929C8F54F00553FBD /* WelcomeScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284829C8F54F00553FBD /* WelcomeScreenALConstants.swift */; };
 		FD5D284B29CA158900553FBD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284A29CA158900553FBD /* MainTabBarController.swift */; };
-		FD5D284D29CA267000553FBD /* LogInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284C29CA267000553FBD /* LogInScreenViewController.swift */; };
-		FD5D284F29CC8E3100553FBD /* LogInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D284E29CC8E3100553FBD /* LogInScreenView.swift */; };
-		FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285029CC8E4300553FBD /* LogInScreenALConstants.swift */; };
-		FD5D285329CED52200553FBD /* SignUpScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285229CED52200553FBD /* SignUpScreenALConstants.swift */; };
-		FD5D285529CED53B00553FBD /* SignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285429CED53B00553FBD /* SignUpScreenViewController.swift */; };
-		FD5D285729CED56600553FBD /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285629CED56600553FBD /* SignUpScreenView.swift */; };
-		FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285929CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift */; };
-		FD5D285C29CEE70D00553FBD /* ConfirmSignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285B29CEE70D00553FBD /* ConfirmSignUpScreenView.swift */; };
-		FD5D285E29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285D29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift */; };
+		FD5D285329CED52200553FBD /* SignInScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285229CED52200553FBD /* SignInScreenALConstants.swift */; };
+		FD5D285529CED53B00553FBD /* SignInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285429CED53B00553FBD /* SignInScreenViewController.swift */; };
+		FD5D285729CED56600553FBD /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285629CED56600553FBD /* SignInScreenView.swift */; };
+		FD5D285A29CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285929CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift */; };
+		FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285B29CEE70D00553FBD /* ConfirmSignInScreenView.swift */; };
+		FD5D285E29CEE72500553FBD /* ConfirmSignInScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D285D29CEE72500553FBD /* ConfirmSignInScreenALConstants.swift */; };
 		FD5D287A29D0C5C000553FBD /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287129D0C5BF00553FBD /* Inter-Regular.ttf */; };
 		FD5D287B29D0C5C000553FBD /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287229D0C5BF00553FBD /* Inter-Thin.ttf */; };
 		FD5D287C29D0C5C000553FBD /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD5D287329D0C5BF00553FBD /* Inter-Black.ttf */; };
@@ -104,9 +107,13 @@
 		FD5836B029E2E995009A992B /* SavedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B229E2E9A7009A992B /* SavedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenView.swift; sourceTree = "<group>"; };
 		FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenALConstants.swift; sourceTree = "<group>"; };
-		FD5836B729E34B85009A992B /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
 		FD5836B929E478AE009A992B /* PostsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableView.swift; sourceTree = "<group>"; };
 		FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionHeaderView.swift; sourceTree = "<group>"; };
+		FD5836C529F47297009A992B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		FD5836C729F4729F009A992B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenDataModel.swift; sourceTree = "<group>"; };
+		FD5836D129F5BFCB009A992B /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -122,15 +129,12 @@
 		FD5D284529C786EC00553FBD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FD5D284829C8F54F00553FBD /* WelcomeScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5D284A29CA158900553FBD /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		FD5D284C29CA267000553FBD /* LogInScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenViewController.swift; sourceTree = "<group>"; };
-		FD5D284E29CC8E3100553FBD /* LogInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenView.swift; sourceTree = "<group>"; };
-		FD5D285029CC8E4300553FBD /* LogInScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenALConstants.swift; sourceTree = "<group>"; };
-		FD5D285229CED52200553FBD /* SignUpScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenALConstants.swift; sourceTree = "<group>"; };
-		FD5D285429CED53B00553FBD /* SignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenViewController.swift; sourceTree = "<group>"; };
-		FD5D285629CED56600553FBD /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
-		FD5D285929CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpScreenViewController.swift; sourceTree = "<group>"; };
-		FD5D285B29CEE70D00553FBD /* ConfirmSignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpScreenView.swift; sourceTree = "<group>"; };
-		FD5D285D29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignUpScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D285229CED52200553FBD /* SignInScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenALConstants.swift; sourceTree = "<group>"; };
+		FD5D285429CED53B00553FBD /* SignInScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D285629CED56600553FBD /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
+		FD5D285929CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignInScreenViewController.swift; sourceTree = "<group>"; };
+		FD5D285B29CEE70D00553FBD /* ConfirmSignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignInScreenView.swift; sourceTree = "<group>"; };
+		FD5D285D29CEE72500553FBD /* ConfirmSignInScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSignInScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5D287129D0C5BF00553FBD /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		FD5D287229D0C5BF00553FBD /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
 		FD5D287329D0C5BF00553FBD /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -158,7 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD5D283829C7793000553FBD /* SnapKit in Frameworks */,
+				FD5836D529F87466009A992B /* PhoneNumberKit in Frameworks */,
+				FD5836C129F27677009A992B /* FirebaseFirestore in Frameworks */,
 				FD5D288829D8B8BB00553FBD /* FirebaseAuth in Frameworks */,
+				FD5836BF29F27571009A992B /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +193,7 @@
 				FD1C5BF329BDD71500C42CD6 /* SocialAppDemoTests */,
 				FD1C5BFD29BDD71500C42CD6 /* SocialAppDemoUITests */,
 				FD1C5BD829BDD71400C42CD6 /* Products */,
+				FD5836BD29F27571009A992B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +210,7 @@
 		FD1C5BD929BDD71400C42CD6 /* SocialAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836D029F5BF86009A992B /* NetworkManager */,
 				FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */,
 				FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */,
 				FD5D284A29CA158900553FBD /* MainTabBarController.swift */,
@@ -210,6 +219,7 @@
 				FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */,
 				FD1C5BEB29BDD71500C42CD6 /* Info.plist */,
 				FD5D288929D8B9A600553FBD /* GoogleService-Info.plist */,
+				FD5836C629F47297009A992B /* Localizable.stringsdict */,
 				FD5D283429C7112E00553FBD /* Localizable.strings */,
 				FD5D282829C6420500553FBD /* UIView+Extention.swift */,
 				FD5D283929C77E0000553FBD /* String+Extention.swift */,
@@ -219,16 +229,14 @@
 				FD5836AF29E2C12C009A992B /* Network */,
 				FD5836B629E331F9009A992B /* PostsTableView */,
 				FD5D282429C188F000553FBD /* WelcomeScreen */,
-				FD5D281E29BE274D00553FBD /* LogInScreen */,
-				FD5D282529C1892700553FBD /* SignUpScreen */,
-				FD5D285829CEE6CB00553FBD /* ConfirmSignUpScreen */,
+				FD5D282529C1892700553FBD /* SignInScreen */,
+				FD5D285829CEE6CB00553FBD /* ConfirmSignInScreen */,
 				FD5D281B29BE26E800553FBD /* MainScreen */,
 				FD5D281C29BE270400553FBD /* ProfileScreen */,
 				FD5D281D29BE271400553FBD /* SavedScreen */,
 				FD5D281F29BE27C100553FBD /* PostScreen */,
 				FD5D284729C786F400553FBD /* Helpers */,
 				FD5D288329D0C5C400553FBD /* Fonts */,
-				FD5836B729E34B85009A992B /* UILabel+Extention.swift */,
 			);
 			path = SocialAppDemo;
 			sourceTree = "<group>";
@@ -268,6 +276,21 @@
 			path = PostsTableView;
 			sourceTree = "<group>";
 		};
+		FD5836BD29F27571009A992B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD5836D029F5BF86009A992B /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				FD5836D129F5BFCB009A992B /* FirebaseStorageManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		FD5D281A29BDD8E900553FBD /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,8 +305,8 @@
 			children = (
 				FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */,
 				FD5D289429D9FCA300553FBD /* MainScreenView.swift */,
-				FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */,
 				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
+				FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -294,6 +317,8 @@
 				FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */,
 				FD5D282229C1831300553FBD /* ProfileScreenView.swift */,
 				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
+				FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */,
+				FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -306,16 +331,6 @@
 				FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */,
 			);
 			path = SavedScreen;
-			sourceTree = "<group>";
-		};
-		FD5D281E29BE274D00553FBD /* LogInScreen */ = {
-			isa = PBXGroup;
-			children = (
-				FD5D284C29CA267000553FBD /* LogInScreenViewController.swift */,
-				FD5D284E29CC8E3100553FBD /* LogInScreenView.swift */,
-				FD5D285029CC8E4300553FBD /* LogInScreenALConstants.swift */,
-			);
-			path = LogInScreen;
 			sourceTree = "<group>";
 		};
 		FD5D281F29BE27C100553FBD /* PostScreen */ = {
@@ -338,14 +353,14 @@
 			path = WelcomeScreen;
 			sourceTree = "<group>";
 		};
-		FD5D282529C1892700553FBD /* SignUpScreen */ = {
+		FD5D282529C1892700553FBD /* SignInScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D285429CED53B00553FBD /* SignUpScreenViewController.swift */,
-				FD5D285629CED56600553FBD /* SignUpScreenView.swift */,
-				FD5D285229CED52200553FBD /* SignUpScreenALConstants.swift */,
+				FD5D285429CED53B00553FBD /* SignInScreenViewController.swift */,
+				FD5D285629CED56600553FBD /* SignInScreenView.swift */,
+				FD5D285229CED52200553FBD /* SignInScreenALConstants.swift */,
 			);
-			path = SignUpScreen;
+			path = SignInScreen;
 			sourceTree = "<group>";
 		};
 		FD5D284729C786F400553FBD /* Helpers */ = {
@@ -357,14 +372,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		FD5D285829CEE6CB00553FBD /* ConfirmSignUpScreen */ = {
+		FD5D285829CEE6CB00553FBD /* ConfirmSignInScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D285929CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift */,
-				FD5D285B29CEE70D00553FBD /* ConfirmSignUpScreenView.swift */,
-				FD5D285D29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift */,
+				FD5D285929CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift */,
+				FD5D285B29CEE70D00553FBD /* ConfirmSignInScreenView.swift */,
+				FD5D285D29CEE72500553FBD /* ConfirmSignInScreenALConstants.swift */,
 			);
-			path = ConfirmSignUpScreen;
+			path = ConfirmSignInScreen;
 			sourceTree = "<group>";
 		};
 		FD5D288329D0C5C400553FBD /* Fonts */ = {
@@ -402,6 +417,9 @@
 			packageProductDependencies = (
 				FD5D283729C7793000553FBD /* SnapKit */,
 				FD5D288729D8B8BB00553FBD /* FirebaseAuth */,
+				FD5836BE29F27571009A992B /* FirebaseStorage */,
+				FD5836C029F27677009A992B /* FirebaseFirestore */,
+				FD5836D429F87466009A992B /* PhoneNumberKit */,
 			);
 			productName = SocialAppDemo;
 			productReference = FD1C5BD729BDD71400C42CD6 /* SocialAppDemo.app */;
@@ -479,6 +497,7 @@
 			packageReferences = (
 				FD5D283629C7793000553FBD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FD5D288629D8B8BB00553FBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FD5836D329F87466009A992B /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 			);
 			productRefGroup = FD1C5BD829BDD71400C42CD6 /* Products */;
 			projectDirPath = "";
@@ -509,6 +528,7 @@
 				FD5D287C29D0C5C000553FBD /* Inter-Black.ttf in Resources */,
 				FD5D287E29D0C5C000553FBD /* Inter-Medium.ttf in Resources */,
 				FD5D288A29D8B9A600553FBD /* GoogleService-Info.plist in Resources */,
+				FD5836C429F47297009A992B /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,19 +558,18 @@
 				FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */,
 				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
 				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,
-				FD5D284F29CC8E3100553FBD /* LogInScreenView.swift in Sources */,
-				FD5D285C29CEE70D00553FBD /* ConfirmSignUpScreenView.swift in Sources */,
+				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,
 				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
 				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
 				FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */,
-				FD5D285A29CEE6FA00553FBD /* ConfirmSignUpScreenViewController.swift in Sources */,
+				FD5D285A29CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
-				FD5D285129CC8E4300553FBD /* LogInScreenALConstants.swift in Sources */,
+				FD5836D229F5BFCB009A992B /* FirebaseStorageManager.swift in Sources */,
 				FD5D289329D9FC9200553FBD /* MainScreenViewController.swift in Sources */,
 				FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */,
 				FD5D283E29C7819500553FBD /* UIColor+Extention.swift in Sources */,
 				FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */,
-				FD5D285329CED52200553FBD /* SignUpScreenALConstants.swift in Sources */,
+				FD5D285329CED52200553FBD /* SignInScreenALConstants.swift in Sources */,
 				FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */,
 				FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */,
 				FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */,
@@ -558,23 +577,23 @@
 				FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */,
 				FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */,
 				FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */,
-				FD5D285529CED53B00553FBD /* SignUpScreenViewController.swift in Sources */,
+				FD5D285529CED53B00553FBD /* SignInScreenViewController.swift in Sources */,
 				FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */,
-				FD5836B829E34B85009A992B /* UILabel+Extention.swift in Sources */,
 				FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */,
-				FD5D284D29CA267000553FBD /* LogInScreenViewController.swift in Sources */,
 				FD1C5BE529BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld in Sources */,
+				FD5836CD29F5A208009A992B /* MiniPhotosCollectionViewCell.swift in Sources */,
 				FD5D283C29C7812D00553FBD /* Pallete.swift in Sources */,
+				FD5836CF29F5BF0C009A992B /* ProfileScreenDataModel.swift in Sources */,
 				FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */,
 				FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */,
 				FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */,
 				FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */,
 				FD5D284929C8F54F00553FBD /* WelcomeScreenALConstants.swift in Sources */,
 				FD5D288F29D9638500553FBD /* PostScreenALConstants.swift in Sources */,
-				FD5D285E29CEE72500553FBD /* ConfirmSignUpScreenALConstants.swift in Sources */,
+				FD5D285E29CEE72500553FBD /* ConfirmSignInScreenALConstants.swift in Sources */,
 				FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */,
 				FD5D284B29CA158900553FBD /* MainTabBarController.swift in Sources */,
-				FD5D285729CED56600553FBD /* SignUpScreenView.swift in Sources */,
+				FD5D285729CED56600553FBD /* SignInScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +636,15 @@
 				FD1C5BE929BDD71500C42CD6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FD5836C629F47297009A992B /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD5836C529F47297009A992B /* en */,
+				FD5836C729F4729F009A992B /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		FD5D283429C7112E00553FBD /* Localizable.strings */ = {
@@ -919,6 +947,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FD5836D329F87466009A992B /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.5.0;
+			};
+		};
 		FD5D283629C7793000553FBD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -938,6 +974,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FD5836BE29F27571009A992B /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5D288629D8B8BB00553FBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		FD5836C029F27677009A992B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5D288629D8B8BB00553FBD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FD5836D429F87466009A992B /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD5836D329F87466009A992B /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
 		FD5D283729C7793000553FBD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FD5D283629C7793000553FBD /* XCRemoteSwiftPackageReference "SnapKit" */;
