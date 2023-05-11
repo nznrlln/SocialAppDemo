@@ -8,7 +8,12 @@
 import UIKit
 
 protocol MainScreenViewDelegate {
-    func didSelectPost()
+    var users: [UserModel] { get }
+    var posts: [String?: [PostModel]] { get }
+    var postsDates: [String] { get }
+
+    func didSelectUser(userUID: String)
+    func didSelectPost(post: PostModel, author: UserModel)
 }
 
 class MainScreenView: UIView {
@@ -57,11 +62,14 @@ class MainScreenView: UIView {
 //    }(
 
     private lazy var postsTableView: PostsTableView = {
-        let tableView = PostsTableView(frame: .zero, style: .grouped)
+        let tableView = PostsTableView(frame: .zero,
+                                       style: .grouped,
+                                       posts: delegate?.posts,
+                                       postsDates: delegate?.postsDates,
+                                       authors: delegate?.users)
         tableView.toAutoLayout()
         tableView.backgroundColor = Palette.mainBackground
 
-        tableView.tvDataSource = self
         tableView.tvDelegate = self
 
         return tableView
@@ -82,6 +90,22 @@ class MainScreenView: UIView {
 
         setupSubviews()
         setupSubviewsLayout()
+    }
+
+    func updateUsersView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.usersCollectionView.reloadData()
+        }
+    }
+
+    func updatePostsView() {
+        postsTableView.posts = delegate?.posts ?? [:]
+        postsTableView.postsDates = delegate?.postsDates ?? []
+        postsTableView.authors = delegate?.users ?? []
+
+        DispatchQueue.main.async { [weak self] in
+            self?.postsTableView.reloadData()
+        }
     }
 
     private func setupSubviews() {
@@ -121,12 +145,12 @@ class MainScreenView: UIView {
 extension MainScreenView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        return delegate?.users.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCollectionViewCell.identifier, for: indexPath) as! UserCollectionViewCell
-//        cell.setupCell(model: <#T##UIImage#>)
+        cell.setupCellWith(model: delegate?.users[indexPath.item])
 
         return cell
     }
@@ -145,66 +169,89 @@ extension MainScreenView: UICollectionViewDelegateFlowLayout {
         return 15
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let user = delegate?.users[indexPath.item] else { return }
 
-}
-
-// MARK: - UITableViewDataSource
-
-extension MainScreenView: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        3
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
-
-        return cell
+        delegate?.didSelectUser(userUID: user.userUID)
     }
 
 
 }
 
-// MARK: - UITableViewDelegate
+//// MARK: - UITableViewDataSource
+////
+//extension MainScreenView: UITableViewDataSource {
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return delegate?.posts.count ?? 2
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return delegate?.posts[section].values.count ?? 3
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
+//        cell.setupCellWith(model: delegate?.posts[indexPath.section].values[indexPath.row])
+//
+//        return cell
+//    }
+//
+//}
 
-extension MainScreenView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 380
-    }
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 380
-    }
-
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = UIView()
-        return footer
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        0
-    }
+//// MARK: - UITableViewDelegate
+//
+//extension MainScreenView: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 380
+//    }
+//
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 380
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footer = UIView()
+//        return footer
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        0
+//    }
 
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let postVC = PostScreenViewController()
 //
 //    }
-}
+//}
 
 
-// MARK: - PostsTableViewDataSource
-
-extension MainScreenView: PostsTableViewDataSource {
-
-}
+//// MARK: - PostsTableViewDataSource
+//
+//extension MainScreenView: PostsTableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 380
+//    }
+//
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 380
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footer = UIView()
+//        return footer
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        0
+//    }
+//}
 
 // MARK: - PostsTableViewDelegate
 
 extension MainScreenView: PostsTableViewDelegate {
-    func didSelectPost() {
-        self.delegate?.didSelectPost()
+    func didSelectPost(post: PostModel, author: UserModel) {
+        self.delegate?.didSelectPost(post: post, author: author)
     }
+
 }

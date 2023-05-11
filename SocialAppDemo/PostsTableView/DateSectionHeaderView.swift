@@ -34,6 +34,11 @@ class DateSectionHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func setupHeader(model: String?) {
+        guard let model = model else { return }
+
+        self.dateLabel.text = model
+    }
 
      // Only override draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.

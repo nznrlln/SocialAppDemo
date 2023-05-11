@@ -10,44 +10,80 @@ import CoreData
 
 final class CoreDataManager {
 
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
+    static let shared = CoreDataManager()
+
+    lazy var mainContext = persistentContainer.viewContext
+
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "SocialAppDemo")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+
+        container.viewContext.automaticallyMergesChangesFromParent = true
+
         return container
     }()
 
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+    private func saveMainContext() {
+        if mainContext.hasChanges {
             do {
-                try context.save()
+                try mainContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+
+    func addPost(post: PostModel, author: UserModel) {
+        let exist = postCheck(postUID: post.postUID)
+        if !exist {
+            persistentContainer.performBackgroundTask { context in
+                let newPost = SavedPostCoreData(context: context)
+                newPost.postUID = post.postUID
+                newPost.postText = post.postText
+                newPost.postCreationDate = post.creationDate
+                if let postImageData = post.postImage?.pngData() {
+                    newPost.postImage = postImageData
+                }
+
+                newPost.authorUID = author.userUID
+                newPost.authorNickname = author.nickname
+                newPost.authorStatus = author.status
+                if let avatarImageData = author.avatar?.pngData() {
+                    newPost.authorAvatar = avatarImageData
+                }
+
+                do {
+                    try context.save()
+                    debugPrint("Post added")
+                } catch {
+                    debugPrint("🎲 CoreDataError: \(error)")
+                }
+            }
+        }
+    }
+
+    func deletePost(post: SavedPostCoreData) {
+        mainContext.delete(post)
+        saveMainContext()
+    }
+
+    private func postCheck(postUID: String) -> Bool {
+        let request = SavedPostCoreData.fetchRequest()
+
+        do {
+            if let _ = try mainContext.fetch(request).first(where: { $0.postUID == postUID }) {
+                return true
+            } else {
+                return false
+            }
+        } catch {
+            debugPrint("🎲 CoreDataError: \(error)")
+            return false
         }
     }
 

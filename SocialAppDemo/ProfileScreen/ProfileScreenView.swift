@@ -7,9 +7,20 @@
 
 import UIKit
 
+protocol ProfileScreenViewDelegate {
+    var user: UserModel { get }
+
+    var images: [UIImage] { get }
+
+    var posts: [String?: [PostModel]] { get }
+    var postsDates: [String] { get }
+
+    func didSelectPost(post: PostModel, author: UserModel)
+}
+
 class ProfileScreenView: UIView {
 
-    var images = [UIImage]()
+    var delegate: ProfileScreenViewDelegate?
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -181,10 +192,12 @@ class ProfileScreenView: UIView {
     }()
 
     private lazy var postsTableView: PostsTableView = {
-        let tableView = PostsTableView(frame: .zero, style: .grouped)
+        let tableView = PostsTableView(frame: .zero, style: .grouped, posts: nil, postsDates: nil, authors: nil)
         tableView.toAutoLayout()
         tableView.backgroundColor = Palette.mainBackground
 
+        tableView.tvDelegate = self
+        
         return tableView
     }()
 
@@ -193,23 +206,46 @@ class ProfileScreenView: UIView {
 
         viewInitialSettings()
 
-        FirebaseStorageManager.shared.getPhotoCollectionList() { [weak self] imageRefs in
-            guard let imageRefs = imageRefs else { return }
-
-            for ref in imageRefs {
-                FirebaseStorageManager.shared.getImage(ref: ref) { image in
-                    guard let image = image else { return }
-                    self?.images.append(image)
-                    self?.photosCollectionView.reloadData()
-                }
-            }
-        }
-
     }
 
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func updateProfile() {
+
+        DispatchQueue.main.async { [weak self] in
+            self?.profileHeaderView.setupView(model: self?.delegate?.user)
+
+            self?.postsCountLabel.text = String(self?.delegate?.user.postsCount ?? 0)
+            self?.postsLabel.text = "common_count_of_posts".localizedPlural(arg: self?.delegate?.user.postsCount ?? 0)
+
+            self?.followingsCountLabel.text = String(self?.delegate?.user.followingsCount ?? 0)
+            self?.followingsLabel.text = "common_count_of_followings".localizedPlural(arg: self?.delegate?.user.followingsCount ?? 0)
+
+            self?.followersCountLabel.text = String(self?.delegate?.user.followersCount ?? 0)
+            self?.followersLabel.text = "common_count_of_followers".localizedPlural(arg: self?.delegate?.user.followersCount ?? 0)
+        }
+
+    }
+
+    func updatePhotos() {
+        DispatchQueue.main.async { [weak self] in
+            self?.photosCollectionView.reloadData()
+        }
+    }
+
+    func updatePosts() {
+        postsTableView.posts = delegate?.posts ?? [:]
+        postsTableView.postsDates = delegate?.postsDates ?? []
+
+        let user = delegate?.user ?? UserModel()
+        postsTableView.authors = [user]
+
+        DispatchQueue.main.async { [weak self] in
+            self?.postsTableView.reloadData()
+        }
     }
 
     private func viewInitialSettings() {
@@ -302,12 +338,14 @@ class ProfileScreenView: UIView {
 
 extension ProfileScreenView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        images.count
+        return delegate?.images.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiniPhotosCollectionViewCell.identifier, for: indexPath) as! MiniPhotosCollectionViewCell
-        cell.setupCell(model: images[indexPath.item])
+        if let model = delegate?.images[indexPath.item] {
+            cell.setupCell(model: model)
+        }
 
         return cell
     }
@@ -327,6 +365,10 @@ extension ProfileScreenView: UICollectionViewDelegateFlowLayout {
         return 4
     }
 
+}
 
-
+extension ProfileScreenView: PostsTableViewDelegate {
+    func didSelectPost(post: PostModel, author: UserModel) {
+        self.delegate?.didSelectPost(post: post, author: author)
+    }
 }

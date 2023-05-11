@@ -26,3 +26,6 @@
 "code_sent" = "We sent the code via SMS to number";
 "enter_code" = "Enter code from SMS";
 
+"photos" = "Photos";
+
+"author" = "Author: ";

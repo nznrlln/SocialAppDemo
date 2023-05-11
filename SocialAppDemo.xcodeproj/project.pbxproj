@@ -29,6 +29,14 @@
 		FD5836CF29F5BF0C009A992B /* ProfileScreenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */; };
 		FD5836D229F5BFCB009A992B /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836D129F5BFCB009A992B /* FirebaseStorageManager.swift */; };
 		FD5836D529F87466009A992B /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836D429F87466009A992B /* PhoneNumberKit */; };
+		FD5836D729FA6D3D009A992B /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836D629FA6D3D009A992B /* FirestoreManager.swift */; };
+		FD5836D929FAFD2F009A992B /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836D829FAFD2F009A992B /* MainScreenModel.swift */; };
+		FD5836DC29FBAF33009A992B /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836DB29FBAF33009A992B /* DataModels.swift */; };
+		FD5836DE29FE6121009A992B /* ScreenControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */; };
+		FD5836E129FEDA96009A992B /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E029FEDA96009A992B /* Observer.swift */; };
+		FD5836E32A016EF0009A992B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E22A016EF0009A992B /* DateHelper.swift */; };
+		FD5836E52A02D8C5009A992B /* PostScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E42A02D8C5009A992B /* PostScreenModel.swift */; };
+		FD5836E72A077F2B009A992B /* PostsTableViewALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -114,6 +122,14 @@
 		FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenDataModel.swift; sourceTree = "<group>"; };
 		FD5836D129F5BFCB009A992B /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
+		FD5836D629FA6D3D009A992B /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		FD5836D829FAFD2F009A992B /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
+		FD5836DB29FBAF33009A992B /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControllerFactory.swift; sourceTree = "<group>"; };
+		FD5836E029FEDA96009A992B /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		FD5836E22A016EF0009A992B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		FD5836E42A02D8C5009A992B /* PostScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenModel.swift; sourceTree = "<group>"; };
+		FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewALConstants.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -210,7 +226,8 @@
 		FD1C5BD929BDD71400C42CD6 /* SocialAppDemo */ = {
 			isa = PBXGroup;
 			children = (
-				FD5836D029F5BF86009A992B /* NetworkManager */,
+				FD5836DF29FEDA83009A992B /* Protocols */,
+				FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */,
 				FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */,
 				FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */,
 				FD5D284A29CA158900553FBD /* MainTabBarController.swift */,
@@ -226,6 +243,8 @@
 				FD5D283D29C7819500553FBD /* UIColor+Extention.swift */,
 				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
 				FD5D281A29BDD8E900553FBD /* CoreData */,
+				FD5836DA29FBAF19009A992B /* DataModels */,
+				FD5836D029F5BF86009A992B /* Firebase */,
 				FD5836AF29E2C12C009A992B /* Network */,
 				FD5836B629E331F9009A992B /* PostsTableView */,
 				FD5D282429C188F000553FBD /* WelcomeScreen */,
@@ -269,9 +288,10 @@
 		FD5836B629E331F9009A992B /* PostsTableView */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 				FD5836B929E478AE009A992B /* PostsTableView.swift */,
+				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
 				FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */,
+				FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */,
 			);
 			path = PostsTableView;
 			sourceTree = "<group>";
@@ -283,12 +303,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FD5836D029F5BF86009A992B /* NetworkManager */ = {
+		FD5836D029F5BF86009A992B /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				FD5836D129F5BFCB009A992B /* FirebaseStorageManager.swift */,
+				FD5836D629FA6D3D009A992B /* FirestoreManager.swift */,
 			);
-			path = NetworkManager;
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		FD5836DA29FBAF19009A992B /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				FD5836DB29FBAF33009A992B /* DataModels.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		FD5836DF29FEDA83009A992B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FD5836E029FEDA96009A992B /* Observer.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FD5D281A29BDD8E900553FBD /* CoreData */ = {
@@ -303,6 +340,7 @@
 		FD5D281B29BE26E800553FBD /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836D829FAFD2F009A992B /* MainScreenModel.swift */,
 				FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */,
 				FD5D289429D9FCA300553FBD /* MainScreenView.swift */,
 				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
@@ -314,11 +352,11 @@
 		FD5D281C29BE270400553FBD /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */,
 				FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */,
 				FD5D282229C1831300553FBD /* ProfileScreenView.swift */,
 				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
 				FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */,
-				FD5836CE29F5BF0C009A992B /* ProfileScreenDataModel.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -336,6 +374,7 @@
 		FD5D281F29BE27C100553FBD /* PostScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836E42A02D8C5009A992B /* PostScreenModel.swift */,
 				FD5D289029D976C200553FBD /* PostScreenViewController.swift */,
 				FD5D288429D3485500553FBD /* PostScreenView.swift */,
 				FD5D288E29D9638500553FBD /* PostScreenALConstants.swift */,
@@ -368,6 +407,7 @@
 			children = (
 				FD5D284529C786EC00553FBD /* Fonts.swift */,
 				FD5D283B29C7812D00553FBD /* Pallete.swift */,
+				FD5836E22A016EF0009A992B /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -553,9 +593,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5836D729FA6D3D009A992B /* FirestoreManager.swift in Sources */,
 				FD5D282B29C6449200553FBD /* CustomUIButton.swift in Sources */,
 				FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */,
 				FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */,
+				FD5836DE29FE6121009A992B /* ScreenControllerFactory.swift in Sources */,
 				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
 				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,
 				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,
@@ -565,12 +607,17 @@
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
 				FD5836D229F5BFCB009A992B /* FirebaseStorageManager.swift in Sources */,
+				FD5836DC29FBAF33009A992B /* DataModels.swift in Sources */,
 				FD5D289329D9FC9200553FBD /* MainScreenViewController.swift in Sources */,
 				FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */,
 				FD5D283E29C7819500553FBD /* UIColor+Extention.swift in Sources */,
 				FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */,
 				FD5D285329CED52200553FBD /* SignInScreenALConstants.swift in Sources */,
 				FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */,
+				FD5836E72A077F2B009A992B /* PostsTableViewALConstants.swift in Sources */,
+				FD5836D929FAFD2F009A992B /* MainScreenModel.swift in Sources */,
+				FD5836E32A016EF0009A992B /* DateHelper.swift in Sources */,
+				FD5836E52A02D8C5009A992B /* PostScreenModel.swift in Sources */,
 				FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */,
 				FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */,
 				FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */,
@@ -586,6 +633,7 @@
 				FD5836CF29F5BF0C009A992B /* ProfileScreenDataModel.swift in Sources */,
 				FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */,
 				FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */,
+				FD5836E129FEDA96009A992B /* Observer.swift in Sources */,
 				FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */,
 				FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */,
 				FD5D284929C8F54F00553FBD /* WelcomeScreenALConstants.swift in Sources */,
@@ -967,8 +1015,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 10.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

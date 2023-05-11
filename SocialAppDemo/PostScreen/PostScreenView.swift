@@ -7,14 +7,26 @@
 
 import UIKit
 
+protocol PostScreenDelegate {
+    var post: PostModel { get }
+    var author: UserModel { get }
+
+    func didPressUser()
+}
+
 class PostScreenView: UIView {
+
+    var delegate: PostScreenDelegate?
+
+    private lazy var avaterTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+    private lazy var nicknameTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
 
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.toAutoLayout()
         imageView.layer.cornerRadius = PostScreenALConstants.avatarHeight / 2
         imageView.clipsToBounds = true
-        imageView.backgroundColor = Palette.mainAccent
+        imageView.isUserInteractionEnabled = true
 
         return imageView
     }()
@@ -24,6 +36,7 @@ class PostScreenView: UIView {
         label.toAutoLayout()
         label.font = Fonts.interMed12
         label.textColor = Palette.mainAccent
+        label.isUserInteractionEnabled = true
         label.text = "Author"
 
         return label
@@ -44,7 +57,6 @@ class PostScreenView: UIView {
         imageView.toAutoLayout()
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.backgroundColor = Palette.mainAccent
 
         return imageView
     }()
@@ -54,7 +66,7 @@ class PostScreenView: UIView {
         label.toAutoLayout()
         label.font = Fonts.interReg14
         label.numberOfLines = 0
-        label.text = "With prototyping in Figma, you can create multiple flows for your prototype in one page to preview a user's full journey and experience through your designs. A flow is a path users take through the network of connected frames that make up your prototype. For example, you can create a prototype for a shopping app that includes a flow for account creation, another for browsing items, and another for the checkout process–all in one page.\nWhen you add a connection between two frames with no existing connections in your prototype, a flow starting point is created. You can create multiple flows using the same network of connected frames by adding different flow starting points."
+//        label.text = "With prototyping in Figma, you can create multiple flows for your prototype in one page to preview a user's full journey and experience through your designs. A flow is a path users take through the network of connected frames that make up your prototype. For example, you can create a prototype for a shopping app that includes a flow for account creation, another for browsing items, and another for the checkout process–all in one page.\nWhen you add a connection between two frames with no existing connections in your prototype, a flow starting point is created. You can create multiple flows using the same network of connected frames by adding different flow starting points."
 
         return label
     }()
@@ -93,6 +105,7 @@ class PostScreenView: UIView {
         let button = UIButton()
         button.toAutoLayout()
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.tintColor = Palette.mainAccent
 
         return button
     }()
@@ -113,6 +126,19 @@ class PostScreenView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupView() {
+        avatarImageView.addGestureRecognizer(avaterTapGesture)
+        authorNicknameLabel.addGestureRecognizer(nicknameTapGesture)
+
+        avatarImageView.image = delegate?.author.avatar
+        authorNicknameLabel.text = delegate?.author.nickname
+        authorStatusLabel.text = delegate?.author.status
+        postImageView.image = delegate?.post.postImage
+        postDescriptionLabel.text = delegate?.post.postText
+        likeCountLabel.text = String(delegate?.post.likesCount ?? 0)
+        commentsCountLabel.text = String(delegate?.post.commentsCount ?? 0)
     }
 
     private func viewInitialSettings() {
@@ -192,6 +218,10 @@ class PostScreenView: UIView {
             make.leading.trailing.equalToSuperview().inset(PostScreenALConstants.generalSideInset)
             make.height.equalTo(PostScreenALConstants.separatorHeight)
         }
+    }
+
+    @objc private func tapAction() {
+        delegate?.didPressUser()
     }
     /*
     // Only override draw() if you perform custom drawing.

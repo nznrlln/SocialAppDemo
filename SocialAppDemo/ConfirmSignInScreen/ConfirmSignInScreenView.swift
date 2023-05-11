@@ -15,6 +15,8 @@ protocol ConfirmSignInScreenViewDelegate {
 class ConfirmSignInScreenView: UIView {
     
     var delegate: ConfirmSignInScreenViewDelegate?
+
+    private var maxDigits: Int = 6
     
     private let confirmSignInLabel: UILabel = {
         let label = UILabel()
@@ -188,7 +190,7 @@ extension ConfirmSignInScreenView: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        if (textField.text!.count >= 6
+        if (textField.text!.count >= self.maxDigits
             && !string.isEmpty) {
             return false
         }

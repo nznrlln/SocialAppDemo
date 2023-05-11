@@ -20,10 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
 
-//        FirebaseStorageManager.shared.getPhotoCollection { result in
-//            //
-//        }
-
         return true
     }
 

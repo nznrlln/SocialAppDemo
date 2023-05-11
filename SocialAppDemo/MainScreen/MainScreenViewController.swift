@@ -9,13 +9,20 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
 
-    private lazy var mainView: MainScreenView = {
-        let view = MainScreenView()
-        view.toAutoLayout()
-        view.delegate = self
+    private let model: MainScreenModel
 
-        return view
-    }()
+    private let mainView: MainScreenView
+
+    init(model: MainScreenModel, mainView: MainScreenView) {
+        self.model = model
+        self.mainView = mainView
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
 
     override func viewDidLoad() {
@@ -31,15 +38,25 @@ class MainScreenViewController: UIViewController {
 
     private func viewInitialSettings() {
         view.backgroundColor = .white
-        self.title = "Main".localizable
-        self.tabBarItem.image = UIImage(systemName: "house")
+//        self.title = "Main".localizable
+//        self.tabBarItem.image = UIImage(systemName: "house")
 
 
+        setupModels()
         setupSubviews()
         setupSubviewsLayout()
     }
 
+    private func setupModels() {
+        model.delegate = self
+        model.getModelData()
+
+        mainView.delegate = self
+        mainView.toAutoLayout()
+    }
+
     private func setupSubviews() {
+
         view.addSubview(mainView)
     }
 
@@ -54,14 +71,48 @@ class MainScreenViewController: UIViewController {
 
 }
 
+// MARK: - MainScreenModelDelegate
+extension MainScreenViewController: MainScreenModelDelegate {
+    func modelUpdatedUsers() {
+        mainView.updateUsersView()
+    }
+    
+    func modelUpdatedPosts() {
+        mainView.updatePostsView()
+    }
+    
+
+}
 
 // MARK: - MainScreenViewDelegate
 
 extension MainScreenViewController: MainScreenViewDelegate {
-    func didSelectPost() {
-        let postVC = PostScreenViewController()
 
-        self.navigationController!.pushViewController(postVC, animated: true)
+    var users: [UserModel] {
+        model.usersCollection
+    }
+
+    var posts: [String?: [PostModel]] {
+        model.postsCollection
+    }
+
+    var postsDates: [String] {
+        model.postsDates
+    }
+
+    func didSelectUser(userUID: String) {
+        let model = ProfileScreenDataModel(profileUID: userUID)
+        let view = ProfileScreenView()
+        let vc = ProfileScreenViewController(model: model, mainView: view)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func didSelectPost(post: PostModel, author: UserModel) {
+        let model = PostScreenModel(post: post, author: author)
+        let view = PostScreenView()
+        let vc = PostScreenViewController(model: model, mainView: view)
+
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 
 

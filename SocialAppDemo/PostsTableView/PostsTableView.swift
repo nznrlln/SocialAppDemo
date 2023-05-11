@@ -7,18 +7,26 @@
 
 import UIKit
 
-protocol PostsTableViewDataSource {}
-
 protocol PostsTableViewDelegate {
-    func didSelectPost()
+    func didSelectPost(post: PostModel, author: UserModel)
 }
 
 class PostsTableView: UITableView {
 
-    var tvDataSource: PostsTableViewDataSource?
     var tvDelegate: PostsTableViewDelegate?
 
-    override init(frame: CGRect, style: UITableView.Style) {
+    var posts: [String?: [PostModel]]
+    var postsDates: [String]
+    var authors: [UserModel]
+
+    init(frame: CGRect, style: UITableView.Style,
+         posts: [String?: [PostModel]]?,
+         postsDates: [String]?,
+         authors: [UserModel]?) {
+
+        self.posts = posts ?? [:]
+        self.postsDates = postsDates ?? []
+        self.authors = authors ?? []
         super.init(frame: frame, style: style)
 
         tableInitialSettings()
@@ -36,26 +44,35 @@ class PostsTableView: UITableView {
 
         self.separatorStyle = .none
     }
+
 }
 
 // MARK: - UITableViewDataSource
 
 extension PostsTableView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        return postsDates.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        let dateKey = postsDates[section]
+        guard let values = posts[dateKey] else {return 0}
+
+        return values.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
 
+        let dateKey = postsDates[indexPath.section]
+        if let model = posts[dateKey] {
+            let postData = model[indexPath.row]
+            let author = authors.first(where: { $0.userUID == postData.authorUID})
+            cell.setupCellWith(model: postData, author: author)
+        }
+
         return cell
     }
-
-
 }
 
 // MARK: - UITableViewDelegate
@@ -68,6 +85,7 @@ extension PostsTableView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = DateSectionHeaderView()
+        headerView.setupHeader(model: postsDates[section])
 
         return headerView
     }
@@ -90,6 +108,12 @@ extension PostsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        tvDelegate?.didSelectPost()
+        let dateKey = postsDates[indexPath.section]
+        if let model = posts[dateKey] {
+            let postData = model[indexPath.row]
+            guard let author = authors.first(where: { $0.userUID == postData.authorUID}) else { return }
+            tvDelegate?.didSelectPost(post: postData, author: author)
+        }
+
     }
 }

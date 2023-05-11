@@ -9,12 +9,14 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
+    var currentPost: PostModel?
+    var currentAuthor: UserModel?
+
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.toAutoLayout()
         imageView.layer.cornerRadius = 30
         imageView.clipsToBounds = true
-        imageView.backgroundColor = Palette.mainAccent
 
         return imageView
     }()
@@ -23,7 +25,6 @@ class PostTableViewCell: UITableViewCell {
         let label = UILabel()
         label.toAutoLayout()
         label.font = Fonts.interMed16
-//        label.textColor = Palette.mainAccent
         label.text = "Author"
 
         return label
@@ -62,7 +63,7 @@ class PostTableViewCell: UITableViewCell {
         label.font = Fonts.interReg14
         label.textAlignment = .left
         label.numberOfLines = 4
-        label.text = "Обязательно вступите в группу курса в Телеграм группа PRO, вся оперативная информация там, но на первой неделе мы будем присылать рассылку о новых уроках"
+//        label.text = "Обязательно вступите в группу курса в Телеграм группа PRO, вся оперативная информация там, но на первой неделе мы будем присылать рассылку о новых уроках"
 
         return label
     }()
@@ -72,7 +73,7 @@ class PostTableViewCell: UITableViewCell {
         imageView.toAutoLayout()
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
-        imageView.backgroundColor = Palette.mainAccent
+        imageView.contentMode = .scaleAspectFill
 
         return imageView
     }()
@@ -85,6 +86,32 @@ class PostTableViewCell: UITableViewCell {
         return view
     }()
 
+    private let likesCountLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.font = Fonts.interReg14
+
+        return label
+    }()
+
+    private let commentsCountLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.font = Fonts.interReg14
+
+        return label
+    }()
+
+    lazy var savePostButton: UIButton = {
+        let button = UIButton()
+        button.toAutoLayout()
+        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.tintColor = Palette.mainAccent
+        button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
+
+        return button
+    }()
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -95,6 +122,40 @@ class PostTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func setupCellWith(model: PostModel?, author: UserModel?) {
+        guard let model = model else { return }
+        guard let author = author else { return }
+
+        currentPost = model
+        currentAuthor = author
+
+        postDescriptionLabel.text = model.postText
+        postImageView.image = model.postImage
+        postDescriptionLabel.text = model.postText
+        likesCountLabel.text = String(describing: model.likesCount)
+        commentsCountLabel.text = String(describing: model.commentsCount)
+
+        avatarImageView.image = author.avatar
+        authorNicknameLabel.text = author.nickname
+        authorStatusLabel.text = author.status
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        currentPost = nil
+        currentAuthor = nil
+
+        postDescriptionLabel.text = ""
+        postImageView.image = nil
+        postDescriptionLabel.text = ""
+
+        avatarImageView.image = nil
+        authorNicknameLabel.text = ""
+        authorStatusLabel.text = ""
+    }
+
+
     private func cellInitialSetting() {
 //        self.backgroundColor = Palette.darkButton
 
@@ -103,76 +164,78 @@ class PostTableViewCell: UITableViewCell {
     }
 
     private func setupSubviews() {
+        self.contentView.addSubviews(avatarImageView,
+                                     authorNicknameLabel,
+                                     authorStatusLabel,
+                                     postBodyView)
+
         postBodyView.addSubviews(verticalLineView,
                                  postDescriptionLabel,
                                  postImageView,
-                                 separatorView)
-
-        self.addSubviews(avatarImageView,
-                         authorNicknameLabel,
-                         authorStatusLabel,
-                         postBodyView)
+                                 separatorView,
+                                 savePostButton)
     }
 
     private func setupSubviewsLayout() {
         avatarImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(MainScreenALConstants.avatarTopInset)
-            make.leading.equalToSuperview().inset(MainScreenALConstants.generalSideInset)
-            make.height.width.equalTo(MainScreenALConstants.avatarHeight)
+            make.top.equalToSuperview().inset(PostsTableViewALConstants.avatarTopInset)
+            make.leading.equalToSuperview().inset(PostsTableViewALConstants.generalSideInset)
+            make.height.width.equalTo(PostsTableViewALConstants.avatarHeight)
         }
 
         authorNicknameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(MainScreenALConstants.nicknameTopInset)
-            make.leading.equalTo(avatarImageView.snp.trailing).offset(MainScreenALConstants.nicknameSideInset)
+            make.top.equalToSuperview().inset(PostsTableViewALConstants.nicknameTopInset)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(PostsTableViewALConstants.nicknameSideInset)
         }
 
         authorStatusLabel.snp.makeConstraints { make in
-            make.top.equalTo(authorNicknameLabel.snp.bottom).offset(MainScreenALConstants.statusTopInset)
+            make.top.equalTo(authorNicknameLabel.snp.bottom).offset(PostsTableViewALConstants.statusTopInset)
             make.leading.equalTo(authorNicknameLabel.snp.leading)
         }
 
         postBodyView.snp.makeConstraints { make in
-            make.top.equalTo(avatarImageView.snp.bottom).offset(MainScreenALConstants.postBodyTopInset)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(PostsTableViewALConstants.postBodyTopInset)
             make.leading.trailing.bottom.equalToSuperview()
         }
 
         verticalLineView.snp.makeConstraints { make in
-            make.top.equalTo(postBodyView.snp.top).inset(MainScreenALConstants.verticalLineTopInset)
-            make.leading.equalTo(postBodyView.snp.leading).inset(MainScreenALConstants.verticalLineSideInset)
-            make.bottom.equalTo(postBodyView.snp.bottom).inset(MainScreenALConstants.verticalLineBottomInset)
+            make.top.equalTo(postBodyView.snp.top).inset(PostsTableViewALConstants.verticalLineTopInset)
+            make.leading.equalTo(postBodyView.snp.leading).inset(PostsTableViewALConstants.verticalLineSideInset)
+            make.bottom.equalTo(postBodyView.snp.bottom).inset(PostsTableViewALConstants.verticalLineBottomInset)
 //            make.height.equalTo(HomeScreenALConstants.verticalLineHeight)
-            make.width.equalTo(MainScreenALConstants.verticalLineWidth)
+            make.width.equalTo(PostsTableViewALConstants.verticalLineWidth)
         }
 
         postDescriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(postBodyView.snp.top).inset(MainScreenALConstants.postDescriptionTopInset)
-            make.leading.equalTo(verticalLineView.snp.trailing).offset(MainScreenALConstants.postDescriptionSideInset)
-            make.trailing.equalTo(postBodyView.snp.trailing).inset(MainScreenALConstants.postDescriptionSideInset)
+            make.top.equalTo(postBodyView.snp.top).inset(PostsTableViewALConstants.postDescriptionTopInset)
+            make.leading.equalTo(verticalLineView.snp.trailing).offset(PostsTableViewALConstants.postDescriptionSideInset)
+            make.trailing.equalTo(postBodyView.snp.trailing).inset(PostsTableViewALConstants.postDescriptionSideInset)
         }
 
         postImageView.snp.makeConstraints { make in
-            make.top.equalTo(postDescriptionLabel.snp.bottom).offset(MainScreenALConstants.postImageTopInset)
-            make.leading.equalTo(verticalLineView.snp.trailing).offset(MainScreenALConstants.postImageSideInset)
-            make.trailing.equalTo(postBodyView.snp.trailing).inset(MainScreenALConstants.postImageSideInset)
-            make.height.equalTo(MainScreenALConstants.postImageHeight)
+            make.top.equalTo(postDescriptionLabel.snp.bottom).offset(PostsTableViewALConstants.postImageTopInset)
+            make.leading.equalTo(verticalLineView.snp.trailing).offset(PostsTableViewALConstants.postImageSideInset)
+            make.trailing.equalTo(postBodyView.snp.trailing).inset(PostsTableViewALConstants.postImageSideInset)
+            make.height.equalTo(PostsTableViewALConstants.postImageHeight)
         }
 
         separatorView.snp.makeConstraints { make in
-            make.top.equalTo(verticalLineView.snp.bottom).offset(MainScreenALConstants.separatorTopInset)
+            make.top.equalTo(verticalLineView.snp.bottom).offset(PostsTableViewALConstants.separatorTopInset)
             make.leading.trailing.equalTo(postBodyView)
-            make.height.equalTo(MainScreenALConstants.separatorHeight)
+            make.height.equalTo(PostsTableViewALConstants.separatorHeight)
+        }
+
+        savePostButton.snp.makeConstraints { make in
+            make.top.equalTo(separatorView.snp.bottom).offset(PostsTableViewALConstants.saveButtonTopInset)
+            make.trailing.equalTo(postBodyView).inset(PostsTableViewALConstants.saveButtonSideInset)
         }
     }
 
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
+    @objc private func saveButtonTap() {
+        debugPrint("save tap")
+        guard let currentPost = currentPost,
+              let currentAuthor = currentAuthor else { return }
+        CoreDataManager.shared.addPost(post: currentPost, author: currentAuthor)
+    }
 
 }

@@ -64,6 +64,17 @@ class ProfileHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func setupView(model: UserModel?) {
+        guard let model = model else { preconditionFailure("no user in profile header")}
+
+        DispatchQueue.main.async { [weak self] in
+            self?.avatarImageView.image = model.avatar
+            self?.userNameLabel.text = model.fullname
+            self?.userStatusLabel.text = model.status
+        }
+
+    }
+
     private func viewInitialSettings() {
         self.backgroundColor = .systemBackground
 

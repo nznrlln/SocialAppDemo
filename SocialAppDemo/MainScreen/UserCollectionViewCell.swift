@@ -29,8 +29,9 @@ class UserCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupCell(model: UIImage) {
-        avatarImageView.image = model
+    func setupCellWith(model: UserModel?) {
+        guard let model = model else { return }
+        avatarImageView.image = model.avatar
     }
 
     override func prepareForReuse() {
