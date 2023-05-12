@@ -99,8 +99,6 @@ extension SavedScreenViewController: NSFetchedResultsControllerDelegate {
             } else {
                 mainView.savedPostsTableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            
-
         case .delete:
             guard let indexPath = indexPath else { return }
 
@@ -110,7 +108,6 @@ extension SavedScreenViewController: NSFetchedResultsControllerDelegate {
             } else {
                 mainView.savedPostsTableView.deleteRows(at: [indexPath], with: .automatic)
             }
-
         case .move:
             guard let indexPath = indexPath, let newIndexPath = newIndexPath else { return }
             mainView.savedPostsTableView.moveRow(at: indexPath, to: newIndexPath)
@@ -184,6 +181,13 @@ extension SavedScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
+        let dataModel = CoreDataHelper.shared.getModels(from: frc.object(at: indexPath))
+
+        let model = PostScreenModel(post: dataModel.post, author: dataModel.user)
+        let view = PostScreenView()
+        let vc = PostScreenViewController(model: model, mainView: view)
+
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 
     // Override to support conditional editing of the table view.

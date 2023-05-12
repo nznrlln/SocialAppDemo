@@ -37,6 +37,7 @@
 		FD5836E32A016EF0009A992B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E22A016EF0009A992B /* DateHelper.swift */; };
 		FD5836E52A02D8C5009A992B /* PostScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E42A02D8C5009A992B /* PostScreenModel.swift */; };
 		FD5836E72A077F2B009A992B /* PostsTableViewALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */; };
+		FD5836E92A0D819C009A992B /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E82A0D819C009A992B /* CoreDataHelper.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -130,6 +131,7 @@
 		FD5836E22A016EF0009A992B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		FD5836E42A02D8C5009A992B /* PostScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenModel.swift; sourceTree = "<group>"; };
 		FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewALConstants.swift; sourceTree = "<group>"; };
+		FD5836E82A0D819C009A992B /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			children = (
 				FD1C5BE329BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld */,
 				FD5D281829BDD84800553FBD /* CoreDataManager.swift */,
+				FD5836E82A0D819C009A992B /* CoreDataHelper.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,
 				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
 				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
+				FD5836E92A0D819C009A992B /* CoreDataHelper.swift in Sources */,
 				FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */,
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
