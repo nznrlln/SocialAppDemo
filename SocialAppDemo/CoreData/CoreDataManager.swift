@@ -72,7 +72,22 @@ final class CoreDataManager {
         saveMainContext()
     }
 
-    private func postCheck(postUID: String) -> Bool {
+    func deletePost(postUID: String) {
+        let request = SavedPostCoreData.fetchRequest()
+
+        do {
+            if let post = try mainContext.fetch(request).first(where: { $0.postUID == postUID }) {
+                mainContext.delete(post)
+                saveMainContext()
+            } else {
+                debugPrint("No such post")
+            }
+        } catch {
+            debugPrint("🎲 CoreDataError: \(error)")
+        }
+    }
+
+    func postCheck(postUID: String) -> Bool {
         let request = SavedPostCoreData.fetchRequest()
 
         do {

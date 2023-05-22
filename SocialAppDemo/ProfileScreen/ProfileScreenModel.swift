@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-protocol ProfileScreenDataModelDelegate {
+protocol ProfileScreenModelDelegate {
     func modelUpdatedProfileData()
     func modelUpdatedPhotos()
     func modelUpdatedPosts()
 }
 
-class ProfileScreenDataModel {
+class ProfileScreenModel {
 
-    var delegate: ProfileScreenDataModelDelegate?
+    var delegate: ProfileScreenModelDelegate?
 
     var profileUID: String?
 
@@ -60,7 +60,7 @@ class ProfileScreenDataModel {
     func getUserProfile(completion: @escaping () -> Void) {
         if let uid = profileUID {
             FirestoreManager.shared.getUserData(userUID: uid) { [weak self] model in
-                guard let model = model else { preconditionFailure() }
+                guard let model = model else { assertionFailure(); return }
 
                 self?.profileData = model
                 self?.profileUID = model.userUID
@@ -68,7 +68,7 @@ class ProfileScreenDataModel {
             }
         } else if profileUID == nil {
             FirestoreManager.shared.getMainUserData { [weak self] model in
-                guard let model = model else { preconditionFailure() }
+                guard let model = model else { assertionFailure(); return }
 
                 self?.profileData = model
                 self?.profileUID = model.userUID
@@ -78,8 +78,8 @@ class ProfileScreenDataModel {
     }
 
     func getUserPhotoCollection() {
-        FirebaseStorageManager.shared.getAllImages { [weak self] images in
-            guard let images = images else { preconditionFailure() }
+        FirebaseStorageManager.shared.getImages(number: 6) { [weak self] images in
+            guard let images = images else { assertionFailure(); return }
 
             self?.userPhotos = images
         }
@@ -89,8 +89,8 @@ class ProfileScreenDataModel {
         guard let profileUID = profileUID else { return }
 
         FirestoreManager.shared.getUserPosts(userUID: profileUID) { [weak self] postColletion, postDates in
-            guard let postColletion = postColletion else { preconditionFailure() }
-            guard let dates = postDates else { preconditionFailure() }
+            guard let postColletion = postColletion else { assertionFailure(); return }
+            guard let dates = postDates else { assertionFailure(); return }
 
             self?.postsDates = dates
 

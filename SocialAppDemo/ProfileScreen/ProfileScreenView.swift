@@ -15,7 +15,10 @@ protocol ProfileScreenViewDelegate {
     var posts: [String?: [PostModel]] { get }
     var postsDates: [String] { get }
 
+    func didSelectPhoto()
     func didSelectPost(post: PostModel, author: UserModel)
+    func didSaveTap(post: PostModel, author: UserModel)
+
 }
 
 class ProfileScreenView: UIView {
@@ -135,26 +138,26 @@ class ProfileScreenView: UIView {
         return view
     }()
 
-    private let addPostButton: UIButton = {
-        let button = UIButton()
-        button.toAutoLayout()
-
-        return button
-    }()
-
-    private let addStoriesButton: UIButton = {
-        let button = UIButton()
-        button.toAutoLayout()
-
-        return button
-    }()
-
-    private let addPhotosButton: UIButton = {
-        let button = UIButton()
-        button.toAutoLayout()
-
-        return button
-    }()
+//    private let addPostButton: UIButton = {
+//        let button = UIButton()
+//        button.toAutoLayout()
+//
+//        return button
+//    }()
+//
+//    private let addStoriesButton: UIButton = {
+//        let button = UIButton()
+//        button.toAutoLayout()
+//
+//        return button
+//    }()
+//
+//    private let addPhotosButton: UIButton = {
+//        let button = UIButton()
+//        button.toAutoLayout()
+//
+//        return button
+//    }()
 
     private let photosLabel: UILabel = {
         let label = UILabel()
@@ -171,7 +174,7 @@ class ProfileScreenView: UIView {
         button.toAutoLayout()
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.tintColor = Palette.blackAndWhite
-//        button.addTarget(self, action: #selector(photosButtonTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(photosButtonTap), for: .touchUpInside)
 
         return button
     }()
@@ -205,7 +208,6 @@ class ProfileScreenView: UIView {
         super.init(frame: frame)
 
         viewInitialSettings()
-
     }
 
 
@@ -256,6 +258,19 @@ class ProfileScreenView: UIView {
     }
 
     private func setupSubviews() {
+        self.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+
+        contentView.addSubviews(
+            profileHeaderView,
+            countsStackView,
+            labelsStackView,
+            separatorView,
+            photosLabel, showPhotosButton,
+            photosCollectionView,
+            postsTableView
+        )
+
         countsStackView.addArrangedSubview(postsCountLabel)
         countsStackView.addArrangedSubview(followingsCountLabel)
         countsStackView.addArrangedSubview(followersCountLabel)
@@ -263,17 +278,6 @@ class ProfileScreenView: UIView {
         labelsStackView.addArrangedSubview(postsLabel)
         labelsStackView.addArrangedSubview(followingsLabel)
         labelsStackView.addArrangedSubview(followersLabel)
-
-        contentView.addSubviews(profileHeaderView,
-                         countsStackView,
-                         labelsStackView,
-                         separatorView,
-                         photosLabel, showPhotosButton,
-                         photosCollectionView,
-                         postsTableView)
-
-        scrollView.addSubview(contentView)
-        self.addSubview(scrollView)
     }
 
     private func setupSubviewsLayout() {
@@ -332,6 +336,9 @@ class ProfileScreenView: UIView {
         }
     }
 
+    @objc private func photosButtonTap() {
+        self.delegate?.didSelectPhoto()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -365,9 +372,19 @@ extension ProfileScreenView: UICollectionViewDelegateFlowLayout {
         return 4
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.didSelectPhoto()
+    }
+
 }
 
+// MARK: - PostsTableViewDelegate
+
 extension ProfileScreenView: PostsTableViewDelegate {
+    func didSaveTap(post: PostModel, author: UserModel) {
+        self.delegate?.didSaveTap(post: post, author: author)
+    }
+
     func didSelectPost(post: PostModel, author: UserModel) {
         self.delegate?.didSelectPost(post: post, author: author)
     }

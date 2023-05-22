@@ -72,10 +72,19 @@ extension PostScreenViewController: PostScreenDelegate {
     }
 
     func didPressUser() {
-        let model = ProfileScreenDataModel(profileUID: author.userUID)
+        let model = ProfileScreenModel(profileUID: author.userUID)
         let view = ProfileScreenView()
         let vc = ProfileScreenViewController(model: model, mainView: view)
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    func saveButtonTapAction() {
+        let exists = CoreDataManager.shared.postCheck(postUID: model.post.postUID)
+
+        if exists {
+            CoreDataManager.shared.deletePost(postUID: model.post.postUID)
+        } else {
+            CoreDataManager.shared.addPost(post: model.post, author: model.author)
+        }
+    }
 }

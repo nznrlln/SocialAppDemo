@@ -38,14 +38,13 @@ struct PostsTableViewALConstants {
     static let separatorTopInset: CGFloat = 20
     static let separatorHeight: CGFloat = 0.5
 
+    static let buttonTopInset: CGFloat = 10
+    static let likeButtonSideInset: CGFloat = 54
+    static let commentButtonSideInset: CGFloat = 30
+
+    static let countTopInset: CGFloat = 12
+    static let countSideInset: CGFloat = 8
+
     static let saveButtonTopInset: CGFloat = 10
     static let saveButtonSideInset: CGFloat = 24
-
-
-    static let buttonTopInset: CGFloat = 15
-    static let commentButtonSideInset: CGFloat = 24
-
-    static let countTopInset: CGFloat = 15
-    static let countSideInset: CGFloat = 10
-
 }

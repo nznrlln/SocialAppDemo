@@ -101,7 +101,7 @@ extension MainScreenViewController: MainScreenViewDelegate {
     }
 
     func didSelectUser(userUID: String) {
-        let model = ProfileScreenDataModel(profileUID: userUID)
+        let model = ProfileScreenModel(profileUID: userUID)
         let view = ProfileScreenView()
         let vc = ProfileScreenViewController(model: model, mainView: view)
         navigationController?.pushViewController(vc, animated: true)
@@ -115,5 +115,13 @@ extension MainScreenViewController: MainScreenViewDelegate {
         self.navigationController!.pushViewController(vc, animated: true)
     }
 
+    func didSaveTap(post: PostModel, author: UserModel) {
+        let exists = CoreDataManager.shared.postCheck(postUID: post.postUID)
 
+        if exists {
+            CoreDataManager.shared.deletePost(postUID: post.postUID)
+        } else {
+            CoreDataManager.shared.addPost(post: post, author: author)
+        }
+    }
 }

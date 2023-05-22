@@ -46,7 +46,7 @@ final class ScreenControllerFactory {
             navController.setViewControllers([controller], animated: true)
 
         case .profileScreen:
-            let model = ProfileScreenDataModel(profileUID: self.profileUID)
+            let model = ProfileScreenModel(profileUID: self.profileUID)
             let mainView = ProfileScreenView()
             let controller = ProfileScreenViewController(model: model, mainView: mainView)
 

@@ -47,7 +47,7 @@ class FirestoreManager {
             snapshot.documents.forEach { doc in
                 let dataDict = doc.data()
                 self?.getUserFromData(userData: dataDict) { userModel in
-                    guard let user = userModel else { preconditionFailure("no user") }
+                    guard let user = userModel else { assertionFailure("no user"); return}
                     users.append(user)
 
                     if users.count == snapshotCount {
@@ -93,7 +93,7 @@ class FirestoreManager {
             guard let dataDict = snapshot.data() else { return }
 
             self?.getUserFromData(userData: dataDict) { userModel in
-                guard let user = userModel else { preconditionFailure("no user") }
+                guard let user = userModel else { assertionFailure("no user"); return }
 
                 completion(user)
             }
@@ -111,7 +111,7 @@ class FirestoreManager {
             guard let dataDict = snapshot.documents.first?.data() else { return }
 
             self?.getUserFromData(userData: dataDict) { userModel in
-                guard let user = userModel else { preconditionFailure("no user") }
+                guard let user = userModel else { assertionFailure("no user"); return }
 
                 completion(user)
             }
@@ -149,7 +149,7 @@ class FirestoreManager {
             snapshot.documents.forEach { doc in
                 let dataDict = doc.data()
                 self?.getPostFromData(postData: dataDict) { postModel in
-                    guard let post = postModel else { preconditionFailure("no post") }
+                    guard let post = postModel else { assertionFailure("no post"); return }
                     posts.append(post)
 
                     if let date = post.creationDate {
@@ -181,7 +181,7 @@ class FirestoreManager {
             snapshot.documents.forEach { doc in
                 let dataDict = doc.data()
                 self?.getPostFromData(postData: dataDict) { postModel in
-                    guard let post = postModel else { preconditionFailure("no post") }
+                    guard let post = postModel else { assertionFailure("no post"); return }
                     posts.append(post)
 
                     if let date = post.creationDate {

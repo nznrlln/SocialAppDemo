@@ -8,6 +8,7 @@
 import UIKit
 
 protocol PostsTableViewDelegate {
+    func didSaveTap(post: PostModel, author: UserModel)
     func didSelectPost(post: PostModel, author: UserModel)
 }
 
@@ -65,10 +66,14 @@ extension PostsTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
 
         let dateKey = postsDates[indexPath.section]
-        if let model = posts[dateKey] {
-            let postData = model[indexPath.row]
-            let author = authors.first(where: { $0.userUID == postData.authorUID})
+        if let models = posts[dateKey] {
+            let postData = models[indexPath.row]
+            guard let author = authors.first(where: { $0.userUID == postData.authorUID}) else { return cell }
             cell.setupCellWith(model: postData, author: author)
+
+            cell.saveButtonTapAction = { [weak self] in
+                self?.tvDelegate?.didSaveTap(post: postData, author: author)
+            }
         }
 
         return cell

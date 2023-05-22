@@ -14,6 +14,8 @@ protocol MainScreenViewDelegate {
 
     func didSelectUser(userUID: String)
     func didSelectPost(post: PostModel, author: UserModel)
+
+    func didSaveTap(post: PostModel, author: UserModel)
 }
 
 class MainScreenView: UIView {
@@ -250,6 +252,10 @@ extension MainScreenView: UICollectionViewDelegateFlowLayout {
 // MARK: - PostsTableViewDelegate
 
 extension MainScreenView: PostsTableViewDelegate {
+    func didSaveTap(post: PostModel, author: UserModel) {
+        self.delegate?.didSaveTap(post: post, author: author)
+    }
+
     func didSelectPost(post: PostModel, author: UserModel) {
         self.delegate?.didSelectPost(post: post, author: author)
     }

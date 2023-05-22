@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileScreenViewController: UIViewController {
 
-    private let model: ProfileScreenDataModel
+    private let model: ProfileScreenModel
 
     private let mainView: ProfileScreenView
 
-    init(model: ProfileScreenDataModel, mainView: ProfileScreenView) {
+    init(model: ProfileScreenModel, mainView: ProfileScreenView) {
         self.mainView = mainView
         self.model = model
 
@@ -37,8 +38,6 @@ class ProfileScreenViewController: UIViewController {
 
     private func viewInitialSettings() {
         view.backgroundColor = .white
-//        self.title = "Profile".localizable
-//        self.tabBarItem.image = UIImage(systemName: "person.crop.circle")
 
         setupModels()
         setupSubviews()
@@ -69,9 +68,9 @@ class ProfileScreenViewController: UIViewController {
 
 }
 
-// MARK: - ProfileScreenDataModelDelegate
+// MARK: - ProfileScreenModelDelegate
 
-extension ProfileScreenViewController: ProfileScreenDataModelDelegate {
+extension ProfileScreenViewController: ProfileScreenModelDelegate {
     func modelUpdatedProfileData() {
         mainView.updateProfile()
     }
@@ -107,6 +106,13 @@ extension ProfileScreenViewController: ProfileScreenViewDelegate {
         model.postsDates
     }
 
+    func didSelectPhoto() {
+        let model = PhotosScreenModel()
+        let mainView = PhotosScreenView()
+        let vc = PhotosScreenViewController(model: model, mainView: mainView)
+
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
 
     func didSelectPost(post: PostModel, author: UserModel) {
         let model = PostScreenModel(post: post, author: author)
@@ -115,5 +121,14 @@ extension ProfileScreenViewController: ProfileScreenViewDelegate {
 
         self.navigationController!.pushViewController(vc, animated: true)
     }
-    
+
+    func didSaveTap(post: PostModel, author: UserModel) {
+        let exists = CoreDataManager.shared.postCheck(postUID: post.postUID)
+
+        if exists {
+            CoreDataManager.shared.deletePost(postUID: post.postUID)
+        } else {
+            CoreDataManager.shared.addPost(post: post, author: author)
+        }
+    }
 }

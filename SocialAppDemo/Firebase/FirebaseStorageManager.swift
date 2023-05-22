@@ -20,6 +20,26 @@ class FirebaseStorageManager {
 
     private init() {}
 
+    func getImages(number: Int, completion: @escaping ([UIImage]?) -> Void) {
+        getPhotoCollectionList { [weak self] imageRefs in
+            guard let imageRefs = imageRefs else { completion(nil); return }
+            let limitedRefs = Array(imageRefs.prefix(number))
+            let imagesCount = limitedRefs.count
+            var images = [UIImage]()
+
+            for ref in limitedRefs {
+                self?.getImage(ref: ref) { image in
+                    guard let image = image else { return }
+                    images.append(image)
+
+                    if images.count == imagesCount {
+                        completion(images)
+                    }
+                }
+            }
+        }
+    }
+
     func getAllImages(completion: @escaping ([UIImage]?) -> Void) {
         getPhotoCollectionList { [weak self] imageRefs in
             guard let imageRefs = imageRefs else { completion(nil); return }
