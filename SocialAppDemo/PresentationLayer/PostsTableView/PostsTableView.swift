@@ -20,11 +20,12 @@ class PostsTableView: UITableView {
     var postsDates: [String]
     var authors: [UserModel]
 
-    init(frame: CGRect, style: UITableView.Style,
+    init(
+        frame: CGRect, style: UITableView.Style,
          posts: [String?: [PostModel]]?,
          postsDates: [String]?,
-         authors: [UserModel]?) {
-
+         authors: [UserModel]?
+    ) {
         self.posts = posts ?? [:]
         self.postsDates = postsDates ?? []
         self.authors = authors ?? []
@@ -38,7 +39,10 @@ class PostsTableView: UITableView {
     }
 
     private func tableInitialSettings() {
-        self.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
+        self.register(
+            PostTableViewCell.self,
+            forCellReuseIdentifier: PostTableViewCell.identifier
+        )
 
         self.dataSource = self
         self.delegate = self

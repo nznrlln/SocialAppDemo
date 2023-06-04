@@ -44,7 +44,10 @@ class MainScreenView: UIView {
         collectionView.toAutoLayout()
         collectionView.showsHorizontalScrollIndicator = false
 
-        collectionView.register(UserCollectionViewCell.self, forCellWithReuseIdentifier: UserCollectionViewCell.identifier)
+        collectionView.register(
+            UserCollectionViewCell.self,
+            forCellWithReuseIdentifier: UserCollectionViewCell.identifier
+        )
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -64,11 +67,13 @@ class MainScreenView: UIView {
 //    }(
 
     private lazy var postsTableView: PostsTableView = {
-        let tableView = PostsTableView(frame: .zero,
-                                       style: .grouped,
-                                       posts: delegate?.posts,
-                                       postsDates: delegate?.postsDates,
-                                       authors: delegate?.users)
+        let tableView = PostsTableView(
+            frame: .zero,
+            style: .grouped,
+            posts: delegate?.posts,
+            postsDates: delegate?.postsDates,
+            authors: delegate?.users
+        )
         tableView.toAutoLayout()
         tableView.backgroundColor = Palette.mainBackground
 
@@ -151,7 +156,10 @@ extension MainScreenView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCollectionViewCell.identifier, for: indexPath) as! UserCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: UserCollectionViewCell.identifier,
+            for: indexPath
+        ) as! UserCollectionViewCell
         cell.setupCellWith(model: delegate?.users[indexPath.item])
 
         return cell

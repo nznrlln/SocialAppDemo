@@ -174,18 +174,22 @@ class PostTableViewCell: UITableViewCell {
     }
 
     private func setupSubviews() {
-        self.contentView.addSubviews(avatarImageView,
-                                     authorNicknameLabel,
-                                     authorStatusLabel,
-                                     postBodyView)
+        self.contentView.addSubviews(
+            avatarImageView,
+            authorNicknameLabel,
+            authorStatusLabel,
+            postBodyView
+        )
 
-        postBodyView.addSubviews(verticalLineView,
-                                 postDescriptionLabel,
-                                 postImageView,
-                                 separatorView,
-                                 likeButton, likesCountLabel,
-                                 commentsButton, commentsCountLabel,
-                                 savePostButton)
+        postBodyView.addSubviews(
+            verticalLineView,
+            postDescriptionLabel,
+            postImageView,
+            separatorView,
+            likeButton, likesCountLabel,
+            commentsButton, commentsCountLabel,
+            savePostButton
+        )
     }
 
     private func setupSubviewsLayout() {

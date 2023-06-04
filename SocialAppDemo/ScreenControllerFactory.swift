@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 //protocol ScreenControllerFactoryProtocol: AnyObject {
-//    func createScreen()
+//    func createModule()
 //}
 
 final class ScreenControllerFactory {

@@ -153,15 +153,17 @@ class PostScreenView: UIView {
     }
 
     private func setupSubviews() {
-        self.addSubviews(avatarImageView,
-                         authorNicknameLabel,
-                         authorStatusLabel,
-                         postImageView,
-                         postDescriptionLabel,
-                         likeButton, likesCountLabel,
-                         commentsButton, commentsCountLabel,
-                         savePostButton,
-                         separatorView)
+        self.addSubviews(
+            avatarImageView,
+            authorNicknameLabel,
+            authorStatusLabel,
+            postImageView,
+            postDescriptionLabel,
+            likeButton, likesCountLabel,
+            commentsButton, commentsCountLabel,
+            savePostButton,
+            separatorView
+        )
     }
 
     private func setupSubviewsLayout() {

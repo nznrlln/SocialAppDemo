@@ -16,5 +16,5 @@ struct PhotosScreenALConstants {
 
     static let groupFractionalWidth: CGFloat = 1.0 // from 0 to 1
     static let groupSpacing: CGFloat = 4
-
+    static let groupInset: CGFloat = 16
 }

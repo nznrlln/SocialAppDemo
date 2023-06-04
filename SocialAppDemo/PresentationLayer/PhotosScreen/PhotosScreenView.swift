@@ -23,7 +23,6 @@ class PhotosScreenView: UIView {
             let numberOfItemsInRow: CGFloat = PhotosScreenALConstants.numberOfItemsInRow
             let contentSize = environmet.container.contentSize
 
-
             let itemSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(PhotosScreenALConstants.itemFractionalWidth),
                 heightDimension: .fractionalHeight(PhotosScreenALConstants.itemFractionalHeight)
@@ -44,6 +43,13 @@ class PhotosScreenView: UIView {
                 count: Int(numberOfItemsInRow) // количество элементов в одной группе
             )
             group.interItemSpacing = .fixed(PhotosScreenALConstants.itemSpacing)
+            // отступы группы от секции
+            group.contentInsets = .init(
+                top: 0,
+                leading: PhotosScreenALConstants.groupInset,
+                bottom: 0,
+                trailing: PhotosScreenALConstants.groupInset
+            )
 
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = PhotosScreenALConstants.groupSpacing
@@ -60,8 +66,11 @@ class PhotosScreenView: UIView {
         collectionView.backgroundColor = Palette.mainBackground
 
         collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: PhotosCollectionViewCell.identifier)
+//        collectionView.delegate = self
+        collectionView.register(
+            PhotosCollectionViewCell.self,
+            forCellWithReuseIdentifier: PhotosCollectionViewCell.identifier
+        )
 
         return collectionView
     }()
@@ -123,6 +132,6 @@ extension PhotosScreenView: UICollectionViewDataSource {
 
 }
 
-extension PhotosScreenView: UICollectionViewDelegate {
-
-}
+//extension PhotosScreenView: UICollectionViewDelegate {
+//
+//}

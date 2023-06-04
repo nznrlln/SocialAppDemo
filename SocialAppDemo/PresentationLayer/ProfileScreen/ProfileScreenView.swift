@@ -187,7 +187,10 @@ class ProfileScreenView: UIView {
         collectionView.toAutoLayout()
         collectionView.showsHorizontalScrollIndicator = false
 
-        collectionView.register(MiniPhotosCollectionViewCell.self, forCellWithReuseIdentifier: MiniPhotosCollectionViewCell.identifier)
+        collectionView.register(
+            MiniPhotosCollectionViewCell.self,
+            forCellWithReuseIdentifier: MiniPhotosCollectionViewCell.identifier
+        )
         collectionView.dataSource = self
         collectionView.delegate = self
 
@@ -195,7 +198,13 @@ class ProfileScreenView: UIView {
     }()
 
     private lazy var postsTableView: PostsTableView = {
-        let tableView = PostsTableView(frame: .zero, style: .grouped, posts: nil, postsDates: nil, authors: nil)
+        let tableView = PostsTableView(
+            frame: .zero,
+            style: .grouped,
+            posts: nil,
+            postsDates: nil,
+            authors: nil
+        )
         tableView.toAutoLayout()
         tableView.backgroundColor = Palette.mainBackground
 
@@ -324,7 +333,6 @@ class ProfileScreenView: UIView {
         photosCollectionView.snp.makeConstraints { make in
             make.top.equalTo(photosLabel.snp.bottom).offset(15)
             make.leading.trailing.equalTo(contentView).inset(16)
-            make.trailing.equalTo(contentView)
             make.height.equalTo(100)
         }
 

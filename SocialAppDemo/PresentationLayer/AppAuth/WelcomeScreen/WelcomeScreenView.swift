@@ -25,11 +25,13 @@ class WelcomeScreenView: UIView {
     }()
 
     private lazy var signInButton: CustomUIButton = {
-        let button = CustomUIButton(title: "sign_in".localizable,
-                                    font: Fonts.interMed16,
-                                    titleColor: nil,
-                                    backgroundColor: Palette.darkButton,
-                                    state: .normal)
+        let button = CustomUIButton(
+            title: "sign_in".localizable,
+            font: Fonts.interMed16,
+            titleColor: nil,
+            backgroundColor: Palette.darkButton,
+            state: .normal
+        )
         button.toAutoLayout()
         button.customButtonTapAction = { [weak self] in
             self?.delegate?.signUpButtonTapAction()
@@ -74,7 +76,6 @@ class WelcomeScreenView: UIView {
             make.leading.trailing.equalToSuperview().inset(WelcomeScreenALConstants.signInButtonSideInset)
             make.height.equalTo(WelcomeScreenALConstants.signInButtonHeight)
         }
-
     }
     
 }

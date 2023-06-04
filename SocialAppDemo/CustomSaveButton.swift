@@ -18,6 +18,7 @@ class CustomSaveButton: UIButton {
             scale: .large
         )
     )
+    
     private let unsavedImage = UIImage(
         systemName: "bookmark",
         withConfiguration: UIImage.SymbolConfiguration(

@@ -21,6 +21,7 @@
 "first_sign_in_description" = "After signing in for the first time, a new user account is created";
 "next" = "NEXT";
 "agreetment_description" = "By pressing “Next” you are agreeing to all terms and conditions of our privacy policy";
+"privacy_policy" = "privacy policy";
 
 "sign_in_confirm" = "Confirm account";
 "code_sent" = "We sent the code via SMS to number";

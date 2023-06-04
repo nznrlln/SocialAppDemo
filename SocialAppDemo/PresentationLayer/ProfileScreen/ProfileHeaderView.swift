@@ -65,7 +65,10 @@ class ProfileHeaderView: UIView {
     }
 
     func setupView(model: UserModel?) {
-        guard let model = model else { assertionFailure("no user in profile header"); return }
+        guard let model = model else {
+            assertionFailure("no user in profile header")
+            return
+        }
 
         DispatchQueue.main.async { [weak self] in
             self?.avatarImageView.image = model.avatar

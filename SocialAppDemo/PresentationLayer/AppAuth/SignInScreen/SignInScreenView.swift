@@ -82,11 +82,13 @@ class SignInScreenView: UIView {
     }()
 
     private lazy var nextButton: CustomUIButton = {
-        let button = CustomUIButton(title: "next".localizable,
-                                    font: Fonts.interMed16,
-                                    titleColor: nil,
-                                    backgroundColor: Palette.darkButton,
-                                    state: .normal)
+        let button = CustomUIButton(
+            title: "next".localizable,
+            font: Fonts.interMed16,
+            titleColor: nil,
+            backgroundColor: Palette.darkButton,
+            state: .normal
+        )
         button.toAutoLayout()
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
@@ -101,17 +103,31 @@ class SignInScreenView: UIView {
         return button
     }()
 
-    private let agreetmentLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.font = Fonts.interMed12
-        label.textColor = Palette.secondaryText
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.text = "agreetment_description".localizable
+    private let agreetmentLabel: UITextView = {
+        let textView = UITextView(frame: .zero)
+        textView.toAutoLayout()
+        textView.isUserInteractionEnabled = true
+        textView.isSelectable = true
+        textView.isEditable = false
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
-        return label
+        let path = "https://www.termsfeed.com/public/uploads/2019/04/privacy-policy-template.pdf"
+        let text = "agreetment_description".localizable
+        let linkWord = "privacy_policy".localizable
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        let attributes = [
+            NSAttributedString.Key.font: Fonts.interMed12,
+            NSAttributedString.Key.foregroundColor: Palette.secondaryText,
+            NSAttributedString.Key.paragraphStyle: paragraph
+        ]
+        let attrString = NSAttributedString.makeHyperlink(for: path, in: text, as: linkWord, with: attributes)
+        textView.attributedText = attrString
+
+        return textView
     }()
+
+    private lazy var viewTapGR = UITapGestureRecognizer(target: self, action: #selector(hideKeybord))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -128,20 +144,22 @@ class SignInScreenView: UIView {
 
         setupSubviews()
         setupSubviewsLayout()
+        addGestures()
     }
 
     private func setupSubviews() {
-        self.addSubviews(signInLabel,
-                         enterNumberLabel,
-                         descriptionLabel,
-                         signInTextField,
-                         firstSignInLabel,
-                         nextButton,
-                         agreetmentLabel)
+        self.addSubviews(
+            signInLabel,
+            enterNumberLabel,
+            descriptionLabel,
+            signInTextField,
+            firstSignInLabel,
+            nextButton,
+            agreetmentLabel
+        )
     }
 
     private func setupSubviewsLayout() {
-
         signInLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(SignInScreenALConstants.signInLabelTopInset)
             make.centerX.equalToSuperview()
@@ -177,9 +195,17 @@ class SignInScreenView: UIView {
         agreetmentLabel.snp.makeConstraints { make in
             make.top.equalTo(nextButton.snp.bottom).offset(SignInScreenALConstants.agreetmentLabelTopInset)
             make.leading.trailing.equalToSuperview().inset(SignInScreenALConstants.agreetmentLabelSideInset)
+            make.height.equalTo(SignInScreenALConstants.agreetmentLabelHeight)
         }
     }
 
+    private func addGestures() {
+        self.addGestureRecognizer(viewTapGR)
+    }
+
+    @objc private func hideKeybord() {
+        self.endEditing(true)
+    }
 }
 
 // MARK: - UITextFieldDelegate

@@ -77,11 +77,13 @@ class ConfirmSignInScreenView: UIView {
     }()
     
     private lazy var signInButton: CustomUIButton = {
-        let button = CustomUIButton(title: "sign_in".localizable,
-                                    font: Fonts.interMed16,
-                                    titleColor: nil,
-                                    backgroundColor: Palette.darkButton,
-                                    state: .normal)
+        let button = CustomUIButton(
+            title: "sign_in".localizable,
+            font: Fonts.interMed16,
+            titleColor: nil,
+            backgroundColor: Palette.darkButton,
+            state: .normal
+        )
         button.toAutoLayout()
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
@@ -103,6 +105,8 @@ class ConfirmSignInScreenView: UIView {
         
         return imageView
     }()
+
+    private lazy var viewTapGR = UITapGestureRecognizer(target: self, action: #selector(hideKeybord))
     
     init(frame: CGRect, number: String) {
         super.init(frame: frame)
@@ -120,16 +124,19 @@ class ConfirmSignInScreenView: UIView {
         numberLabel.text = number
         setupSubviews()
         setupSubviewsLayout()
+        addGestures()
     }
     
     private func setupSubviews() {
-        self.addSubviews(confirmSignInLabel,
-                         descriptionLabel,
-                         numberLabel,
-                         enterCodeLabel,
-                         codeTextField,
-                         signInButton,
-                         checkImageView)
+        self.addSubviews(
+            confirmSignInLabel,
+            descriptionLabel,
+            numberLabel,
+            enterCodeLabel,
+            codeTextField,
+            signInButton,
+            checkImageView
+        )
     }
     
     private func setupSubviewsLayout() {
@@ -173,6 +180,10 @@ class ConfirmSignInScreenView: UIView {
             
         }
     }
+
+    private func addGestures() {
+        self.addGestureRecognizer(viewTapGR)
+    }
     
     @objc private func textFieldChanged(_ textField: UITextField) {
         if let num = Int(textField.text!) {
@@ -180,6 +191,10 @@ class ConfirmSignInScreenView: UIView {
         } else {
             textField.text = ""
         }
+    }
+
+    @objc private func hideKeybord() {
+        self.endEditing(true)
     }
 }
 

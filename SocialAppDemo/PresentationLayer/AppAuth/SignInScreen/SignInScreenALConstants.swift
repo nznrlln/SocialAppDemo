@@ -28,4 +28,6 @@ struct SignInScreenALConstants {
 
     static let agreetmentLabelTopInset: CGFloat = 30
     static let agreetmentLabelSideInset: CGFloat = 58
+    static let agreetmentLabelHeight: CGFloat = 45
+
 }

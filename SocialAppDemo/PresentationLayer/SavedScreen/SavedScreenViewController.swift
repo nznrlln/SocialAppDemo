@@ -17,7 +17,12 @@ class SavedScreenViewController: UIViewController {
         let request = SavedPostCoreData.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "postCreationDate", ascending: false)] //
 
-        let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataManager.shared.mainContext, sectionNameKeyPath: "postCreationDate", cacheName: nil)
+        let frc = NSFetchedResultsController(
+            fetchRequest: request,
+            managedObjectContext: CoreDataManager.shared.mainContext,
+            sectionNameKeyPath: "postCreationDate",
+            cacheName: nil
+        )
         return frc
     }()
 
@@ -69,7 +74,10 @@ class SavedScreenViewController: UIViewController {
 
         mainView.savedPostsTableView.dataSource = self
         mainView.savedPostsTableView.delegate = self
-        mainView.savedPostsTableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.identifier)
+        mainView.savedPostsTableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: UITableViewCell.identifier
+        )
     }
 
     private func setupSubviewsLayout() {
