@@ -22,7 +22,7 @@ class MiniPhotosCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        cellInitialSetting()
+        cellInitialSettings()
     }
 
     required init?(coder: NSCoder) {
@@ -39,7 +39,7 @@ class MiniPhotosCollectionViewCell: UICollectionViewCell {
         photoImageView.image = nil
     }
 
-    private func cellInitialSetting() {
+    private func cellInitialSettings() {
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 0.5
         self.layer.borderColor = Palette.mainAccent?.cgColor

@@ -106,6 +106,10 @@ extension ProfileScreenViewController: ProfileScreenViewDelegate {
         model.postsDates
     }
 
+    func didTapDetails() {
+      //  
+    }
+
     func didSelectPhoto() {
         let model = PhotosScreenModel()
         let mainView = PhotosScreenView()

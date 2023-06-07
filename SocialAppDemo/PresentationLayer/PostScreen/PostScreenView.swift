@@ -12,9 +12,7 @@ protocol PostScreenDelegate {
     var author: UserModel { get }
 
     func didPressUser()
-
     func saveButtonTapAction()
-
 }
 
 class PostScreenView: UIView {

@@ -71,7 +71,6 @@ extension PhotosScreenViewController: PhotosScreenModelDelegate {
     func modelUpdatedPhotos() {
         mainView.photosCollectionView.reloadData()
     }
-
 }
 
 
@@ -81,6 +80,4 @@ extension PhotosScreenViewController: PhotosScreenViewDelegate {
     var photos: [UIImage] {
         model.userPhotos
     }
-
-
 }

@@ -10,6 +10,8 @@ import SnapKit
 
 class ProfileHeaderView: UIView {
 
+    var detailsButtonTapAction: (() -> Void)?
+
     private let avatarImageView: UIImageView = {
         let avatar = UIImageView()
         avatar.toAutoLayout()
@@ -46,12 +48,105 @@ class ProfileHeaderView: UIView {
         button.toAutoLayout()
         button.setImage(UIImage(systemName:"info.circle.fill"), for: .normal)
         button.tintColor = Palette.mainAccent
-        button.setTitle("Подробная информация", for: .normal)
+        button.setTitle("detailed_information".localizable, for: .normal)
         button.setTitleColor(Palette.blackAndWhite, for: .normal)
         button.titleLabel?.font = Fonts.interMed14
         button.contentHorizontalAlignment = .leading
+        button.addTarget(self, action: #selector(detailsButtonTap), for: .touchUpInside)
 
         return button
+    }()
+
+    private let postsCountLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.numberOfLines = 2
+        label.font = Fonts.interReg14
+        label.text = "10"
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    private let postsLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.numberOfLines = 2
+        label.font = Fonts.interReg14
+        label.text = "common_count_of_posts".localizedPlural(arg: 10)
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    private let followingsCountLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.numberOfLines = 2
+        label.font = Fonts.interReg14
+        label.text = "333"
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    private let followingsLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.numberOfLines = 2
+        label.font = Fonts.interReg14
+        label.text = "common_count_of_followings".localizedPlural(arg: 333)
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    private let followersCountLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.numberOfLines = 2
+        label.font = Fonts.interReg14
+        label.text = "999"
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    private let followersLabel: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.numberOfLines = 2
+        label.font = Fonts.interReg14
+        label.text = "common_count_of_followers".localizedPlural(arg: 999)
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    private let countsStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.toAutoLayout()
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+
+        return stack
+    }()
+
+    private let labelsStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.toAutoLayout()
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+
+        return stack
+    }()
+
+    private let separatorView: UIView = {
+        let view = UIView()
+        view.toAutoLayout()
+        view.backgroundColor = Palette.secondaryText
+
+        return view
     }()
 
     override init(frame: CGRect) {
@@ -74,6 +169,15 @@ class ProfileHeaderView: UIView {
             self?.avatarImageView.image = model.avatar
             self?.userNameLabel.text = model.fullname
             self?.userStatusLabel.text = model.status
+
+            self?.postsCountLabel.text = String(model.postsCount ?? 0)
+            self?.postsLabel.text = "common_count_of_posts".localizedPlural(arg: model.postsCount ?? 0)
+
+            self?.followingsCountLabel.text = String(model.followingsCount ?? 0)
+            self?.followingsLabel.text = "common_count_of_followings".localizedPlural(arg: model.followingsCount ?? 0)
+
+            self?.followersCountLabel.text = String(model.followersCount ?? 0)
+            self?.followersLabel.text = "common_count_of_followers".localizedPlural(arg: model.followersCount ?? 0)
         }
 
     }
@@ -86,15 +190,28 @@ class ProfileHeaderView: UIView {
     }
 
     private func setupSubviews() {
-        self.addSubviews(avatarImageView,
-                         userNameLabel,
-                         userStatusLabel,
-                         detailsButton)
+        self.addSubviews(
+            avatarImageView,
+            userNameLabel,
+            userStatusLabel,
+            detailsButton,
+            countsStackView,
+            labelsStackView,
+            separatorView
+        )
+
+        countsStackView.addArrangedSubview(postsCountLabel)
+        countsStackView.addArrangedSubview(followingsCountLabel)
+        countsStackView.addArrangedSubview(followersCountLabel)
+
+        labelsStackView.addArrangedSubview(postsLabel)
+        labelsStackView.addArrangedSubview(followingsLabel)
+        labelsStackView.addArrangedSubview(followersLabel)
     }
 
     private func setupSubviewsLayout() {
         avatarImageView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(15)
+            make.top.equalToSuperview().inset(15)
             make.leading.equalToSuperview().inset(34)
             make.height.width.equalTo(80)
         }
@@ -116,6 +233,27 @@ class ProfileHeaderView: UIView {
             make.leading.equalTo(avatarImageView.snp.trailing).offset(15)
             make.trailing.equalToSuperview().inset(34)
         }
+
+        countsStackView.snp.makeConstraints { make in
+            make.top.equalTo(avatarImageView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+
+        labelsStackView.snp.makeConstraints { make in
+            make.top.equalTo(countsStackView.snp.bottom)
+            make.leading.trailing.equalTo(countsStackView)
+        }
+
+        separatorView.snp.makeConstraints { make in
+            make.top.equalTo(labelsStackView.snp.bottom).offset(15)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(0.5)
+        }
+    }
+
+    @objc private func detailsButtonTap() {
+        detailsButtonTapAction?()
     }
 
 }

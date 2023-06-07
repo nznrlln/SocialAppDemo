@@ -131,7 +131,3 @@ extension PhotosScreenView: UICollectionViewDataSource {
     }
 
 }
-
-//extension PhotosScreenView: UICollectionViewDelegate {
-//
-//}

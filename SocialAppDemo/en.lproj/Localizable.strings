@@ -30,3 +30,7 @@
 "photos" = "Photos";
 
 "author" = "Author: ";
+
+// MARK: - ProfileScreen
+
+"detailed_information" = "Details";

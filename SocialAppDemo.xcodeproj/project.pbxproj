@@ -45,6 +45,7 @@
 		FD5836F82A1BD57C009A992B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836F72A1BD57C009A992B /* PhotosCollectionViewCell.swift */; };
 		FD5836FA2A2A777E009A992B /* NSAttributedString+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836F92A2A777E009A992B /* NSAttributedString+Extention.swift */; };
 		FD5837002A2C6B1B009A992B /* StoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836FF2A2C6B1B009A992B /* StoryScreenViewController.swift */; };
+		FD5837062A2F1249009A992B /* CircularAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5837052A2F1249009A992B /* CircularAnimator.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -84,7 +85,7 @@
 		FD5D289329D9FC9200553FBD /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */; };
 		FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289429D9FCA300553FBD /* MainScreenView.swift */; };
 		FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */; };
-		FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */; };
+		FD5D289929DB531000553FBD /* UserStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289829DB531000553FBD /* UserStoryCollectionViewCell.swift */; };
 		FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		FD5836F72A1BD57C009A992B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD5836F92A2A777E009A992B /* NSAttributedString+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extention.swift"; path = "../../../../../Documents/NSAttributedString+Extention.swift"; sourceTree = "<group>"; };
 		FD5836FF2A2C6B1B009A992B /* StoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScreenViewController.swift; sourceTree = "<group>"; };
+		FD5837052A2F1249009A992B /* CircularAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularAnimator.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -184,7 +186,7 @@
 		FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		FD5D289429D9FCA300553FBD /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenALConstants.swift; sourceTree = "<group>"; };
-		FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD5D289829DB531000553FBD /* UserStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,8 +262,6 @@
 				FD5836FB2A2C6614009A992B /* PresentationLayer */,
 				FD5836FC2A2C662C009A992B /* ServiceLayer */,
 				FD5836FD2A2C663E009A992B /* CoreLayer */,
-				FD5D281A29BDD8E900553FBD /* CoreData */,
-				FD5836DA29FBAF19009A992B /* DataModels */,
 				FD5836D029F5BF86009A992B /* Firebase */,
 				FD5836AF29E2C12C009A992B /* Network */,
 				FD5D284729C786F400553FBD /* Helpers */,
@@ -347,7 +347,7 @@
 		FD5836FB2A2C6614009A992B /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				FD5837012A2CA47C009A992B /* AppAuth */,
+				FD5837012A2CA47C009A992B /* AuthScreens */,
 				FD5D281B29BE26E800553FBD /* MainScreen */,
 				FD5D281C29BE270400553FBD /* ProfileScreen */,
 				FD5D281D29BE271400553FBD /* SavedScreen */,
@@ -369,6 +369,8 @@
 		FD5836FD2A2C663E009A992B /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836DA29FBAF19009A992B /* DataModels */,
+				FD5D281A29BDD8E900553FBD /* CoreData */,
 			);
 			path = CoreLayer;
 			sourceTree = "<group>";
@@ -377,18 +379,19 @@
 			isa = PBXGroup;
 			children = (
 				FD5836FF2A2C6B1B009A992B /* StoryScreenViewController.swift */,
+				FD5837052A2F1249009A992B /* CircularAnimator.swift */,
 			);
 			path = StoryScreen;
 			sourceTree = "<group>";
 		};
-		FD5837012A2CA47C009A992B /* AppAuth */ = {
+		FD5837012A2CA47C009A992B /* AuthScreens */ = {
 			isa = PBXGroup;
 			children = (
 				FD5D282429C188F000553FBD /* WelcomeScreen */,
 				FD5D282529C1892700553FBD /* SignInScreen */,
 				FD5D285829CEE6CB00553FBD /* ConfirmSignInScreen */,
 			);
-			path = AppAuth;
+			path = AuthScreens;
 			sourceTree = "<group>";
 		};
 		FD5D281A29BDD8E900553FBD /* CoreData */ = {
@@ -407,7 +410,7 @@
 				FD5836D829FAFD2F009A992B /* MainScreenModel.swift */,
 				FD5D289229D9FC9200553FBD /* MainScreenViewController.swift */,
 				FD5D289429D9FCA300553FBD /* MainScreenView.swift */,
-				FD5D289829DB531000553FBD /* UserCollectionViewCell.swift */,
+				FD5D289829DB531000553FBD /* UserStoryCollectionViewCell.swift */,
 				FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */,
 			);
 			path = MainScreen;
@@ -685,6 +688,7 @@
 				FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */,
 				FD5836E72A077F2B009A992B /* PostsTableViewALConstants.swift in Sources */,
 				FD5836D929FAFD2F009A992B /* MainScreenModel.swift in Sources */,
+				FD5837062A2F1249009A992B /* CircularAnimator.swift in Sources */,
 				FD5836E32A016EF0009A992B /* DateHelper.swift in Sources */,
 				FD5836E52A02D8C5009A992B /* PostScreenModel.swift in Sources */,
 				FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */,
@@ -703,7 +707,7 @@
 				FD5836F62A1A22F9009A992B /* PhotosScreenALConstants.swift in Sources */,
 				FD5836CF29F5BF0C009A992B /* ProfileScreenModel.swift in Sources */,
 				FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */,
-				FD5D289929DB531000553FBD /* UserCollectionViewCell.swift in Sources */,
+				FD5D289929DB531000553FBD /* UserStoryCollectionViewCell.swift in Sources */,
 				FD5836FA2A2A777E009A992B /* NSAttributedString+Extention.swift in Sources */,
 				FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */,
 				FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */,

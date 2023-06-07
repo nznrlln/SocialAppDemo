@@ -30,3 +30,7 @@
 "photos" = "Фотографии";
 
 "author" = "Автор: ";
+
+// MARK: - ProfileScreen
+
+"detailed_information" = "Подробная информация";

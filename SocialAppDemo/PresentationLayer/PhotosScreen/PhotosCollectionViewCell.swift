@@ -22,7 +22,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        cellInitialSetting()
+        cellInitialSettings()
     }
 
     required init?(coder: NSCoder) {
@@ -40,7 +40,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         photoImageView.image = nil
     }
 
-    private func cellInitialSetting() {
+    private func cellInitialSettings() {
         self.layer.cornerRadius = 8
         self.clipsToBounds = true
 

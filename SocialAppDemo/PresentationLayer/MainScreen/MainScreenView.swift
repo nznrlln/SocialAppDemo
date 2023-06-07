@@ -12,7 +12,7 @@ protocol MainScreenViewDelegate {
     var posts: [String?: [PostModel]] { get }
     var postsDates: [String] { get }
 
-    func didSelectUser(userUID: String)
+    func didSelectUser(user: UserModel, cell: UserStoryCollectionViewCell, xOffset: CGFloat)
     func didSelectPost(post: PostModel, author: UserModel)
 
     func didSaveTap(post: PostModel, author: UserModel)
@@ -22,9 +22,14 @@ class MainScreenView: UIView {
 
     var delegate: MainScreenViewDelegate?
 
-    private let scrollView: UIScrollView = {
+    private var cellXOffset: CGFloat?
+
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.toAutoLayout()
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.delegate = self
+        scrollView.bounces = true
 
         return scrollView
     }()
@@ -45,26 +50,14 @@ class MainScreenView: UIView {
         collectionView.showsHorizontalScrollIndicator = false
 
         collectionView.register(
-            UserCollectionViewCell.self,
-            forCellWithReuseIdentifier: UserCollectionViewCell.identifier
+            UserStoryCollectionViewCell.self,
+            forCellWithReuseIdentifier: UserStoryCollectionViewCell.identifier
         )
         collectionView.dataSource = self
         collectionView.delegate = self
 
         return collectionView
     }()
-
-//    private lazy var postsTableView: UITableView = {
-//        let tableView = UITableView(frame: .zero, style: .plain)
-//        tableView.toAutoLayout()
-////        tableView.backgroundColor = Palette.mainAccent
-//
-//        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.identifier)
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//
-//        return tableView
-//    }(
 
     private lazy var postsTableView: PostsTableView = {
         let tableView = PostsTableView(
@@ -76,12 +69,15 @@ class MainScreenView: UIView {
         )
         tableView.toAutoLayout()
         tableView.backgroundColor = Palette.mainBackground
+        tableView.bounces = false
+        tableView.isScrollEnabled = false
+        tableView.showsVerticalScrollIndicator = false
 
         tableView.tvDelegate = self
 
         return tableView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -133,18 +129,42 @@ class MainScreenView: UIView {
         
         usersCollectionView.snp.makeConstraints { make in
             make.top.equalTo(contentView).inset(MainScreenALConstants.collectionTopInset)
-            make.leading.trailing.equalTo(contentView).inset(16)
-            make.height.equalTo(60)
+            make.leading.trailing.equalTo(contentView).inset(MainScreenALConstants.collectionSideInset)
+            make.height.equalTo(MainScreenALConstants.collectionHeight)
         }
 
         postsTableView.snp.makeConstraints { make in
             make.top.equalTo(usersCollectionView.snp.bottom).offset(MainScreenALConstants.tableViewTopInset)
             make.leading.trailing.equalTo(contentView)
             make.bottom.equalTo(contentView)
-            make.height.equalTo(700)
+            make.height.equalTo(MainScreenALConstants.tableViewHeight)
         }
     }
 
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension MainScreenView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        // если пролистываем скроллвью
+        if scrollView == self.scrollView {
+            // когда точка контента скроллвью сдвинется от начальной больше, чем на 50 - у таблицы вкл прокуртка
+                postsTableView.isScrollEnabled = (self.scrollView.contentOffset.y > 60)
+            }
+
+        // если пролистываем таблицу
+        if scrollView == self.postsTableView {
+            // когда точка контента таблицы совпадет с началом таблицы - у таблицы откл прокрутка
+            self.postsTableView.isScrollEnabled = (postsTableView.contentOffset.y > 0)
+        }
+
+        if scrollView == self.usersCollectionView {
+            self.cellXOffset = scrollView.contentOffset.x
+        }
+
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -157,9 +177,9 @@ extension MainScreenView: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: UserCollectionViewCell.identifier,
+            withReuseIdentifier: UserStoryCollectionViewCell.identifier,
             for: indexPath
-        ) as! UserCollectionViewCell
+        ) as! UserStoryCollectionViewCell
         cell.setupCellWith(model: delegate?.users[indexPath.item])
 
         return cell
@@ -181,81 +201,18 @@ extension MainScreenView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let user = delegate?.users[indexPath.item] else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? UserStoryCollectionViewCell else { return }
 
-        delegate?.didSelectUser(userUID: user.userUID)
+        delegate?.didSelectUser(
+            user: user,
+            cell: cell,
+            xOffset: self.cellXOffset ?? 0
+        )
     }
 
 
 }
 
-//// MARK: - UITableViewDataSource
-////
-//extension MainScreenView: UITableViewDataSource {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return delegate?.posts.count ?? 2
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return delegate?.posts[section].values.count ?? 3
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier) as! PostTableViewCell
-//        cell.setupCellWith(model: delegate?.posts[indexPath.section].values[indexPath.row])
-//
-//        return cell
-//    }
-//
-//}
-
-//// MARK: - UITableViewDelegate
-//
-//extension MainScreenView: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 380
-//    }
-//
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 380
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footer = UIView()
-//        return footer
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        0
-//    }
-
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let postVC = PostScreenViewController()
-//
-//    }
-//}
-
-
-//// MARK: - PostsTableViewDataSource
-//
-//extension MainScreenView: PostsTableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 380
-//    }
-//
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 380
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footer = UIView()
-//        return footer
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        0
-//    }
-//}
 
 // MARK: - PostsTableViewDelegate
 

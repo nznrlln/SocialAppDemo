@@ -25,10 +25,7 @@ class PhotosScreenModel {
     func getModelData() {
         FirebaseStorageManager.shared.getAllImages { [weak self] images in
             guard let images = images else { assertionFailure(); return }
-
             self?.userPhotos = images
         }
-
-
     }
 }

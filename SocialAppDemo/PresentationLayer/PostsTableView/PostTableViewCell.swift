@@ -62,7 +62,6 @@ class PostTableViewCell: UITableViewCell {
         label.font = Fonts.interReg14
         label.textAlignment = .left
         label.numberOfLines = 4
-//        label.text = "Обязательно вступите в группу курса в Телеграм группа PRO, вся оперативная информация там, но на первой неделе мы будем присылать рассылку о новых уроках"
 
         return label
     }()
@@ -129,7 +128,7 @@ class PostTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        cellInitialSetting()
+        cellInitialSettings()
     }
 
     required init?(coder: NSCoder) {
@@ -166,9 +165,7 @@ class PostTableViewCell: UITableViewCell {
     }
 
 
-    private func cellInitialSetting() {
-//        self.backgroundColor = Palette.darkButton
-
+    private func cellInitialSettings() {
         setupSubviews()
         setupSubviewsLayout()
     }

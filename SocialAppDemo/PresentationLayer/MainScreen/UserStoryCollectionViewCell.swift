@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class UserCollectionViewCell: UICollectionViewCell {
+class UserStoryCollectionViewCell: UICollectionViewCell {
 
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
@@ -22,7 +22,7 @@ class UserCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        cellInitialSetting()
+        cellInitialSettings()
     }
 
     required init?(coder: NSCoder) {
@@ -40,8 +40,7 @@ class UserCollectionViewCell: UICollectionViewCell {
         avatarImageView.image = nil
     }
 
-    private func cellInitialSetting() {
-//        self.contentView.backgroundColor = .blue
+    private func cellInitialSettings() {
         self.layer.cornerRadius = 30
         self.layer.borderWidth = 0.5
         self.layer.borderColor = Palette.mainAccent?.cgColor

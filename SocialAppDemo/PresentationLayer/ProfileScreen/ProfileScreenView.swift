@@ -15,6 +15,7 @@ protocol ProfileScreenViewDelegate {
     var posts: [String?: [PostModel]] { get }
     var postsDates: [String] { get }
 
+    func didTapDetails()
     func didSelectPhoto()
     func didSelectPost(post: PostModel, author: UserModel)
     func didSaveTap(post: PostModel, author: UserModel)
@@ -25,9 +26,11 @@ class ProfileScreenView: UIView {
 
     var delegate: ProfileScreenViewDelegate?
 
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.toAutoLayout()
+        scrollView.delegate = self
+        scrollView.showsVerticalScrollIndicator = false
 
         return scrollView
     }()
@@ -46,119 +49,6 @@ class ProfileScreenView: UIView {
         return view
     }()
 
-    private let postsCountLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.numberOfLines = 2
-        label.font = Fonts.interReg14
-        label.text = "10"
-        label.textAlignment = .center
-
-        return label
-    }()
-
-    private let postsLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.numberOfLines = 2
-        label.font = Fonts.interReg14
-        label.text = "common_count_of_posts".localizedPlural(arg: 10)
-        label.textAlignment = .center
-
-        return label
-    }()
-
-    private let followingsCountLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.numberOfLines = 2
-        label.font = Fonts.interReg14
-        label.text = "333"
-        label.textAlignment = .center
-
-        return label
-    }()
-
-    private let followingsLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.numberOfLines = 2
-        label.font = Fonts.interReg14
-        label.text = "common_count_of_followings".localizedPlural(arg: 333)
-        label.textAlignment = .center
-
-        return label
-    }()
-
-    private let followersCountLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.numberOfLines = 2
-        label.font = Fonts.interReg14
-        label.text = "999"
-        label.textAlignment = .center
-
-        return label
-    }()
-
-    private let followersLabel: UILabel = {
-        let label = UILabel()
-        label.toAutoLayout()
-        label.numberOfLines = 2
-        label.font = Fonts.interReg14
-        label.text = "common_count_of_followers".localizedPlural(arg: 999)
-        label.textAlignment = .center
-
-        return label
-    }()
-
-    private let countsStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.toAutoLayout()
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
-
-        return stack
-    }()
-
-    private let labelsStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.toAutoLayout()
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
-
-        return stack
-    }()
-
-    private let separatorView: UIView = {
-        let view = UIView()
-        view.toAutoLayout()
-        view.backgroundColor = Palette.secondaryText
-
-        return view
-    }()
-
-//    private let addPostButton: UIButton = {
-//        let button = UIButton()
-//        button.toAutoLayout()
-//
-//        return button
-//    }()
-//
-//    private let addStoriesButton: UIButton = {
-//        let button = UIButton()
-//        button.toAutoLayout()
-//
-//        return button
-//    }()
-//
-//    private let addPhotosButton: UIButton = {
-//        let button = UIButton()
-//        button.toAutoLayout()
-//
-//        return button
-//    }()
-
     private let photosLabel: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
@@ -169,7 +59,7 @@ class ProfileScreenView: UIView {
         return label
     }()
 
-    private let showPhotosButton: UIButton = {
+    private lazy var showPhotosButton: UIButton = {
         let button = UIButton()
         button.toAutoLayout()
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
@@ -207,6 +97,9 @@ class ProfileScreenView: UIView {
         )
         tableView.toAutoLayout()
         tableView.backgroundColor = Palette.mainBackground
+        tableView.bounces = false
+        tableView.isScrollEnabled = false
+        tableView.showsVerticalScrollIndicator = false
 
         tableView.tvDelegate = self
         
@@ -225,24 +118,15 @@ class ProfileScreenView: UIView {
     }
 
     func updateProfile() {
-
         DispatchQueue.main.async { [weak self] in
             self?.profileHeaderView.setupView(model: self?.delegate?.user)
-
-            self?.postsCountLabel.text = String(self?.delegate?.user.postsCount ?? 0)
-            self?.postsLabel.text = "common_count_of_posts".localizedPlural(arg: self?.delegate?.user.postsCount ?? 0)
-
-            self?.followingsCountLabel.text = String(self?.delegate?.user.followingsCount ?? 0)
-            self?.followingsLabel.text = "common_count_of_followings".localizedPlural(arg: self?.delegate?.user.followingsCount ?? 0)
-
-            self?.followersCountLabel.text = String(self?.delegate?.user.followersCount ?? 0)
-            self?.followersLabel.text = "common_count_of_followers".localizedPlural(arg: self?.delegate?.user.followersCount ?? 0)
         }
 
     }
 
     func updatePhotos() {
         DispatchQueue.main.async { [weak self] in
+
             self?.photosCollectionView.reloadData()
         }
     }
@@ -272,21 +156,10 @@ class ProfileScreenView: UIView {
 
         contentView.addSubviews(
             profileHeaderView,
-            countsStackView,
-            labelsStackView,
-            separatorView,
             photosLabel, showPhotosButton,
             photosCollectionView,
             postsTableView
         )
-
-        countsStackView.addArrangedSubview(postsCountLabel)
-        countsStackView.addArrangedSubview(followingsCountLabel)
-        countsStackView.addArrangedSubview(followersCountLabel)
-
-        labelsStackView.addArrangedSubview(postsLabel)
-        labelsStackView.addArrangedSubview(followingsLabel)
-        labelsStackView.addArrangedSubview(followersLabel)
     }
 
     private func setupSubviewsLayout() {
@@ -303,24 +176,8 @@ class ProfileScreenView: UIView {
             make.top.leading.trailing.equalTo(contentView)
         }
 
-        countsStackView.snp.makeConstraints { make in
-            make.top.equalTo(profileHeaderView.snp.bottom).offset(20)
-            make.leading.trailing.equalTo(contentView).inset(16)
-        }
-
-        labelsStackView.snp.makeConstraints { make in
-            make.top.equalTo(countsStackView.snp.bottom)
-            make.leading.trailing.equalTo(countsStackView)
-        }
-
-        separatorView.snp.makeConstraints { make in
-            make.top.equalTo(labelsStackView.snp.bottom).offset(15)
-            make.leading.trailing.equalTo(contentView).inset(16)
-            make.height.equalTo(0.5)
-        }
-
         photosLabel.snp.makeConstraints { make in
-            make.top.equalTo(separatorView.snp.bottom).offset(22)
+            make.top.equalTo(profileHeaderView.snp.bottom).offset(22)
             make.leading.equalTo(contentView).inset(16)
         }
 
@@ -331,9 +188,9 @@ class ProfileScreenView: UIView {
         }
 
         photosCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(photosLabel.snp.bottom).offset(15)
+            make.top.equalTo(photosLabel.snp.bottom).offset(10)
             make.leading.trailing.equalTo(contentView).inset(16)
-            make.height.equalTo(100)
+            make.height.equalTo(80)
         }
 
         postsTableView.snp.makeConstraints { make in
@@ -346,6 +203,26 @@ class ProfileScreenView: UIView {
 
     @objc private func photosButtonTap() {
         self.delegate?.didSelectPhoto()
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension ProfileScreenView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        // если пролистываем скроллвью
+        if scrollView == self.scrollView {
+            // когда точка контента скроллвью сдвинется от начальной больше, чем на 200 - у таблицы вкл прокуртка
+                postsTableView.isScrollEnabled = (self.scrollView.contentOffset.y >= 200)
+            }
+
+        // если пролистываем таблицу
+        if scrollView == self.postsTableView {
+            // когда точка контента таблицы совпадет с началом таблицы - у таблицы откл прокрутка
+            self.postsTableView.isScrollEnabled = (postsTableView.contentOffset.y > 0)
+        }
+
     }
 }
 
@@ -371,6 +248,10 @@ extension ProfileScreenView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ProfileScreenView: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 72, height: 66)
