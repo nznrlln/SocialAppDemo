@@ -51,7 +51,10 @@ class MainScreenModel {
             guard let postColletion = postColletion else { return }
             guard let dates = postDates else { return }
 
-            self?.postsDates = dates
+            let sortedDates = dates.sorted {
+                $0 > $1
+            }
+            self?.postsDates = sortedDates
 
             let dict = Dictionary(grouping: postColletion) { $0.creationDate }
             self?.postsCollection = dict

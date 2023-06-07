@@ -92,7 +92,10 @@ class ProfileScreenModel {
             guard let postColletion = postColletion else { assertionFailure(); return }
             guard let dates = postDates else { assertionFailure(); return }
 
-            self?.postsDates = dates
+            let sortedDates = dates.sorted {
+                $0 > $1
+            }
+            self?.postsDates = sortedDates
 
             let dict = Dictionary(grouping: postColletion) { $0.creationDate }
             self?.userPosts = dict
