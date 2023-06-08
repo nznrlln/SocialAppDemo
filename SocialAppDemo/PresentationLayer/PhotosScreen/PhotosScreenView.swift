@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol PhotosScreenViewDelegate {
+protocol PhotosScreenViewDelegate: NSObject {
     var photos: [UIImage] { get }
 }
 
 class PhotosScreenView: UIView {
 
-    var delegate: PhotosScreenViewDelegate?
+    weak var delegate: PhotosScreenViewDelegate?
 
     private lazy var collectionLayout: UICollectionViewLayout = {
         UICollectionViewCompositionalLayout { (section, environmet) -> NSCollectionLayoutSection? in

@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol PostsTableViewDelegate {
+protocol PostsTableViewDelegate: NSObject {
     func didSaveTap(post: PostModel, author: UserModel)
     func didSelectPost(post: PostModel, author: UserModel)
 }
 
 class PostsTableView: UITableView {
 
-    var tvDelegate: PostsTableViewDelegate?
+    weak var tvDelegate: PostsTableViewDelegate?
 
     var posts: [String?: [PostModel]]
     var postsDates: [String]

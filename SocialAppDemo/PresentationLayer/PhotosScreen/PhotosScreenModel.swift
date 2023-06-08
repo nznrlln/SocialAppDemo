@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-protocol PhotosScreenModelDelegate {
+protocol PhotosScreenModelDelegate: NSObject {
     func modelUpdatedPhotos()
 }
 
 class PhotosScreenModel {
 
-    var delegate: PhotosScreenModelDelegate?
+    weak var delegate: PhotosScreenModelDelegate?
     
     var userPhotos = [UIImage]() {
         didSet {

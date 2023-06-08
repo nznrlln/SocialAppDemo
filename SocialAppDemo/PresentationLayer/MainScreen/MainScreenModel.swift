@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol MainScreenModelDelegate {
+protocol MainScreenModelDelegate: NSObject {
     func modelUpdatedUsers()
     func modelUpdatedPosts()
 }
 
 class MainScreenModel {
 
-    var delegate: MainScreenModelDelegate?
+    weak var delegate: MainScreenModelDelegate?
 
     var usersCollection = [UserModel]() {
         didSet {

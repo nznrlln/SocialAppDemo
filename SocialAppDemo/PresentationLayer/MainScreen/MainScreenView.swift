@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol MainScreenViewDelegate {
+protocol MainScreenViewDelegate: NSObject {
     var users: [UserModel] { get }
     var posts: [String?: [PostModel]] { get }
     var postsDates: [String] { get }
@@ -20,7 +20,7 @@ protocol MainScreenViewDelegate {
 
 class MainScreenView: UIView {
 
-    var delegate: MainScreenViewDelegate?
+    weak var delegate: MainScreenViewDelegate?
 
     private var cellXOffset: CGFloat?
 

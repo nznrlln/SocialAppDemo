@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PostScreenDelegate {
+protocol PostScreenDelegate: NSObject {
     var post: PostModel { get }
     var author: UserModel { get }
 
@@ -17,7 +17,7 @@ protocol PostScreenDelegate {
 
 class PostScreenView: UIView {
 
-    var delegate: PostScreenDelegate?
+    weak var delegate: PostScreenDelegate?
 
     private lazy var avaterTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
     private lazy var nicknameTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))

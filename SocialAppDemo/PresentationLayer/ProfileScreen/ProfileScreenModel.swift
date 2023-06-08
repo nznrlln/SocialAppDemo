@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol ProfileScreenModelDelegate {
+protocol ProfileScreenModelDelegate: NSObject {
     func modelUpdatedProfileData()
     func modelUpdatedPhotos()
     func modelUpdatedPosts()
@@ -16,7 +16,7 @@ protocol ProfileScreenModelDelegate {
 
 class ProfileScreenModel {
 
-    var delegate: ProfileScreenModelDelegate?
+    weak var delegate: ProfileScreenModelDelegate?
 
     var profileUID: String?
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ProfileScreenViewDelegate {
+protocol ProfileScreenViewDelegate: NSObject {
     var user: UserModel { get }
 
     var images: [UIImage] { get }
@@ -24,7 +24,7 @@ protocol ProfileScreenViewDelegate {
 
 class ProfileScreenView: UIView {
 
-    var delegate: ProfileScreenViewDelegate?
+    weak var delegate: ProfileScreenViewDelegate?
 
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
