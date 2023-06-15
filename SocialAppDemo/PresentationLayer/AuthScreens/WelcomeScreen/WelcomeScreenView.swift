@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-protocol WelcomeScreenViewDelegate {
+protocol WelcomeScreenViewDelegate: AnyObject {
     func signUpButtonTapAction()
 }
 
 class WelcomeScreenView: UIView {
 
-    var delegate: WelcomeScreenViewDelegate?
+    weak var delegate: WelcomeScreenViewDelegate?
 
     private let welcomeImageView: UIImageView = {
         let imageView = UIImageView()

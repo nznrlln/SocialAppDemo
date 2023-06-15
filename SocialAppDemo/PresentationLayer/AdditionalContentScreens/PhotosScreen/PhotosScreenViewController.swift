@@ -1,29 +1,26 @@
 //
-//  ConfirmSignUpScreenViewController.swift
+//  PhotosScreenViewController.swift
 //  SocialAppDemo
 //
-//  Created by Нияз Нуруллин on 25.03.2023.
+//  Created by Нияз Нуруллин on 21.05.2023.
 //
 
 import UIKit
-import SnapKit
 
-class ConfirmSignInScreenViewController: UIViewController {
+class PhotosScreenViewController: UIViewController {
 
-    weak var coordinator: AuthCoordinator?
+    private let model: PhotosScreenModel
 
-    private(set) var accountPhoneNumber: String!
-
-    private lazy var mainView: ConfirmSignInScreenView = {
-        let view = ConfirmSignInScreenView(frame: .zero, number: accountPhoneNumber)
+    private lazy var mainView: PhotosScreenView = {
+        let view = PhotosScreenView()
         view.toAutoLayout()
         view.delegate = self
 
         return view
     }()
 
-    init(accountPhoneNumber: String!) {
-        self.accountPhoneNumber = accountPhoneNumber
+    init(model: PhotosScreenModel) {
+        self.model = model
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,11 +36,21 @@ class ConfirmSignInScreenViewController: UIViewController {
         viewInitialSettings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+
     private func viewInitialSettings() {
         view.backgroundColor = .white
 
+        setupModels()
         setupSubviews()
         setupSubviewsLayout()
+    }
+
+    private func setupModels() {
+        model.delegate = self
+        model.getModelData()
     }
 
     private func setupSubviews() {
@@ -57,19 +64,22 @@ class ConfirmSignInScreenViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
     }
+
 }
 
-// MARK: - ConfirmSignUpScreenViewDelegate
+// MARK: - PhotosScreenModelDelegate
 
-extension ConfirmSignInScreenViewController: ConfirmSignInScreenViewDelegate {
-    func signInButtonTapAction(code: String) {
-        AuthManager.shared.verifyCode(smsCode: code) { [weak self] success in
-            guard success else { return }
-            DispatchQueue.main.async {
-                self?.coordinator?.openGeneralContent()
-            }
-        }
+extension PhotosScreenViewController: PhotosScreenModelDelegate {
+    func modelUpdatedPhotos() {
+        mainView.photosCollectionView.reloadData()
     }
+}
 
 
+// MARK: - PhotosScreenModelDelegate
+
+extension PhotosScreenViewController: PhotosScreenViewDelegate {
+    var photos: [UIImage] {
+        model.userPhotos
+    }
 }

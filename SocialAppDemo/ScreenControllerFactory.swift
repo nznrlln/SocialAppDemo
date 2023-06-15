@@ -5,7 +5,6 @@
 //  Created by Нияз Нуруллин on 30.04.2023.
 //
 
-import Foundation
 import UIKit
 
 //protocol ScreenControllerFactoryProtocol: AnyObject {
@@ -38,8 +37,7 @@ final class ScreenControllerFactory {
 
         case .mainScreen:
             let model = MainScreenModel()
-            let mainView = MainScreenView()
-            let controller = MainScreenViewController(model: model, mainView: mainView)
+            let controller = MainScreenViewController(model: model)
 
             navController.tabBarItem.title = "main".localizable
             navController.tabBarItem.image = UIImage(systemName: "house")
@@ -47,16 +45,14 @@ final class ScreenControllerFactory {
 
         case .profileScreen:
             let model = ProfileScreenModel(profileUID: self.profileUID)
-            let mainView = ProfileScreenView()
-            let controller = ProfileScreenViewController(model: model, mainView: mainView)
+            let controller = ProfileScreenViewController(model: model)
 
             navController.tabBarItem.title = "profile".localizable
             navController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
             navController.setViewControllers([controller], animated: true)
 
         case .savedScreen:
-            let mainView = SavedScreenView()
-            let controller = SavedScreenViewController(mainView: mainView)
+            let controller = SavedScreenViewController()
 
             navController.tabBarItem.title = "saved".localizable
             navController.tabBarItem.image = UIImage(systemName: "bookmark")

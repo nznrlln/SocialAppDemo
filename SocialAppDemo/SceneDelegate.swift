@@ -12,6 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    // declare it here to avoid being deallocated earlier than needed
+    var authCoordinator: AuthCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,16 +23,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         // if already auth in firebase - show main tab bar controller, else sign in/up
-
         if Auth.auth().currentUser == nil {
-            let welcomeVC = WelcomeScreenViewController ()
-            let welcomeNC = UINavigationController(rootViewController: welcomeVC)
-            window.rootViewController = welcomeNC
+            // creating navController and creating auth coordinator with it
+            // coordinator will tell to navController (in start method) which VC is first in stack
+            // and then we are passing chosen screen through window root
+            let navigationController = UINavigationController()
+            authCoordinator = AuthCoordinator(navigationController: navigationController)
+            authCoordinator?.start()
+            window.rootViewController = navigationController
         } else {
+            // tabbar has it own collection of coordinators for each tab
+            // and passing it to window root
             let mainTabBarVC = MainTabBarController()
             window.rootViewController = mainTabBarVC
         }
 
+        // we make chosen window root vc visible
+        // and passing it to app window
         window.makeKeyAndVisible()
         self.window = window
     }

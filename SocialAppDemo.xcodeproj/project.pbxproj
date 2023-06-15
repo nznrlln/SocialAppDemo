@@ -16,10 +16,10 @@
 		FD1C5BF529BDD71500C42CD6 /* SocialAppDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BF429BDD71500C42CD6 /* SocialAppDemoTests.swift */; };
 		FD1C5BFF29BDD71500C42CD6 /* SocialAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */; };
 		FD1C5C0129BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */; };
+		FD457B152A3B5ED80068C6EC /* GeneralContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD457B142A3B5ED80068C6EC /* GeneralContentCoordinator.swift */; };
 		FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */; };
 		FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B029E2E995009A992B /* SavedScreenViewController.swift */; };
 		FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B229E2E9A7009A992B /* SavedScreenView.swift */; };
-		FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */; };
 		FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B929E478AE009A992B /* PostsTableView.swift */; };
 		FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */; };
 		FD5836BF29F27571009A992B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836BE29F27571009A992B /* FirebaseStorage */; };
@@ -43,9 +43,14 @@
 		FD5836F42A1A22EC009A992B /* PhotosScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836F32A1A22EC009A992B /* PhotosScreenModel.swift */; };
 		FD5836F62A1A22F9009A992B /* PhotosScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836F52A1A22F9009A992B /* PhotosScreenALConstants.swift */; };
 		FD5836F82A1BD57C009A992B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836F72A1BD57C009A992B /* PhotosCollectionViewCell.swift */; };
-		FD5836FA2A2A777E009A992B /* NSAttributedString+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836F92A2A777E009A992B /* NSAttributedString+Extention.swift */; };
 		FD5837002A2C6B1B009A992B /* StoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836FF2A2C6B1B009A992B /* StoryScreenViewController.swift */; };
 		FD5837062A2F1249009A992B /* CircularAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5837052A2F1249009A992B /* CircularAnimator.swift */; };
+		FD58370A2A349EC0009A992B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5837092A349EC0009A992B /* Coordinator.swift */; };
+		FD58370E2A35A762009A992B /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD58370D2A35A762009A992B /* AuthCoordinator.swift */; };
+		FD5837162A35AE19009A992B /* NSAttributedString+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5837152A35AE19009A992B /* NSAttributedString+Extention.swift */; };
+		FD58371A2A35DB47009A992B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5837192A35DB47009A992B /* MainCoordinator.swift */; };
+		FD58371C2A35DB60009A992B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD58371B2A35DB60009A992B /* ProfileCoordinator.swift */; };
+		FD58371E2A35DB70009A992B /* SavedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD58371D2A35DB70009A992B /* SavedCoordinator.swift */; };
 		FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D281829BDD84800553FBD /* CoreDataManager.swift */; };
 		FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */; };
 		FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D282229C1831300553FBD /* ProfileScreenView.swift */; };
@@ -120,10 +125,10 @@
 		FD1C5BFA29BDD71500C42CD6 /* SocialAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITests.swift; sourceTree = "<group>"; };
 		FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FD457B142A3B5ED80068C6EC /* GeneralContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralContentCoordinator.swift; sourceTree = "<group>"; };
 		FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B029E2E995009A992B /* SavedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B229E2E9A7009A992B /* SavedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenView.swift; sourceTree = "<group>"; };
-		FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5836B929E478AE009A992B /* PostsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableView.swift; sourceTree = "<group>"; };
 		FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionHeaderView.swift; sourceTree = "<group>"; };
 		FD5836C529F47297009A992B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -145,9 +150,14 @@
 		FD5836F32A1A22EC009A992B /* PhotosScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosScreenModel.swift; sourceTree = "<group>"; };
 		FD5836F52A1A22F9009A992B /* PhotosScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5836F72A1BD57C009A992B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
-		FD5836F92A2A777E009A992B /* NSAttributedString+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Extention.swift"; path = "../../../../../Documents/NSAttributedString+Extention.swift"; sourceTree = "<group>"; };
 		FD5836FF2A2C6B1B009A992B /* StoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryScreenViewController.swift; sourceTree = "<group>"; };
 		FD5837052A2F1249009A992B /* CircularAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularAnimator.swift; sourceTree = "<group>"; };
+		FD5837092A349EC0009A992B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FD58370D2A35A762009A992B /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		FD5837152A35AE19009A992B /* NSAttributedString+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extention.swift"; sourceTree = "<group>"; };
+		FD5837192A35DB47009A992B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		FD58371B2A35DB60009A992B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		FD58371D2A35DB70009A992B /* SavedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCoordinator.swift; sourceTree = "<group>"; };
 		FD5D281829BDD84800553FBD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FD5D282229C1831300553FBD /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
@@ -247,7 +257,6 @@
 				FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */,
 				FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */,
 				FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */,
-				FD5D284A29CA158900553FBD /* MainTabBarController.swift */,
 				FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */,
 				FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */,
 				FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */,
@@ -255,19 +264,9 @@
 				FD5D288929D8B9A600553FBD /* GoogleService-Info.plist */,
 				FD5836C629F47297009A992B /* Localizable.stringsdict */,
 				FD5D283429C7112E00553FBD /* Localizable.strings */,
-				FD5D282829C6420500553FBD /* UIView+Extention.swift */,
-				FD5D283929C77E0000553FBD /* String+Extention.swift */,
-				FD5D283D29C7819500553FBD /* UIColor+Extention.swift */,
-				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
 				FD5836FB2A2C6614009A992B /* PresentationLayer */,
 				FD5836FC2A2C662C009A992B /* ServiceLayer */,
 				FD5836FD2A2C663E009A992B /* CoreLayer */,
-				FD5836D029F5BF86009A992B /* Firebase */,
-				FD5836AF29E2C12C009A992B /* Network */,
-				FD5D284729C786F400553FBD /* Helpers */,
-				FD5D288329D0C5C400553FBD /* Fonts */,
-				FD5836EC2A156C7A009A992B /* CustomSaveButton.swift */,
-				FD5836F92A2A777E009A992B /* NSAttributedString+Extention.swift */,
 			);
 			path = SocialAppDemo;
 			sourceTree = "<group>";
@@ -287,6 +286,15 @@
 				FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */,
 			);
 			path = SocialAppDemoUITests;
+			sourceTree = "<group>";
+		};
+		FD457B162A3B8FB80068C6EC /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D284529C786EC00553FBD /* Fonts.swift */,
+				FD5D283B29C7812D00553FBD /* Pallete.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		FD5836AF29E2C12C009A992B /* Network */ = {
@@ -347,14 +355,11 @@
 		FD5836FB2A2C6614009A992B /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD5837092A349EC0009A992B /* Coordinator.swift */,
 				FD5837012A2CA47C009A992B /* AuthScreens */,
-				FD5D281B29BE26E800553FBD /* MainScreen */,
-				FD5D281C29BE270400553FBD /* ProfileScreen */,
-				FD5D281D29BE271400553FBD /* SavedScreen */,
-				FD5836FE2A2C6AF4009A992B /* StoryScreen */,
-				FD5D281F29BE27C100553FBD /* PostScreen */,
-				FD5836EE2A1A2284009A992B /* PhotosScreen */,
-				FD5836B629E331F9009A992B /* PostsTableView */,
+				FD58370F2A35ACAA009A992B /* GeneralContentScreens */,
+				FD5837102A35AD0C009A992B /* AdditionalContentScreens */,
+				FD5837112A35AD85009A992B /* SharedViews */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -362,6 +367,8 @@
 		FD5836FC2A2C662C009A992B /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FD5836AF29E2C12C009A992B /* Network */,
+				FD5836D029F5BF86009A992B /* Firebase */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -369,8 +376,12 @@
 		FD5836FD2A2C663E009A992B /* CoreLayer */ = {
 			isa = PBXGroup;
 			children = (
-				FD5836DA29FBAF19009A992B /* DataModels */,
+				FD457B162A3B8FB80068C6EC /* Appearance */,
 				FD5D281A29BDD8E900553FBD /* CoreData */,
+				FD5836DA29FBAF19009A992B /* DataModels */,
+				FD5837122A35ADD2009A992B /* Extentions */,
+				FD5D288329D0C5C400553FBD /* Fonts */,
+				FD5D284729C786F400553FBD /* Helpers */,
 			);
 			path = CoreLayer;
 			sourceTree = "<group>";
@@ -387,11 +398,58 @@
 		FD5837012A2CA47C009A992B /* AuthScreens */ = {
 			isa = PBXGroup;
 			children = (
+				FD58370D2A35A762009A992B /* AuthCoordinator.swift */,
 				FD5D282429C188F000553FBD /* WelcomeScreen */,
 				FD5D282529C1892700553FBD /* SignInScreen */,
 				FD5D285829CEE6CB00553FBD /* ConfirmSignInScreen */,
 			);
 			path = AuthScreens;
+			sourceTree = "<group>";
+		};
+		FD58370F2A35ACAA009A992B /* GeneralContentScreens */ = {
+			isa = PBXGroup;
+			children = (
+				FD457B142A3B5ED80068C6EC /* GeneralContentCoordinator.swift */,
+				FD5837192A35DB47009A992B /* MainCoordinator.swift */,
+				FD58371B2A35DB60009A992B /* ProfileCoordinator.swift */,
+				FD58371D2A35DB70009A992B /* SavedCoordinator.swift */,
+				FD5D284A29CA158900553FBD /* MainTabBarController.swift */,
+				FD5D281B29BE26E800553FBD /* MainScreen */,
+				FD5D281C29BE270400553FBD /* ProfileScreen */,
+				FD5D281D29BE271400553FBD /* SavedScreen */,
+			);
+			path = GeneralContentScreens;
+			sourceTree = "<group>";
+		};
+		FD5837102A35AD0C009A992B /* AdditionalContentScreens */ = {
+			isa = PBXGroup;
+			children = (
+				FD5836FE2A2C6AF4009A992B /* StoryScreen */,
+				FD5D281F29BE27C100553FBD /* PostScreen */,
+				FD5836EE2A1A2284009A992B /* PhotosScreen */,
+			);
+			path = AdditionalContentScreens;
+			sourceTree = "<group>";
+		};
+		FD5837112A35AD85009A992B /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
+				FD5836EC2A156C7A009A992B /* CustomSaveButton.swift */,
+				FD5836B629E331F9009A992B /* PostsTableView */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
+		FD5837122A35ADD2009A992B /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				FD5837152A35AE19009A992B /* NSAttributedString+Extention.swift */,
+				FD5D283929C77E0000553FBD /* String+Extention.swift */,
+				FD5D283D29C7819500553FBD /* UIColor+Extention.swift */,
+				FD5D282829C6420500553FBD /* UIView+Extention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		FD5D281A29BDD8E900553FBD /* CoreData */ = {
@@ -433,7 +491,6 @@
 			children = (
 				FD5836B029E2E995009A992B /* SavedScreenViewController.swift */,
 				FD5836B229E2E9A7009A992B /* SavedScreenView.swift */,
-				FD5836B429E2E9C0009A992B /* SavedScreenALConstants.swift */,
 			);
 			path = SavedScreen;
 			sourceTree = "<group>";
@@ -472,8 +529,6 @@
 		FD5D284729C786F400553FBD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D284529C786EC00553FBD /* Fonts.swift */,
-				FD5D283B29C7812D00553FBD /* Pallete.swift */,
 				FD5836E22A016EF0009A992B /* DateHelper.swift */,
 			);
 			path = Helpers;
@@ -670,11 +725,13 @@
 				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,
 				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,
 				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
+				FD457B152A3B5ED80068C6EC /* GeneralContentCoordinator.swift in Sources */,
 				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
 				FD5836E92A0D819C009A992B /* CoreDataHelper.swift in Sources */,
 				FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */,
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
+				FD5837162A35AE19009A992B /* NSAttributedString+Extention.swift in Sources */,
 				FD5836D229F5BFCB009A992B /* FirebaseStorageManager.swift in Sources */,
 				FD5836F82A1BD57C009A992B /* PhotosCollectionViewCell.swift in Sources */,
 				FD5836DC29FBAF33009A992B /* DataModels.swift in Sources */,
@@ -683,6 +740,7 @@
 				FD5D282129C180AC00553FBD /* ProfileHeaderView.swift in Sources */,
 				FD5D283E29C7819500553FBD /* UIColor+Extention.swift in Sources */,
 				FD5D288D29D9620C00553FBD /* PostScreenView.swift in Sources */,
+				FD58370E2A35A762009A992B /* AuthCoordinator.swift in Sources */,
 				FD5D285329CED52200553FBD /* SignInScreenALConstants.swift in Sources */,
 				FD5836ED2A156C7A009A992B /* CustomSaveButton.swift in Sources */,
 				FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */,
@@ -691,14 +749,16 @@
 				FD5837062A2F1249009A992B /* CircularAnimator.swift in Sources */,
 				FD5836E32A016EF0009A992B /* DateHelper.swift in Sources */,
 				FD5836E52A02D8C5009A992B /* PostScreenModel.swift in Sources */,
+				FD58370A2A349EC0009A992B /* Coordinator.swift in Sources */,
 				FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */,
 				FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */,
 				FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */,
 				FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */,
 				FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */,
+				FD58371E2A35DB70009A992B /* SavedCoordinator.swift in Sources */,
 				FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */,
 				FD5D285529CED53B00553FBD /* SignInScreenViewController.swift in Sources */,
-				FD5836B529E2E9C0009A992B /* SavedScreenALConstants.swift in Sources */,
+				FD58371C2A35DB60009A992B /* ProfileCoordinator.swift in Sources */,
 				FD5D281929BDD84800553FBD /* CoreDataManager.swift in Sources */,
 				FD1C5BE529BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld in Sources */,
 				FD5836CD29F5A208009A992B /* MiniPhotosCollectionViewCell.swift in Sources */,
@@ -707,8 +767,8 @@
 				FD5836F62A1A22F9009A992B /* PhotosScreenALConstants.swift in Sources */,
 				FD5836CF29F5BF0C009A992B /* ProfileScreenModel.swift in Sources */,
 				FD5D282929C6420500553FBD /* UIView+Extention.swift in Sources */,
+				FD58371A2A35DB47009A992B /* MainCoordinator.swift in Sources */,
 				FD5D289929DB531000553FBD /* UserStoryCollectionViewCell.swift in Sources */,
-				FD5836FA2A2A777E009A992B /* NSAttributedString+Extention.swift in Sources */,
 				FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */,
 				FD5D289129D976C200553FBD /* PostScreenViewController.swift in Sources */,
 				FD5836F22A1A22D6009A992B /* PhotosScreenView.swift in Sources */,

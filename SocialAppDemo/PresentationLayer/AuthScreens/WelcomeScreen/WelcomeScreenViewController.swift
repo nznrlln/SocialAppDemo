@@ -10,6 +10,8 @@ import SnapKit
 
 class WelcomeScreenViewController: UIViewController {
 
+    weak var coordinator: AuthCoordinator?
+
     private lazy var mainView: WelcomeScreenView = {
         let view = WelcomeScreenView()
         view.toAutoLayout()
@@ -49,7 +51,9 @@ class WelcomeScreenViewController: UIViewController {
 // MARK: - WelcomeScreenViewDelegate
 extension WelcomeScreenViewController: WelcomeScreenViewDelegate {
     func signUpButtonTapAction() {
-        let signInVC = SignInScreenViewController()
-        self.navigationController?.pushViewController(signInVC, animated: true)
+//        let signInVC = SignInScreenViewController()
+//        self.navigationController?.pushViewController(signInVC, animated: true)
+        self.coordinator?.openSignInScreen()
+
     }
 }

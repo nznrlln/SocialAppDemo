@@ -8,13 +8,13 @@
 import UIKit
 import SnapKit
 
-protocol ConfirmSignInScreenViewDelegate {
+protocol ConfirmSignInScreenViewDelegate: AnyObject {
     func signInButtonTapAction(code: String)
 }
 
 class ConfirmSignInScreenView: UIView {
     
-    var delegate: ConfirmSignInScreenViewDelegate?
+    weak var delegate: ConfirmSignInScreenViewDelegate?
 
     private var maxDigits: Int = 6
     
@@ -43,7 +43,6 @@ class ConfirmSignInScreenView: UIView {
         let label = UILabel()
         label.toAutoLayout()
         label.font = Fonts.interSemiBold14
-        //        label.textColor = Palette.secondaryText
         label.text = "3235231"
         
         return label

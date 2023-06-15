@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 import PhoneNumberKit
 
-protocol SignInScreenViewDelegate {
+protocol SignInScreenViewDelegate: AnyObject {
     func nextButtonTapAction(number: String)
 }
 
 class SignInScreenView: UIView {
 
-    var delegate: SignInScreenViewDelegate?
+    weak var delegate: SignInScreenViewDelegate?
 
     private let signInLabel: UILabel = {
         let label = UILabel()

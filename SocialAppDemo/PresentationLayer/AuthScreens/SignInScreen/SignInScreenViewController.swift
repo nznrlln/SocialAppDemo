@@ -10,6 +10,8 @@ import SnapKit
 
 class SignInScreenViewController: UIViewController {
 
+    weak var coordinator: AuthCoordinator?
+
     private lazy var mainView: SignInScreenView = {
         let view = SignInScreenView()
         view.toAutoLayout()
@@ -57,8 +59,7 @@ extension SignInScreenViewController: SignInScreenViewDelegate {
         AuthManager.shared.startAuth(phoneNumber: number) { [weak self] success in
             guard success else { return }
             DispatchQueue.main.async {
-                let confirmSignInVC = ConfirmSignInScreenViewController(accountPhoneNumber: number)
-                self?.navigationController?.pushViewController(confirmSignInVC, animated: true)
+                self?.coordinator?.openConfirmSignInScreen(phoneNumber: number)
             }
         }
     }
