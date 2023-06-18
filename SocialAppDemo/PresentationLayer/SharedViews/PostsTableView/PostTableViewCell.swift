@@ -166,6 +166,8 @@ class PostTableViewCell: UITableViewCell {
 
 
     private func cellInitialSettings() {
+        contentView.backgroundColor = Palette.mainBackground
+        
         setupSubviews()
         setupSubviewsLayout()
     }

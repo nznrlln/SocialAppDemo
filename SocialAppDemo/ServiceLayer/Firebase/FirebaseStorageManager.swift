@@ -8,7 +8,15 @@
 import FirebaseStorage
 import UIKit
 
-class FirebaseStorageManager {
+protocol FirebaseStorageManagerProtocol {
+    func getImages(number: Int, completion: @escaping ([UIImage]?) -> Void)
+    func getAllImages(completion: @escaping ([UIImage]?) -> Void)
+    func getPhotoCollectionList(completion: @escaping ([StorageReference]?) -> Void)
+    func getImage(ref imageRef: StorageReference, completion: @escaping (UIImage?) -> Void)
+    func getImage(ref imageURL: String, completion: @escaping (UIImage?) -> Void)
+}
+
+class FirebaseStorageManager: FirebaseStorageManagerProtocol {
 
     static let shared = FirebaseStorageManager()
 

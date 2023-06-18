@@ -7,7 +7,11 @@
 
 import UIKit
 
-class CoreDataHelper {
+protocol CoreDataHelperProtocol {
+    func getModels(from savedPost: SavedPostCoreData) -> (user: UserModel, post: PostModel)
+}
+
+class CoreDataHelper: CoreDataHelperProtocol {
 
     static let shared = CoreDataHelper()
 

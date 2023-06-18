@@ -40,6 +40,15 @@ class UserStoryCollectionViewCell: UICollectionViewCell {
         avatarImageView.image = nil
     }
 
+    // In this situation, you need to specify which trait collection to use to resolve the dynamic color.
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 13.0, *) {
+               if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                   self.layer.borderColor = Palette.mainAccent?.cgColor
+               }
+           }
+    }
+
     private func cellInitialSettings() {
         self.layer.cornerRadius = 30
         self.layer.borderWidth = 0.5

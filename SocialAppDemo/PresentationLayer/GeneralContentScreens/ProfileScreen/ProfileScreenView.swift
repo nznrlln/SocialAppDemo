@@ -180,27 +180,27 @@ class ProfileScreenView: UIView {
         }
 
         photosLabel.snp.makeConstraints { make in
-            make.top.equalTo(profileHeaderView.snp.bottom).offset(22)
-            make.leading.equalTo(contentView).inset(16)
+            make.top.equalTo(profileHeaderView.snp.bottom).offset(ProfileScreenALConstants.photosLabelTopInset)
+            make.leading.equalTo(contentView).inset(ProfileScreenALConstants.generalSideInset)
         }
 
         showPhotosButton.snp.makeConstraints { make in
             make.centerY.equalTo(photosLabel)
-            make.trailing.equalTo(contentView).inset(16)
-            make.height.width.equalTo(24)
+            make.trailing.equalTo(contentView).inset(ProfileScreenALConstants.generalSideInset)
+            make.height.width.equalTo(ProfileScreenALConstants.photosButtonHeightWidth)
         }
 
         photosCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(photosLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalTo(contentView).inset(16)
-            make.height.equalTo(80)
+            make.top.equalTo(photosLabel.snp.bottom).offset(ProfileScreenALConstants.photosCollectionTopInset)
+            make.leading.trailing.equalTo(contentView).inset(ProfileScreenALConstants.generalSideInset)
+            make.height.equalTo(ProfileScreenALConstants.photosCollectionHeight)
         }
 
         postsTableView.snp.makeConstraints { make in
-            make.top.equalTo(photosCollectionView.snp.bottom).offset(16)
+            make.top.equalTo(photosCollectionView.snp.bottom).offset(ProfileScreenALConstants.tableViewTopInset)
             make.leading.trailing.equalTo(contentView)
             make.bottom.equalTo(contentView)
-            make.height.equalTo(700)
+            make.height.equalTo(ProfileScreenALConstants.tableViewHeight)
         }
     }
 

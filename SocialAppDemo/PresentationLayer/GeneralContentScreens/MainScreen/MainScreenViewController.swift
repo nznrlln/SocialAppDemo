@@ -43,7 +43,7 @@ class MainScreenViewController: UIViewController {
     }
 
     private func viewInitialSettings() {
-        view.backgroundColor = .white
+        view.backgroundColor = Palette.mainBackground
 
         setupModels()
         setupSubviews()

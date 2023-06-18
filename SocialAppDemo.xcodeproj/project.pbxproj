@@ -18,6 +18,7 @@
 		FD1C5C0129BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */; };
 		FD457B152A3B5ED80068C6EC /* GeneralContentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD457B142A3B5ED80068C6EC /* GeneralContentCoordinator.swift */; };
 		FD457B182A3D9BA20068C6EC /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD457B172A3D9BA20068C6EC /* AlertHelper.swift */; };
+		FD457B1A2A3F43B30068C6EC /* ProfileScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD457B192A3F43B30068C6EC /* ProfileScreenALConstants.swift */; };
 		FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */; };
 		FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B029E2E995009A992B /* SavedScreenViewController.swift */; };
 		FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B229E2E9A7009A992B /* SavedScreenView.swift */; };
@@ -128,6 +129,7 @@
 		FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FD457B142A3B5ED80068C6EC /* GeneralContentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralContentCoordinator.swift; sourceTree = "<group>"; };
 		FD457B172A3D9BA20068C6EC /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		FD457B192A3F43B30068C6EC /* ProfileScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B029E2E995009A992B /* SavedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B229E2E9A7009A992B /* SavedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenView.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				FD5D282229C1831300553FBD /* ProfileScreenView.swift */,
 				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
 				FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */,
+				FD457B192A3F43B30068C6EC /* ProfileScreenALConstants.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 				FD5837162A35AE19009A992B /* NSAttributedString+Extention.swift in Sources */,
 				FD5836D229F5BFCB009A992B /* FirebaseStorageManager.swift in Sources */,
 				FD5836F82A1BD57C009A992B /* PhotosCollectionViewCell.swift in Sources */,
+				FD457B1A2A3F43B30068C6EC /* ProfileScreenALConstants.swift in Sources */,
 				FD5836DC29FBAF33009A992B /* DataModels.swift in Sources */,
 				FD5836F42A1A22EC009A992B /* PhotosScreenModel.swift in Sources */,
 				FD5D289329D9FC9200553FBD /* MainScreenViewController.swift in Sources */,

@@ -7,7 +7,12 @@
 
 import FirebaseAuth
 
-class AuthManager {
+protocol AuthManagerProtocol {
+    func startAuth(phoneNumber: String, completion: @escaping (Bool) -> Void)
+    func verifyCode(smsCode: String, completion: @escaping (Bool) -> Void)
+}
+
+class AuthManager: AuthManagerProtocol {
     static let shared = AuthManager()
 
     private let auth = Auth.auth()

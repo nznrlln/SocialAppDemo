@@ -8,7 +8,14 @@
 import Foundation
 import CoreData
 
-final class CoreDataManager {
+protocol CoreDataManagerProtocol {
+    func addPost(post: PostModel, author: UserModel)
+    func deletePost(post: SavedPostCoreData)
+    func deletePost(postUID: String)
+    func postCheck(postUID: String) -> Bool
+}
+
+final class CoreDataManager: CoreDataManagerProtocol {
 
     static let shared = CoreDataManager()
 

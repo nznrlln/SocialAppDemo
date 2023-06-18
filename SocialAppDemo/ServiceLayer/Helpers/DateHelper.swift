@@ -8,7 +8,12 @@
 import Foundation
 import FirebaseFirestore
 
-class DateHelper {
+protocol DateHelperProtocol {
+    func getPostDate(timestamp: Timestamp) -> String
+    func getBirthdayDate(timestamp: Timestamp) -> String
+}
+
+class DateHelper: DateHelperProtocol {
 
     static let shared = DateHelper()
 

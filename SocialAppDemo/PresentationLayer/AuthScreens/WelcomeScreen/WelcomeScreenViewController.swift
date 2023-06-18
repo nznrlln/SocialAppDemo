@@ -28,7 +28,7 @@ class WelcomeScreenViewController: UIViewController {
     }
 
     private func viewInitialSettings() {
-        view.backgroundColor = .white
+        view.backgroundColor = Palette.mainBackground
 
         setupSubviews()
         setupSubviewsLayout()

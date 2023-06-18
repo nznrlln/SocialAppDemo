@@ -16,7 +16,7 @@ class ProfileHeaderView: UIView {
         let avatar = UIImageView()
         avatar.toAutoLayout()
 
-        avatar.layer.cornerRadius = 40
+        avatar.layer.cornerRadius = ProfileScreenALConstants.avatarHeight / 2
         avatar.layer.borderWidth = 2
         avatar.layer.borderColor = Palette.mainAccent?.cgColor
         avatar.clipsToBounds = true
@@ -182,6 +182,15 @@ class ProfileHeaderView: UIView {
 
     }
 
+    // In this situation, you need to specify which trait collection to use to resolve the dynamic color.
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 13.0, *) {
+               if (traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection)) {
+                   self.avatarImageView.layer.borderColor = Palette.mainAccent?.cgColor
+               }
+           }
+    }
+
     private func viewInitialSettings() {
         self.backgroundColor = .systemBackground
 
@@ -211,32 +220,32 @@ class ProfileHeaderView: UIView {
 
     private func setupSubviewsLayout() {
         avatarImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(15)
-            make.leading.equalToSuperview().inset(34)
-            make.height.width.equalTo(80)
+            make.top.equalToSuperview().inset(ProfileScreenALConstants.generalTopInset)
+            make.leading.equalToSuperview().inset(ProfileScreenALConstants.generalTrailingInset)
+            make.height.width.equalTo(ProfileScreenALConstants.avatarHeight)
         }
 
         userNameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(15)
-            make.leading.equalTo(avatarImageView.snp.trailing).offset(15)
-            make.trailing.equalToSuperview().inset(34)
+            make.top.equalToSuperview().inset(ProfileScreenALConstants.generalTopInset)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(ProfileScreenALConstants.generalLeadingOffset)
+            make.trailing.equalToSuperview().inset(ProfileScreenALConstants.generalTrailingInset)
         }
 
         userStatusLabel.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(3)
-            make.leading.equalTo(avatarImageView.snp.trailing).offset(15)
-            make.trailing.equalToSuperview().inset(34)
+            make.top.equalTo(userNameLabel.snp.bottom).offset(ProfileScreenALConstants.secondaryTopInset)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(ProfileScreenALConstants.generalLeadingOffset)
+            make.trailing.equalToSuperview().inset(ProfileScreenALConstants.generalTrailingInset)
         }
 
         detailsButton.snp.makeConstraints { make in
-            make.top.equalTo(userStatusLabel.snp.bottom).offset(3)
-            make.leading.equalTo(avatarImageView.snp.trailing).offset(15)
-            make.trailing.equalToSuperview().inset(34)
+            make.top.equalTo(userStatusLabel.snp.bottom).offset(ProfileScreenALConstants.secondaryTopInset)
+            make.leading.equalTo(avatarImageView.snp.trailing).offset(ProfileScreenALConstants.generalLeadingOffset)
+            make.trailing.equalToSuperview().inset(ProfileScreenALConstants.generalTrailingInset)
         }
 
         countsStackView.snp.makeConstraints { make in
-            make.top.equalTo(avatarImageView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(avatarImageView.snp.bottom).offset(ProfileScreenALConstants.countsTopInset)
+            make.leading.trailing.equalToSuperview().inset(ProfileScreenALConstants.generalSideInset)
         }
 
         labelsStackView.snp.makeConstraints { make in
@@ -245,8 +254,8 @@ class ProfileHeaderView: UIView {
         }
 
         separatorView.snp.makeConstraints { make in
-            make.top.equalTo(labelsStackView.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(labelsStackView.snp.bottom).offset(ProfileScreenALConstants.generalTopInset)
+            make.leading.trailing.equalToSuperview().inset(ProfileScreenALConstants.generalSideInset)
             make.bottom.equalToSuperview()
             make.height.equalTo(0.5)
         }

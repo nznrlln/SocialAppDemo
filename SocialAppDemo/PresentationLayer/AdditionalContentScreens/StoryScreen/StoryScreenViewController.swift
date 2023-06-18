@@ -31,15 +31,21 @@ class StoryScreenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupSubviews()
-        setupSubviewsLayout()
-        addGestures()
+        viewInitialSettings()
     }
 
     func setupStory(model: UIImage) {
         avatarImageView.image = model
     }
 
+    private func viewInitialSettings() {
+        view.backgroundColor = Palette.mainBackground
+
+        setupSubviews()
+        setupSubviewsLayout()
+        addGestures()
+    }
+    
     private func setupSubviews() {
         view.backgroundColor = .systemYellow
 

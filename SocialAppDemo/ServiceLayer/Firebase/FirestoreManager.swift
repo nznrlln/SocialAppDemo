@@ -10,6 +10,16 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseStorage
 
+protocol FirestoreManagerProtocol {
+    func getAllUsers(completion: @escaping ([UserModel]?) -> Void)
+    func getUserFromData(userData: [String : Any], completion: @escaping (UserModel?) -> Void)
+    func getUserData(userUID: String, completion: @escaping (UserModel?) -> Void)
+    func getMainUserData(completion: @escaping (UserModel?) -> Void)
+
+    func getUserPostsCount(userUID: String) async -> Int?
+    func getAllPosts(completion: @escaping ([PostModel]?, [String]?) -> Void)
+    func getUserPosts(userUID: String, completion: @escaping ([PostModel]?, [String]?) -> Void)
+}
 
 struct FirestoreRefs {
     static let devUsers = "dev/dev/users"
@@ -58,7 +68,7 @@ class FirestoreManager {
         }
     }
 
-    func getUserFromData(userData: [String : Any], completion: @escaping (UserModel?) -> Void ) {
+    func getUserFromData(userData: [String : Any], completion: @escaping (UserModel?) -> Void) {
         FirebaseStorageManager.shared.getImage(ref: userData["avatar"] as! String) { image in
             Task {
                 guard let userUID = userData["uid"] as? String else { completion(nil); return }
@@ -83,7 +93,7 @@ class FirestoreManager {
     }
 
     // get user data from firestore with users field "uid"
-    func getUserData(userUID: String, completion: @escaping (UserModel?) -> Void ) {
+    func getUserData(userUID: String, completion: @escaping (UserModel?) -> Void) {
         dbUsers.document(userUID).getDocument { [weak self] snapshot, error in
             if let error = error {
                 debugPrint(error.localizedDescription)
@@ -101,7 +111,7 @@ class FirestoreManager {
 
     }
 
-    func getMainUserData(completion: @escaping (UserModel?) -> Void ) {
+    func getMainUserData(completion: @escaping (UserModel?) -> Void) {
         dbUsers.whereField("nickname", isEqualTo: "mainUser").getDocuments { [weak self] snapshot, error in
             if let error = error {
                 debugPrint(error.localizedDescription)
@@ -199,11 +209,10 @@ class FirestoreManager {
         }
     }
 
-    private func getPostFromData(postData: [String : Any], completion: @escaping (PostModel?) -> Void ) {
+    private func getPostFromData(postData: [String : Any], completion: @escaping (PostModel?) -> Void) {
         let imageRef = postData["post_image"] as! String
         FirebaseStorageManager.shared.getImage(ref: imageRef) { image in
             Task {
-//                guard let image = image else { completion(nil); return }
                 guard let postUID = postData["post_uid"] as? String else { completion(nil); return }
                 guard let authorUID = postData["author_uid"] as? String else { completion(nil); return }
 
