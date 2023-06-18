@@ -42,9 +42,12 @@ class ProfileScreenView: UIView {
         return view
     }()
 
-    private let profileHeaderView: ProfileHeaderView = {
+    private lazy var profileHeaderView: ProfileHeaderView = {
         let view = ProfileHeaderView()
         view.toAutoLayout()
+        view.detailsButtonTapAction = { [weak self] in
+            self?.delegate?.didTapDetails()
+        }
 
         return view
     }()

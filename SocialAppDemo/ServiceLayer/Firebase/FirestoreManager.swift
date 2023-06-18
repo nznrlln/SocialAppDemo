@@ -71,7 +71,7 @@ class FirestoreManager {
                 user.followingsCount = userData["followings_count"] as? Int
                 user.followersCount = userData["followers_count"] as? Int
                 user.fullname = userData["fullname"] as? String
-                user.birthday = userData["birthday"] as? Date
+                user.birthday = DateHelper.shared.getPostDate(timestamp:  userData["birthday"] as! Timestamp)
                 user.hometown = userData["hometown"] as? String
                 user.isMale = userData["is_male"] as? Bool
 

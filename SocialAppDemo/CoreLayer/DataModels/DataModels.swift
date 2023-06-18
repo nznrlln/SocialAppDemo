@@ -18,7 +18,7 @@ class UserModel {
     var followingsCount: Int?
     var followersCount: Int?
     var fullname: String?
-    var birthday: Date?
+    var birthday: String?
     var hometown: String?
     var isMale: Bool?
 }

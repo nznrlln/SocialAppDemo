@@ -34,3 +34,12 @@
 // MARK: - ProfileScreen
 
 "detailed_information" = "Details";
+"birthday" = "Birthday";
+"hometown" = "Hometown";
+"gender" = "Gender";
+
+"unknown" = "Unknown";
+"male" = "male";
+"female" = "female";
+
+"close" = "Close";

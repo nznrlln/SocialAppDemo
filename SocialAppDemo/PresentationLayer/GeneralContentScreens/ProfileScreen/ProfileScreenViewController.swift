@@ -111,7 +111,14 @@ extension ProfileScreenViewController: ProfileScreenViewDelegate {
     }
 
     func didTapDetails() {
-      //  
+        let user = model.profileData
+        let alert = AlertHelper.shared.showUserDetails(
+            fullname: user.fullname,
+            birthday: user.birthday,
+            hometown: user.hometown,
+            isMale: user.isMale
+        )
+        self.present(alert, animated: true)
     }
 
     func didSelectPhoto() {

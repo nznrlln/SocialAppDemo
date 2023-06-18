@@ -34,3 +34,12 @@
 // MARK: - ProfileScreen
 
 "detailed_information" = "Подробная информация";
+"birthday" = "День Рождения";
+"hometown" = "Родной город";
+"gender" = "Пол";
+
+"unknown" = "Нет данных";
+"male" = "мужской";
+"female" = "женский";
+
+"close" = "Закрыть";
