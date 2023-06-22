@@ -34,7 +34,6 @@
 		FD5836D729FA6D3D009A992B /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836D629FA6D3D009A992B /* FirestoreManager.swift */; };
 		FD5836D929FAFD2F009A992B /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836D829FAFD2F009A992B /* MainScreenModel.swift */; };
 		FD5836DC29FBAF33009A992B /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836DB29FBAF33009A992B /* DataModels.swift */; };
-		FD5836DE29FE6121009A992B /* ScreenControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */; };
 		FD5836E32A016EF0009A992B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E22A016EF0009A992B /* DateHelper.swift */; };
 		FD5836E52A02D8C5009A992B /* PostScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E42A02D8C5009A992B /* PostScreenModel.swift */; };
 		FD5836E72A077F2B009A992B /* PostsTableViewALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */; };
@@ -143,7 +142,6 @@
 		FD5836D629FA6D3D009A992B /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		FD5836D829FAFD2F009A992B /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
 		FD5836DB29FBAF33009A992B /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
-		FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenControllerFactory.swift; sourceTree = "<group>"; };
 		FD5836E22A016EF0009A992B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		FD5836E42A02D8C5009A992B /* PostScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreenModel.swift; sourceTree = "<group>"; };
 		FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewALConstants.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 		FD1C5BD929BDD71400C42CD6 /* SocialAppDemo */ = {
 			isa = PBXGroup;
 			children = (
-				FD5836DD29FE6121009A992B /* ScreenControllerFactory.swift */,
 				FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */,
 				FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */,
 				FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */,
@@ -727,7 +724,6 @@
 				FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */,
 				FD457B182A3D9BA20068C6EC /* AlertHelper.swift in Sources */,
 				FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */,
-				FD5836DE29FE6121009A992B /* ScreenControllerFactory.swift in Sources */,
 				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
 				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,
 				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,

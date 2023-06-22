@@ -13,10 +13,6 @@ class MainTabBarController: UITabBarController {
     let profileCoordinator = ProfileCoordinator(navigationController: UINavigationController())
     let savedCoordinator = SavedCoordinator(navigationController: UINavigationController())
 
-    private let mainScreen = ScreenControllerFactory(flow: .mainScreen)
-    private let profileScreen = ScreenControllerFactory(flow: .profileScreen)
-    private let savedScreen = ScreenControllerFactory(flow: .savedScreen)
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
