@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileCoordinator: GeneralContentCoordinator {
+final class ProfileCoordinator: GeneralContentCoordinator {
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {

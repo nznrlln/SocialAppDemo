@@ -12,7 +12,7 @@ protocol AuthManagerProtocol {
     func verifyCode(smsCode: String, completion: @escaping (Bool) -> Void)
 }
 
-class AuthManager: AuthManagerProtocol {
+final class AuthManager: AuthManagerProtocol {
     static let shared = AuthManager()
 
     private let auth = Auth.auth()

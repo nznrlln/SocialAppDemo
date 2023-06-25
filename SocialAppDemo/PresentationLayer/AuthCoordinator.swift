@@ -8,7 +8,7 @@
 import UIKit
 
 // coordinator for Authentication flow
-class AuthCoordinator: Coordinator {
+final class AuthCoordinator: Coordinator {
     // navController for authentication flow
     var navigationController: UINavigationController
 

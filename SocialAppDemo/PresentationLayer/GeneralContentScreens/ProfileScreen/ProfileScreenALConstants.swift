@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProfileScreenALConstants {
+enum ProfileScreenALConstants {
     // ProfileScreenView autolayout constants
     static let generalSideInset: CGFloat = 16
 

@@ -12,7 +12,7 @@ protocol ConfirmSignInScreenViewDelegate: AnyObject {
     func signInButtonTapAction(code: String)
 }
 
-class ConfirmSignInScreenView: UIView {
+final class ConfirmSignInScreenView: UIView {
     
     weak var delegate: ConfirmSignInScreenViewDelegate?
 

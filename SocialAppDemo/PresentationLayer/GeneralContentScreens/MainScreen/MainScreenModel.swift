@@ -12,7 +12,7 @@ protocol MainScreenModelDelegate: AnyObject {
     func modelUpdatedPosts()
 }
 
-class MainScreenModel {
+final class MainScreenModel {
 
     weak var delegate: MainScreenModelDelegate?
 

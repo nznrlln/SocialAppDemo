@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct PostScreenALConstants {
+enum PostScreenALConstants {
     static let generalSideInset: CGFloat = 16
 
     static let avatarTopInset: CGFloat = 18

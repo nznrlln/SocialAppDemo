@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ConfirmSignInScreenALConstants {
+enum ConfirmSignInScreenALConstants {
     static let confirmSignInLabelTopInset: CGFloat = 60
 
     static let descriptionLabelTopInset: CGFloat = 12
@@ -28,5 +28,4 @@ struct ConfirmSignInScreenALConstants {
     static let checkImageViewTopInset: CGFloat = 43
     static let checkImageViewHeight: CGFloat = 100
     static let checkImageViewWidth: CGFloat = 86
-
 }

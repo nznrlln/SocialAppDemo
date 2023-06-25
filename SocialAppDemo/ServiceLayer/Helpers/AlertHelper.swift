@@ -11,7 +11,7 @@ protocol AlertHelperProtocol {
     func showUserDetails(fullname: String?, birthday: String?, hometown: String?, isMale: Bool?) -> UIAlertController
 }
 
-class AlertHelper: AlertHelperProtocol {
+final class AlertHelper: AlertHelperProtocol {
 
     static let shared = AlertHelper()
 

@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class PostScreenViewController: UIViewController {
+final class PostScreenViewController: UIViewController {
 
     weak var coordinator: GeneralContentCoordinator?
 

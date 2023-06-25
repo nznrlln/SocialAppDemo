@@ -18,7 +18,7 @@ protocol MainScreenViewDelegate: AnyObject {
     func didSaveTap(post: PostModel, author: UserModel)
 }
 
-class MainScreenView: UIView {
+final class MainScreenView: UIView {
 
     weak var delegate: MainScreenViewDelegate?
 

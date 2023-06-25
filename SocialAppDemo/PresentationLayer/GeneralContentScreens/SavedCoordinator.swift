@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedCoordinator: GeneralContentCoordinator {
+final class SavedCoordinator: GeneralContentCoordinator {
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {

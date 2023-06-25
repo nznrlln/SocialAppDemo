@@ -22,7 +22,7 @@ protocol ProfileScreenViewDelegate: AnyObject {
 
 }
 
-class ProfileScreenView: UIView {
+final class ProfileScreenView: UIView {
 
     weak var delegate: ProfileScreenViewDelegate?
 

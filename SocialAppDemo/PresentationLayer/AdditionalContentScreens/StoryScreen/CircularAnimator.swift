@@ -11,7 +11,7 @@ import UIKit
 // содержит все необходимое для перехода от одного эрана на другой
 // наследуется от NSObject, т.к. это обязательное условие
 // для реализации протокола UIViewControllerAnimatedTransitioning
-class CircularAnimator: NSObject {
+final class CircularAnimator: NSObject {
 
     enum TransitionMode {
         case present

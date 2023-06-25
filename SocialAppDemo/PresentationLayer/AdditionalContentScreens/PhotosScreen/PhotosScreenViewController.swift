@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotosScreenViewController: UIViewController {
+final class PhotosScreenViewController: UIViewController {
 
     private let model: PhotosScreenModel
 

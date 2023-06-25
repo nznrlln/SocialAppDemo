@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct WelcomeScreenALConstants {
+enum WelcomeScreenALConstants {
     static let welcomeImageTopInset: CGFloat = 80
     static let welcomeImageSideInset: CGFloat = 16
     static let welcomeImageHeightWidth: CGFloat = 344

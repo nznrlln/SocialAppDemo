@@ -21,13 +21,13 @@ protocol FirestoreManagerProtocol {
     func getUserPosts(userUID: String, completion: @escaping ([PostModel]?, [String]?) -> Void)
 }
 
-struct FirestoreRefs {
+enum FirestoreRefs {
     static let devUsers = "dev/dev/users"
     static let devPosts = "dev/dev/posts"
 
 }
 
-class FirestoreManager {
+final class FirestoreManager {
 
     static let shared = FirestoreManager()
 

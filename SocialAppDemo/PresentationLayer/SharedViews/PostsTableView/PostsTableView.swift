@@ -12,7 +12,7 @@ protocol PostsTableViewDelegate: AnyObject {
     func didSelectPost(post: PostModel, author: UserModel)
 }
 
-class PostsTableView: UITableView {
+final class PostsTableView: UITableView {
 
     weak var tvDelegate: PostsTableViewDelegate?
 

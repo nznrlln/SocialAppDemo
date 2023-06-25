@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PostScreenModel {
+final class PostScreenModel {
 
     let post: PostModel
     let author: UserModel

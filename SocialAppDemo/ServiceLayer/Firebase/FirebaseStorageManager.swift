@@ -16,7 +16,7 @@ protocol FirebaseStorageManagerProtocol {
     func getImage(ref imageURL: String, completion: @escaping (UIImage?) -> Void)
 }
 
-class FirebaseStorageManager: FirebaseStorageManagerProtocol {
+final class FirebaseStorageManager: FirebaseStorageManagerProtocol {
 
     static let shared = FirebaseStorageManager()
 

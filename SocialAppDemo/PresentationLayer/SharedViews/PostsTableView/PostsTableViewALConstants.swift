@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct PostsTableViewALConstants {
-
+enum PostsTableViewALConstants {
     // PostTableViewCell autolayout constants
     static let generalSideInset: CGFloat = 16
 

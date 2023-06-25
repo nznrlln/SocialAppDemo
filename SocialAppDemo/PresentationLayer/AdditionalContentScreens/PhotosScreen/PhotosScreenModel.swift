@@ -11,7 +11,7 @@ protocol PhotosScreenModelDelegate: AnyObject {
     func modelUpdatedPhotos()
 }
 
-class PhotosScreenModel {
+final class PhotosScreenModel {
 
     weak var delegate: PhotosScreenModelDelegate?
     

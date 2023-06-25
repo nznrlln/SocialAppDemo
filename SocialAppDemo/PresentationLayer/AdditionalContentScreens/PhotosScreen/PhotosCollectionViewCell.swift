@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class PhotosCollectionViewCell: UICollectionViewCell {
+final class PhotosCollectionViewCell: UICollectionViewCell {
 
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()

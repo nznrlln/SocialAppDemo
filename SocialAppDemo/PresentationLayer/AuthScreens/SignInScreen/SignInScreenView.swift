@@ -13,7 +13,7 @@ protocol SignInScreenViewDelegate: AnyObject {
     func nextButtonTapAction(number: String)
 }
 
-class SignInScreenView: UIView {
+final class SignInScreenView: UIView {
 
     weak var delegate: SignInScreenViewDelegate?
 

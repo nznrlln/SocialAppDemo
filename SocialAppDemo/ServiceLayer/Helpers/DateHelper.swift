@@ -13,7 +13,7 @@ protocol DateHelperProtocol {
     func getBirthdayDate(timestamp: Timestamp) -> String
 }
 
-class DateHelper: DateHelperProtocol {
+final class DateHelper: DateHelperProtocol {
 
     static let shared = DateHelper()
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomSaveButton: UIButton {
+final class CustomSaveButton: UIButton {
 
     private let savedImage = UIImage(
         systemName: "bookmark.fill",

@@ -11,7 +11,7 @@ protocol CoreDataHelperProtocol {
     func getModels(from savedPost: SavedPostCoreData) -> (user: UserModel, post: PostModel)
 }
 
-class CoreDataHelper: CoreDataHelperProtocol {
+final class CoreDataHelper: CoreDataHelperProtocol {
 
     static let shared = CoreDataHelper()
 

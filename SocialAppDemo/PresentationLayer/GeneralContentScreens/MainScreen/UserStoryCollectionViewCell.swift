@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class UserStoryCollectionViewCell: UICollectionViewCell {
+final class UserStoryCollectionViewCell: UICollectionViewCell {
 
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()

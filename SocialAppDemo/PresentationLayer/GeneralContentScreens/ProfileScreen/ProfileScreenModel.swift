@@ -13,7 +13,7 @@ protocol ProfileScreenModelDelegate: AnyObject {
     func modelUpdatedPosts()
 }
 
-class ProfileScreenModel {
+final class ProfileScreenModel {
 
     weak var delegate: ProfileScreenModelDelegate?
 

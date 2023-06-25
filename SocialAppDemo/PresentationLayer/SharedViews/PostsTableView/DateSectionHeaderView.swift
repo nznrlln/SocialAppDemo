@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DateSectionHeaderView: UIView {
+final class DateSectionHeaderView: UIView {
 
     private let dateLabel: UILabel = {
         let label = UILabel()

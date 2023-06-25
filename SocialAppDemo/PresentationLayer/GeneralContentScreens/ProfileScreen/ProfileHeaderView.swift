@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileHeaderView: UIView {
+final class ProfileHeaderView: UIView {
 
     var detailsButtonTapAction: (() -> Void)?
 

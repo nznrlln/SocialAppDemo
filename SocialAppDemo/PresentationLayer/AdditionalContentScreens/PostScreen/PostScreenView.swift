@@ -15,7 +15,7 @@ protocol PostScreenDelegate: AnyObject {
     func saveButtonTapAction()
 }
 
-class PostScreenView: UIView {
+final class PostScreenView: UIView {
 
     weak var delegate: PostScreenDelegate?
 

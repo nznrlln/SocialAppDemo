@@ -11,7 +11,7 @@ protocol PhotosScreenViewDelegate: AnyObject {
     var photos: [UIImage] { get }
 }
 
-class PhotosScreenView: UIView {
+final class PhotosScreenView: UIView {
 
     weak var delegate: PhotosScreenViewDelegate?
 
@@ -112,6 +112,7 @@ class PhotosScreenView: UIView {
 
 }
 
+// MARK: - UICollectionViewDataSource
 
 extension PhotosScreenView: UICollectionViewDataSource {
 

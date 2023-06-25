@@ -11,7 +11,7 @@ protocol MainCoordinatorProtocol: GeneralContentCoordinator {
     func openStory(story: UIImage, cell: UserStoryCollectionViewCell, xOffset: CGFloat)
 }
 
-class MainCoordinator: NSObject, MainCoordinatorProtocol {
+final class MainCoordinator: NSObject, MainCoordinatorProtocol {
     var navigationController: UINavigationController
 
     // для анимации - знать какую сториз открыли

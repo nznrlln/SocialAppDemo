@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import CoreData
 
-class SavedScreenViewController: UIViewController {
+final class SavedScreenViewController: UIViewController {
 
     weak var coordinator: GeneralContentCoordinator?
 

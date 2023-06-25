@@ -7,16 +7,16 @@
 
 import UIKit
 
-struct Palette {
-    static var mainBackground = UIColor.systemBackground
-    static var secondBackground = UIColor(named: "SecondBackgroundColor")
-    static var mainAccent = UIColor(named: "MainAccentColor")
+enum Palette {
+    static let mainBackground = UIColor.systemBackground
+    static let secondBackground = UIColor(named: "SecondBackgroundColor")
+    static let mainAccent = UIColor(named: "MainAccentColor")
 
-    static var darkButton = UIColor(named: "DarkButtonColor") ?? .systemGray
+    static let darkButton = UIColor(named: "DarkButtonColor") ?? .systemGray
 
-    static var blackAndWhite = UIColor.createColor(lightMode: .black, darkMode: .white)
+    static let blackAndWhite = UIColor.createColor(lightMode: .black, darkMode: .white)
 
-    static var secondaryText = UIColor(named: "SecondaryTextColor") ?? .systemGray5
+    static let secondaryText = UIColor(named: "SecondaryTextColor") ?? .systemGray5
 
-    static var thirdText = UIColor(named: "ThirdTextColor") ?? .systemGray6
+    static let thirdText = UIColor(named: "ThirdTextColor") ?? .systemGray6
 }

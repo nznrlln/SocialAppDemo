@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StoryScreenViewController: UIViewController {
+final class StoryScreenViewController: UIViewController {
 
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()

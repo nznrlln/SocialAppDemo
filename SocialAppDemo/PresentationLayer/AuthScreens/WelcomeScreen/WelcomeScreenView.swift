@@ -12,7 +12,7 @@ protocol WelcomeScreenViewDelegate: AnyObject {
     func signUpButtonTapAction()
 }
 
-class WelcomeScreenView: UIView {
+final class WelcomeScreenView: UIView {
 
     weak var delegate: WelcomeScreenViewDelegate?
 

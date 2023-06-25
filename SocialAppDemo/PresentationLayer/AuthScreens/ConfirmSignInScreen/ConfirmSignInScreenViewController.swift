@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ConfirmSignInScreenViewController: UIViewController {
+final class ConfirmSignInScreenViewController: UIViewController {
 
     weak var coordinator: AuthCoordinator?
 

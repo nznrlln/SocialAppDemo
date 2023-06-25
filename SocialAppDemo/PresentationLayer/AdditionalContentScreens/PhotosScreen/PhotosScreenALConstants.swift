@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct PhotosScreenALConstants {
-
+enum PhotosScreenALConstants {
     static let numberOfItemsInRow: CGFloat = 3.0 
     static let itemFractionalWidth: CGFloat = 1.0 // from 0 to 1
     static let itemFractionalHeight: CGFloat = 1.0  // from 0 to 1

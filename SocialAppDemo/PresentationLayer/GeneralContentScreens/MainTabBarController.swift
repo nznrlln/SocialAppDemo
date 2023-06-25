@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController {
 
     let mainCoordinator = MainCoordinator(navigationController: UINavigationController())
     let profileCoordinator = ProfileCoordinator(navigationController: UINavigationController())

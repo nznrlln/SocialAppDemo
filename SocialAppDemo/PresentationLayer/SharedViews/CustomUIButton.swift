@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomUIButton: UIButton {
+final class CustomUIButton: UIButton {
 
     var customButtonTapAction: (() -> Void)?
 

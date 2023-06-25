@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FD1C5BDB29BDD71400C42CD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */; };
 		FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */; };
-		FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */; };
 		FD1C5BE529BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BE329BDD71400C42CD6 /* SocialAppDemo.xcdatamodeld */; };
 		FD1C5BE729BDD71500C42CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */; };
 		FD1C5BEA29BDD71500C42CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */; };
@@ -116,7 +115,6 @@
 		FD1C5BD729BDD71400C42CD6 /* SocialAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FD1C5BE429BDD71400C42CD6 /* SocialAppDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialAppDemo.xcdatamodel; sourceTree = "<group>"; };
 		FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD1C5BE929BDD71500C42CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			children = (
 				FD1C5BDA29BDD71400C42CD6 /* AppDelegate.swift */,
 				FD1C5BDC29BDD71400C42CD6 /* SceneDelegate.swift */,
-				FD1C5BDE29BDD71400C42CD6 /* ViewController.swift */,
 				FD1C5BE629BDD71500C42CD6 /* Assets.xcassets */,
 				FD1C5BE829BDD71500C42CD6 /* LaunchScreen.storyboard */,
 				FD1C5BEB29BDD71500C42CD6 /* Info.plist */,
@@ -727,7 +724,6 @@
 				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
 				FD5D283A29C77E0000553FBD /* String+Extention.swift in Sources */,
 				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,
-				FD1C5BDF29BDD71400C42CD6 /* ViewController.swift in Sources */,
 				FD457B152A3B5ED80068C6EC /* GeneralContentCoordinator.swift in Sources */,
 				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
 				FD5836E92A0D819C009A992B /* CoreDataHelper.swift in Sources */,
