@@ -77,7 +77,7 @@ final class ProfileScreenModel {
     }
 
     func getUserPhotoCollection() {
-        FirebaseStorageManager.shared.getImages(number: 6) { [weak self] images in
+        FirebaseStorageManager.shared.getImages(number: ProfileScreenALConstants.numberOfPhotos) { [weak self] images in
             guard let images = images else { assertionFailure(); return }
 
             self?.userPhotos = images

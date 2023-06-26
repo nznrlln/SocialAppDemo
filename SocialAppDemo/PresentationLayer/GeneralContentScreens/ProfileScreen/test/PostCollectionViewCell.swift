@@ -1,14 +1,14 @@
 //
-//  PostTableViewCell.swift
+//  PostCollectionViewCell.swift
 //  SocialAppDemo
 //
-//  Created by Нияз Нуруллин on 04.04.2023.
+//  Created by Нияз Нуруллин on 25.06.2023.
 //
 
 import UIKit
 import SnapKit
 
-final class PostTableViewCell: UITableViewCell {
+final class PostCollectionViewCell: UICollectionViewCell {
 
     var saveButtonTapAction: (() -> Void)?
 
@@ -126,8 +126,8 @@ final class PostTableViewCell: UITableViewCell {
         return button
     }()
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
 
         cellInitialSettings()
     }
@@ -168,7 +168,7 @@ final class PostTableViewCell: UITableViewCell {
 
     private func cellInitialSettings() {
         contentView.backgroundColor = Palette.mainBackground
-        
+
         setupSubviews()
         setupSubviewsLayout()
     }

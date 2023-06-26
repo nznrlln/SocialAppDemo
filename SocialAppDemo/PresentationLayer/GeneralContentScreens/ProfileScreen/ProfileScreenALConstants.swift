@@ -15,7 +15,8 @@ enum ProfileScreenALConstants {
 
     static let photosButtonHeightWidth: CGFloat = 24
 
-    static let photosCollectionTopInset: CGFloat = 10
+    static let numberOfPhotos = 6
+    static let photosCollectionTopInset: CGFloat = 12
     static let photosCollectionHeight: CGFloat = 80
 
     static let tableViewTopInset: CGFloat = 16

@@ -106,7 +106,7 @@ extension PostsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView()
         footer.backgroundColor = Palette.mainBackground
-        
+
         return footer
     }
 

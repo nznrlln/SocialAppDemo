@@ -30,9 +30,12 @@ final class MainCoordinator: NSObject, MainCoordinatorProtocol {
               let cellXOffset = self.selectedCellXOffset
         else { return .zero }
 
+        guard let center = self.selectedCellSnapshot?.center else { return .zero }
         return CGPoint(
-            x: cellCenterPoint.x - cellXOffset + MainScreenALConstants.collectionSideInset,
-            y: cellCenterPoint.y + navBarHeight + navBarYOffset - MainScreenALConstants.collectionTopInset
+//            x: cellCenterPoint.x - cellXOffset + MainScreenALConstants.collectionSideInset,
+//            y: cellCenterPoint.y + navBarHeight + navBarYOffset - MainScreenALConstants.collectionTopInset
+            x: cellCenterPoint.x,
+            y: cellCenterPoint.y + navBarHeight + MainScreenALConstants.collectionTopInset
         )
     }
 
@@ -56,6 +59,7 @@ final class MainCoordinator: NSObject, MainCoordinatorProtocol {
         self.selectedStoryCell = cell
         self.selectedCellSnapshot = self.selectedStoryCell?.contentView.snapshotView(afterScreenUpdates: false)
         self.selectedCellXOffset = xOffset
+
 
         let controller = StoryScreenViewController()
         controller.setupStory(model: story)
