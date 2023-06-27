@@ -15,7 +15,6 @@
 		FD1C5BF529BDD71500C42CD6 /* SocialAppDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BF429BDD71500C42CD6 /* SocialAppDemoTests.swift */; };
 		FD1C5BFF29BDD71500C42CD6 /* SocialAppDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */; };
 		FD1C5C0129BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */; };
-		FD21DB3D2A482B15003466B4 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21DB3C2A482B15003466B4 /* File.swift */; };
 		FD21DB3F2A484864003466B4 /* ProfileHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21DB3E2A484864003466B4 /* ProfileHeaderCollectionViewCell.swift */; };
 		FD21DB422A484F87003466B4 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21DB412A484F87003466B4 /* PostCollectionViewCell.swift */; };
 		FD21DB442A496540003466B4 /* DateSectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21DB432A496540003466B4 /* DateSectionHeaderCollectionReusableView.swift */; };
@@ -25,8 +24,6 @@
 		FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */; };
 		FD5836B129E2E995009A992B /* SavedScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B029E2E995009A992B /* SavedScreenViewController.swift */; };
 		FD5836B329E2E9A7009A992B /* SavedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B229E2E9A7009A992B /* SavedScreenView.swift */; };
-		FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836B929E478AE009A992B /* PostsTableView.swift */; };
-		FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */; };
 		FD5836BF29F27571009A992B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836BE29F27571009A992B /* FirebaseStorage */; };
 		FD5836C129F27677009A992B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FD5836C029F27677009A992B /* FirebaseFirestore */; };
 		FD5836C429F47297009A992B /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FD5836C629F47297009A992B /* Localizable.stringsdict */; };
@@ -95,7 +92,6 @@
 		FD5D289529D9FCA300553FBD /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289429D9FCA300553FBD /* MainScreenView.swift */; };
 		FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */; };
 		FD5D289929DB531000553FBD /* UserStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289829DB531000553FBD /* UserStoryCollectionViewCell.swift */; };
-		FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +124,6 @@
 		FD1C5BFA29BDD71500C42CD6 /* SocialAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1C5BFE29BDD71500C42CD6 /* SocialAppDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITests.swift; sourceTree = "<group>"; };
 		FD1C5C0029BDD71500C42CD6 /* SocialAppDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FD21DB3C2A482B15003466B4 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FD21DB3E2A484864003466B4 /* ProfileHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD21DB412A484F87003466B4 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD21DB432A496540003466B4 /* DateSectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -138,8 +133,6 @@
 		FD5836AD29E20B92009A992B /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B029E2E995009A992B /* SavedScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenViewController.swift; sourceTree = "<group>"; };
 		FD5836B229E2E9A7009A992B /* SavedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScreenView.swift; sourceTree = "<group>"; };
-		FD5836B929E478AE009A992B /* PostsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableView.swift; sourceTree = "<group>"; };
-		FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSectionHeaderView.swift; sourceTree = "<group>"; };
 		FD5836C529F47297009A992B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FD5836C729F4729F009A992B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -205,7 +198,6 @@
 		FD5D289429D9FCA300553FBD /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		FD5D289629D9FCB800553FBD /* MainScreenALConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenALConstants.swift; sourceTree = "<group>"; };
 		FD5D289829DB531000553FBD /* UserStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,15 +286,13 @@
 			path = SocialAppDemoUITests;
 			sourceTree = "<group>";
 		};
-		FD21DB402A484F61003466B4 /* test */ = {
+		FD21DB472A4AF8FF003466B4 /* CustomButtons */ = {
 			isa = PBXGroup;
 			children = (
-				FD21DB3C2A482B15003466B4 /* File.swift */,
-				FD21DB3E2A484864003466B4 /* ProfileHeaderCollectionViewCell.swift */,
-				FD21DB412A484F87003466B4 /* PostCollectionViewCell.swift */,
-				FD21DB432A496540003466B4 /* DateSectionHeaderCollectionReusableView.swift */,
+				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
+				FD5836EC2A156C7A009A992B /* CustomSaveButton.swift */,
 			);
-			path = test;
+			path = CustomButtons;
 			sourceTree = "<group>";
 		};
 		FD457B162A3B8FB80068C6EC /* Appearance */ = {
@@ -322,15 +312,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		FD5836B629E331F9009A992B /* PostsTableView */ = {
+		FD5836B629E331F9009A992B /* PostCell */ = {
 			isa = PBXGroup;
 			children = (
-				FD5836B929E478AE009A992B /* PostsTableView.swift */,
-				FD5D289A29DCC05F00553FBD /* PostTableViewCell.swift */,
-				FD5836BB29E5ECC6009A992B /* DateSectionHeaderView.swift */,
+				FD21DB412A484F87003466B4 /* PostCollectionViewCell.swift */,
+				FD21DB432A496540003466B4 /* DateSectionHeaderCollectionReusableView.swift */,
 				FD5836E62A077F2B009A992B /* PostsTableViewALConstants.swift */,
 			);
-			path = PostsTableView;
+			path = PostCell;
 			sourceTree = "<group>";
 		};
 		FD5836BD29F27571009A992B /* Frameworks */ = {
@@ -451,9 +440,8 @@
 		FD5837112A35AD85009A992B /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
-				FD5D282A29C6449200553FBD /* CustomUIButton.swift */,
-				FD5836EC2A156C7A009A992B /* CustomSaveButton.swift */,
-				FD5836B629E331F9009A992B /* PostsTableView */,
+				FD21DB472A4AF8FF003466B4 /* CustomButtons */,
+				FD5836B629E331F9009A992B /* PostCell */,
 			);
 			path = SharedViews;
 			sourceTree = "<group>";
@@ -500,7 +488,7 @@
 				FD5D282029C180AC00553FBD /* ProfileHeaderView.swift */,
 				FD5836CC29F5A208009A992B /* MiniPhotosCollectionViewCell.swift */,
 				FD457B192A3F43B30068C6EC /* ProfileScreenALConstants.swift */,
-				FD21DB402A484F61003466B4 /* test */,
+				FD21DB3E2A484864003466B4 /* ProfileHeaderCollectionViewCell.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -738,7 +726,6 @@
 				FD5836D729FA6D3D009A992B /* FirestoreManager.swift in Sources */,
 				FD5D282B29C6449200553FBD /* CustomUIButton.swift in Sources */,
 				FD5836F02A1A22BE009A992B /* PhotosScreenViewController.swift in Sources */,
-				FD5836BC29E5ECC6009A992B /* DateSectionHeaderView.swift in Sources */,
 				FD457B182A3D9BA20068C6EC /* AlertHelper.swift in Sources */,
 				FD5D288C29D8BA9400553FBD /* AuthManager.swift in Sources */,
 				FD5D284629C786EC00553FBD /* Fonts.swift in Sources */,
@@ -746,9 +733,7 @@
 				FD21DB422A484F87003466B4 /* PostCollectionViewCell.swift in Sources */,
 				FD5D285C29CEE70D00553FBD /* ConfirmSignInScreenView.swift in Sources */,
 				FD457B152A3B5ED80068C6EC /* GeneralContentCoordinator.swift in Sources */,
-				FD5D289B29DCC05F00553FBD /* PostTableViewCell.swift in Sources */,
 				FD5836E92A0D819C009A992B /* CoreDataHelper.swift in Sources */,
-				FD5836BA29E478AE009A992B /* PostsTableView.swift in Sources */,
 				FD5D285A29CEE6FA00553FBD /* ConfirmSignInScreenViewController.swift in Sources */,
 				FD5D282729C63FC400553FBD /* WelcomeScreenView.swift in Sources */,
 				FD5837162A35AE19009A992B /* NSAttributedString+Extention.swift in Sources */,
@@ -774,7 +759,6 @@
 				FD5D289729D9FCB800553FBD /* MainScreenALConstants.swift in Sources */,
 				FD21DB442A496540003466B4 /* DateSectionHeaderCollectionReusableView.swift in Sources */,
 				FD5D284029C783D800553FBD /* WelcomeScreenViewController.swift in Sources */,
-				FD21DB3D2A482B15003466B4 /* File.swift in Sources */,
 				FD1C5BDD29BDD71400C42CD6 /* SceneDelegate.swift in Sources */,
 				FD5836AE29E20B92009A992B /* ProfileScreenViewController.swift in Sources */,
 				FD5D282329C1831300553FBD /* ProfileScreenView.swift in Sources */,

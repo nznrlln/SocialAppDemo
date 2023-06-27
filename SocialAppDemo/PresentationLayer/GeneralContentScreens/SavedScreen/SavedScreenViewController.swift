@@ -160,7 +160,7 @@ extension SavedScreenViewController: UITableViewDataSource {
 extension SavedScreenViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = DateSectionHeaderView()
+        let headerView = DateSectionHeaderCollectionReusableView()
 
         let title = frc.sections?[section].name
         headerView.setupHeader(model: title)

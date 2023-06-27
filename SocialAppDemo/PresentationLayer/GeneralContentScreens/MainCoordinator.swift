@@ -32,9 +32,7 @@ final class MainCoordinator: NSObject, MainCoordinatorProtocol {
 
         guard let center = self.selectedCellSnapshot?.center else { return .zero }
         return CGPoint(
-//            x: cellCenterPoint.x - cellXOffset + MainScreenALConstants.collectionSideInset,
-//            y: cellCenterPoint.y + navBarHeight + navBarYOffset - MainScreenALConstants.collectionTopInset
-            x: cellCenterPoint.x,
+            x: cellXOffset,
             y: cellCenterPoint.y + navBarHeight + MainScreenALConstants.collectionTopInset
         )
     }
