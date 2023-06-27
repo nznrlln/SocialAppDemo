@@ -30,7 +30,6 @@ final class MainCoordinator: NSObject, MainCoordinatorProtocol {
               let cellXOffset = self.selectedCellXOffset
         else { return .zero }
 
-        guard let center = self.selectedCellSnapshot?.center else { return .zero }
         return CGPoint(
             x: cellXOffset,
             y: cellCenterPoint.y + navBarHeight + MainScreenALConstants.collectionTopInset
